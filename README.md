@@ -1,2 +1,1 @@
 # Clinica-Imagen
-# test
