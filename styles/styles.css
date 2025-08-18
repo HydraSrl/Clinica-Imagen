@@ -1719,26 +1719,48 @@ footer > div > nav {
     margin-left: 20%;
     margin-right: 20%;
     input{
+        margin-top: 0%;
+        background-color: white;
+    }
+    select{
+        margin-top: 0%;
+        background-color: white;
+    }
+    button{
+        width: 60%;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top: 6%;
+        margin-top: 8%;
+        margin-bottom: 7%;
         background-color: white;
+    }
+    p{
+        margin-top: 6%;
+        margin-bottom: 0%;
+    }
+
+}
+.formulariodiv1{
+    display:flex;
+    flex-direction: row;
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    input{
+        margin-left: 10%;
+        margin-right: 10%;
     }
     select{
         margin-left: 10%;
         margin-right: 10%;
-        margin-top: 6%;
-        background-color: white;
     }
-    button{
-        margin-left: 35%;
-        margin-right: 35%;
-        margin-top: 7%;
-        margin-bottom: 7%;
-        background-color: white;
-    }
-    div{
-        display:flex;
-        flex-direction: column;
-    }
+}
+.formulariodiv2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-right: 20%;
+    margin-left: 20%;
 }
