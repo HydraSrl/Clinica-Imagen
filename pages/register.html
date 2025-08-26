@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="icon" href="../img/logomini.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
-    <title>Registro</title>
 </head>
 <body>
     <header>
         <nav style="cursor: pointer;" class="logo-header"><img src="../img/logo.png" onclick="window.location.href='../index.html'"></nav>
         <div class="buttons-header">
-            <nav style="font-family: 'Karla';" class="links-header"><a href="/tratamientos.html">Tratamientos</a></nav>
-            <nav style="font-family: 'Karla';" class="links-header"><a href="/agendate.html">Agendate</a></nav>
-            <nav style="font-family: 'Karla';" class="links-header"><a href="/contacto.html">Contacto</a></nav>
+            <nav style="font-family: 'Karla';" class="links-header"><a href="contacto.html">Contacto</a></nav>
+            <nav style="font-family: 'Karla';" class="links-header"><a href="../index.html">Agendate</a></nav>
+            <nav style="font-family: 'Karla';" class="links-header"><a href="tratamientos.html">Tratamientos</a></nav>
         </div>
         <div class="menu-perfil-container">
             <div class="mobile-buttons-header">
@@ -39,28 +40,24 @@
             </div>
         </div>
     </header>
-    <section class="sectionReg1">
-        <div class="register-box">
-            <div class="inputs-register">
-                <input placeholder="Nombre" id="name" class="Name">
-                <input placeholder="Apellido" id="sname" class="Sname">
-                <input placeholder="Contraseña" id="pass" class="Pass" type="password">
-                <input placeholder="Fecha de nacimiento" id="fechan" type="date" class="Fechan">
-                <select id="eot" onchange="EoT()">
-                    <option value="email">Email</option>
-                    <option value="tel">Telefono</option>
-                </select>
-                <input placeholder="Contacto" id="contacto" class="Contacto">
-            </div>
-            <div class="buttons-register">
-                <button class="already-account-button" onclick="window.location.href='login.html'">Ya tengo una cuenta</button>
-                <div class="userlist-register-buttons">
-                    <button class="register-button" id="register" onclick="Registrar()">Registrar</button>
-                    <button class="user-list-button" id="list" onclick="Listar()">Lista de Usuarios</button>
+    <main>
+        <section class="login">
+            <div class="login_back">
+                <div class="login_box">
+                    <div class="login_deco_box">
+                        <p class="hover-efect" onclick="location='login.html'">Login   </p>
+                        <p class="login_actual_loc">| Register</p>
+                    </div>
+                    <div class="login_box2">
+                        <input placeholder="Nombre">
+                        <input placeholder="Email">
+                        <input placeholder="Fecha de nacimiento" type="date">
+                        <input placeholder="Contraseña" type="password">
+                        <button class="button_register">Registrarse</button>
+                    </div> 
                 </div>
             </div>
-        </div>
-    </section>
-    <script src="../script/script.js"></script>
+        </section>
+    </main>
 </body>
 </html>
