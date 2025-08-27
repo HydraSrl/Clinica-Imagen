@@ -1343,9 +1343,37 @@ footer {
     }
 }
 
-/* Sobre Nosotros */
+/* Contacto */
 
-.sectionSobreN1{
+.sectionContact1{
+    width: 100%;
+}
+.sectionContact1 > div{
+    margin-top: 20dvh;
+    gap: 5px;
+    margin-left: 30dvh;
+    justify-content: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+        input{
+            height: 5dvh;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            padding-left: 2dvh;
+            background: beige;
+        }
+}
+.sectionContact1 > div >input:focus{
+    outline: none;
+    border-color: #4169E1;
+    transition: color 0.5 ease;
+}
+
+.sectionContact2{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -1353,7 +1381,7 @@ footer {
     gap: 60px;
     padding: 1rem;
 }
-.sectionSobreN2{
+.sectionContact3{
     padding: 1rem;
     box-sizing: border-box;
     gap: 60px;
