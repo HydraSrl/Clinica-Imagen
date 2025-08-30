@@ -1544,7 +1544,7 @@ footer {
     background: linear-gradient(53deg, rgba(46, 46, 46, 1) 0%, rgba(33, 197, 222, 1) 84%);
 }
 .login_back{
-    margin-left: 50dvh;
+    margin-left: 25dvh;
     display: flex;
     position: absolute;
     z-index: 0;
@@ -1561,6 +1561,21 @@ footer {
     justify-content: center;
     width: 100%;
     z-index: 1;
+
+}
+.homeButton{
+    width: 8%;
+    position: absolute;
+    display: flex;
+    background: none;
+    border: none;
+    transform: translateY(-20dvh);
+        img{
+            width: 100%;
+        }
+}
+.homeButton:hover{
+    cursor: pointer;
 }
 .login_actual_loc{
     color: black;
