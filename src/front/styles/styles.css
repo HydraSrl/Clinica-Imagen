@@ -1087,6 +1087,10 @@ footer {
     padding: 0 5rem;
 }
 
+.text-tratamientos-web{
+    width: 50%;
+}
+
 .Tratlinks{
     grid-column: span 1;
     grid-row: span 1;
@@ -1096,7 +1100,7 @@ footer {
     flex-direction: row;
     display: flex;
     border: 1px solid #444;
-    border-radius: 5px;
+    border-radius: 20px;
     border-color: #1e1e1e;
     text-decoration: none;
     div{
@@ -1120,7 +1124,7 @@ footer {
         color: white;
         border: solid 1px black;
         background-color: black;
-        border-radius: 3px;
+        border-radius: 5px;
         transition: 0.2s;
     }
     button:hover {
@@ -1592,6 +1596,19 @@ footer {
         input:focus {
             outline: none;
             background-color: rgba(0, 0, 0, 0.9);
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        input[type="password"]::-ms-reveal {
+            filter: invert(1); /* invierte colores */
+        }
+        input[type="date"]::-webkit-password {
+            filter: invert(1);
+            border-radius: 50%;
+            padding: 4px;
         }
         button{
             border: none;

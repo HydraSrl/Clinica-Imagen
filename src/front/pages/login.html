@@ -43,19 +43,21 @@
     <main>
         <section class="login">
             <div class="login_back">
-                <div class="login_box">
+                <form class="login_box">
                     <div class="login_deco_box">
                         <p class="login_actual_loc">Login |</p>
                         <p class="hover-efect" onclick="location='register.html'"> Register</p>
                     </div>
                     <div class="login_box2">
-                        <input placeholder="Nombre o Email">
-                        <input placeholder="Contraseña" type="password">
-                        <button class="button_login">Iniciar sesión</button>
+                        <input id="usuario" placeholder="Nombre o Email">
+                        <input id="pass" placeholder="Contraseña" type="password">
+                        <button type="submit" class="button_login">Iniciar sesión</button>
                     </div> 
-                </div>
+                </form>
+                <div id="mensaje"></div>
             </div>
         </section>
     </main>
+    <script src="../script/login.js"></script>
 </body>
 </html>
