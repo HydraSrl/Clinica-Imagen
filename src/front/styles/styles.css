@@ -1259,6 +1259,136 @@ footer {
     background-color: #57534D;
 }
 
+/* Tratamientos segunda plantilla */
+
+#SectionTrat-plantilla2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10%;
+    background-color: #222;
+    z-index: 1;
+    .background-plantilla2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.4;
+    }
+}
+
+.left-div-plantilla2 {
+    width: 35%;
+    height: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    h1 {
+        font-size: 1.75rem;
+    }
+}
+
+.left-div-plantilla2 > * {
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    font-size: 1.25rem;
+    font-family:'Karla', sans-serif;
+}
+
+.right-div-plantilla2 {
+    width: 45%;
+    height: 500px;
+    z-index: 1;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 300px;
+        border-bottom-left-radius: 300px;
+    }
+}
+
+/* Tratamientos tercera plantilla */
+
+#SectionTrat-plantilla3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    gap: 8%;
+}
+
+.grid-plantilla3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 40%;
+    height: 50%;
+    gap: 1.5rem;
+}
+
+.grid-plantilla3 > div {
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding-left: 2rem;
+    font-size: 1.25rem;
+    font-family:'Karla', sans-serif;
+}
+
+.grid-plantilla3 > .img-grande-plantilla3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/0.5;
+    grid-column: span 2;
+    grid-row: 2;
+    border-radius: 20px;
+}
+
+.grid-plantilla3 > .img-chica-plantilla3 {
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 20px;
+}
+
+.right-div-plantilla3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 30%;
+    height: 40%;
+    color: white;
+    font-family:'Karla', sans-serif;
+    h1 {
+        font-size: 1.75rem;
+        margin: 0;
+    }
+    p {
+        font-size: 1.4rem;
+        margin: 0;
+    }
+}
+
 /* Mobile Tratamientos */
 
 /* Cuando haya mas de 1000px (vista desktop) */
