@@ -1087,8 +1087,20 @@ footer {
     padding: 0 5rem;
 }
 
-.text-tratamientos-web{
-    width: 50%;
+.text1-tratamientos-web{
+    width: 60%;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 5rem;
+}
+.text2-tratamientos-web{
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1rem;
+    margin-bottom: 5%;
 }
 
 .Tratlinks{
@@ -1481,16 +1493,21 @@ footer {
 .sectionContact1{
     width: 100%;
     display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-right: 20%;
 }
 .info_Contact1{
-    margin-top: 20dvh;
+    margin-top: 5dvh;
     gap: 5px;
-    margin-left: 20dvh;
     justify-content: center;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin-left: 20%;
         input{
+            width: 60%;
             height: 5dvh;
             border-top: none;
             border-left: none;
@@ -1500,8 +1517,10 @@ footer {
             padding-left: 2dvh;
             font-family: 'Karla';
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
         textarea{
+            width: 60%;
             height: 10dvh;
             border-top: none;
             border-left: none;
@@ -1516,20 +1535,27 @@ footer {
             font-family: 'Karla';
             padding-top: 1dvh;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
         input:focus{
             outline: none;
             border-color: #4169E1;
+            text-align: center;
         }
         textarea:focus{
             outline: none;
             border-color: #4169E1;
+            text-align: center;
         }
 }
 .info_Contact2 {
-    width: 40%;
+    width: 100%;
     margin-top: 20dvh;
-    margin-left: 10dvh;
+    text-align: center;
+
+    .p{
+        text-align: center;
+    }
 }
 .sectionContact2{
     display: flex;
@@ -1547,8 +1573,8 @@ footer {
 }
 #map {
     align-items: center;
-    height: 400px;
-    width: 90%;
+    height: 30rem;
+    width: 100%;
     border-radius: 20px;
     border: 2px;
     border-color: gray;
@@ -1572,9 +1598,11 @@ footer {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 90%;
+    width: 100%;
     height: auto;
     overflow: hidden;
+
+    margin-bottom: 2.5%;
 }
 .contactSliderB{
     flex: 0 0 calc(100% / 5);
@@ -1586,7 +1614,6 @@ footer {
     border-radius: 3px;
     height: 180px;
     cursor: pointer;
-    text-align: center;
 }
 
 
