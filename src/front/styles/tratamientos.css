@@ -1,0 +1,448 @@
+
+/* Grid Tratamientos web */
+
+#Tratsweb{
+    background-color: rgb(245, 245, 220);
+    margin-top: 10vh;
+    padding: 2rem;
+}
+
+.grid-tratamientos {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 1rem;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    padding: 0 5rem;
+}
+
+.text1-tratamientos-web{
+    width: 60%;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 5rem;
+}
+.text2-tratamientos-web{
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1rem;
+    margin-bottom: 5%;
+}
+
+.Tratlinks{
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(245, 245, 220);
+    flex-direction: row;
+    display: flex;
+    border: 1px solid #444;
+    border-radius: 20px;
+    border-color: #1e1e1e;
+    text-decoration: none;
+    div{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem;   
+        color: #1e1e1e;
+        h2 {
+            margin: 0;
+            text-wrap: balance;
+        }
+    }
+    button {
+        width: 80%;
+        height: 1.5rem;
+        color: white;
+        border: solid 1px black;
+        background-color: black;
+        border-radius: 5px;
+        transition: 0.2s;
+    }
+    button:hover {
+        border: solid 1px black;
+        background-color: white;
+        color: black;
+    }
+}
+
+.Tratlinksbot{
+    text-decoration: none;
+    color: #1e1e1e;
+}
+
+
+/* Termina Tratamientos web */
+
+/* Mobile Tratamientos web */
+
+/* Cuando haya mas de 1000px (vista desktop) */
+
+@media (min-width: 1400px) {
+    .grid-tratamientos {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Cuando haya menos de 1400px (vista laptop) */
+
+@media (max-width: 1400px) {
+    .grid-tratamientos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* Cuando haya menos de 1000px (vista tablet) */
+
+@media (max-width: 1000px) {
+    .grid-tratamientos {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* cuando haya menos de 600px (vista mobile) */
+
+@media (max-width: 600px) {
+    .grid-tratamientos {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+/* Tratamientos */
+/* Tratamientos primera plantilla */
+
+#SectionTrat-plantilla1{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 10vh;
+    background-color: black;
+    .background-plantilla1 {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        position: absolute;
+        z-index: 1;
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+.trat-imagen-plantilla1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
+    height: 60%;
+    z-index: 2;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+    h1 {
+        position: absolute;
+        z-index: 1;
+        font-family: 'Poppins';
+    }
+}
+
+.trat-info-divs-plantilla1 {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+    width: 15%;
+    height: 60%;
+    padding: 3rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.8rem;
+    text-align: left;
+    svg {
+        width: 3rem;
+    }
+    p {
+        min-height: 150px;
+    }
+}
+
+.color-div1-plantilla1 {
+    background-color: #1C1917;
+}
+
+.color-div2-plantilla1 {
+    background-color: #292524;
+}
+
+.color-div3-plantilla1 {
+    background-color: #57534D;
+}
+
+/* Tratamientos segunda plantilla */
+
+#SectionTrat-plantilla2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10%;
+    background-color: #222;
+    z-index: 1;
+    .background-plantilla2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.4;
+    }
+}
+
+.left-div-plantilla2 {
+    width: 35%;
+    height: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    h1 {
+        font-size: 1.75rem;
+    }
+}
+
+.left-div-plantilla2 > * {
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    font-size: 1.25rem;
+    font-family:'Karla', sans-serif;
+}
+
+.right-div-plantilla2 {
+    width: 45%;
+    z-index: 1;
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2/1;
+        border-top-left-radius: 300px;
+        border-bottom-left-radius: 300px;
+    }
+}
+
+/* Tratamientos tercera plantilla */
+
+#SectionTrat-plantilla3 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    gap: 8%;
+}
+
+.grid-plantilla3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 40%;
+    height: 50%;
+    gap: 1.5rem;
+}
+
+.grid-plantilla3 > div {
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding-left: 2rem;
+    font-size: 1.25rem;
+    font-family:'Karla', sans-serif;
+}
+
+.grid-plantilla3 > .img-grande-plantilla3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/0.5;
+    grid-column: span 2;
+    grid-row: 2;
+    border-radius: 20px;
+}
+
+.grid-plantilla3 > .img-chica-plantilla3 {
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.right-div-plantilla3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 30%;
+    height: 40%;
+    color: white;
+    font-family:'Karla', sans-serif;
+    h1 {
+        font-size: 1.75rem;
+        margin: 0;
+    }
+    p {
+        font-size: 1.4rem;
+        margin: 0;
+    }
+}
+
+/* Mobile Tratamientos */
+
+/* Cuando haya mas de 1000px (vista desktop) */
+
+@media (min-width: 1000px) {
+}
+
+/* Cuando haya menos de 1000px (vista tablet) */
+
+@media (max-width: 1000px) {
+    /* Plantilla 1 */
+    #SectionTrat-plantilla1 {
+        flex-direction: column;
+    }
+    .trat-imagen-plantilla1 {
+        width: 70%;
+        height: 30%;
+    }
+    .trat-info-divs-plantilla1 {
+        width: 70%;
+        height: 10%;
+        padding: 1rem;
+        p {
+            min-height: 0;
+        }
+    }
+
+    /* Plantilla 2 */
+    #SectionTrat-plantilla2 {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: flex-end;
+        .background-plantilla2 {
+            top: 0;
+        }
+    }
+    .right-div-plantilla2 {
+        width: 70%;
+    }
+    .left-div-plantilla2 {
+        align-self: center;
+        width: 80%;
+        height: auto;
+    }
+
+    /* Plantilla 3 */
+    #SectionTrat-plantilla3 {
+        flex-direction: column;
+        padding-top: 10vh;
+        gap: 0;
+    }
+    .grid-plantilla3 {
+        width: 80%;
+    }
+    .right-div-plantilla3 {
+        width: 80%;
+    }
+}
+
+/* cuando haya menos de 600px (vista mobile) */
+
+@media (max-width: 600px) {
+    /* Plantilla 1 */
+    .trat-imagen-plantilla1 {
+        width: 90%;
+        h1 {
+            font-size: 1rem;
+        }
+    }
+    .trat-info-divs-plantilla1 {
+        width: 90%;
+        height: 20%;
+        p {
+            font-size: 0.7rem;
+        }
+    }
+    /* Plantilla 2 */
+    .right-div-plantilla2 {
+        width: 80%;
+    }
+    .left-div-plantilla2 {
+        h1 {
+            font-size: 1.2rem;
+        }
+        p {
+            font-size:0.8rem;
+        }
+    }
+    /* Plantilla 3 */
+    #SectionTrat-plantilla3 {
+        flex-direction: column;
+        padding-top: 10vh;
+        gap: 10%;
+    }
+    .grid-plantilla3 {
+        width: 100%;
+    }
+    .right-div-plantilla3 {
+        width: 100%;
+        height: auto;
+        h2 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+    }
+    .grid-plantilla3 > div {
+        font-size: 1rem;
+    }
+}

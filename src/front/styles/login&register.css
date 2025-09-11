@@ -1,0 +1,179 @@
+
+
+/*  Login  */
+
+.login{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    background: linear-gradient(53deg, rgba(46, 46, 46, 1) 0%, rgba(33, 197, 222, 1) 84%);
+}
+.login_back{
+    margin-left: 25dvh;
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    width: 50%;
+    height: 50dvh;
+    opacity: 0.4;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+.login_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+
+}
+.homeButton{
+    width: 8%;
+    position: absolute;
+    display: flex;
+    background: none;
+    border: none;
+    transform: translateY(-20dvh);
+        img{
+            width: 100%;
+        }
+}
+.homeButton:hover{
+    cursor: pointer;
+}
+.login_actual_loc{
+    color: black;
+}
+.hover-efect:hover{
+    cursor: pointer;
+    color: aqua;
+    transition: color 0.5s ease;
+}
+.hover-efect{
+    color: white;
+}
+.login_box2{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+        input{
+            border: none;
+            background: rgba(0, 0, 0, 0.6);
+            height: 5dvh;
+            width: 40dvh;
+            color: white;
+            padding-left: 1dvh;
+            transition: background-color 0.3s ease;
+        }
+        input::placeholder{
+            color: whitesmoke;
+            font-family: 'Roboto';
+        }
+        input:focus {
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        input[type="password"]::-ms-reveal {
+            filter: invert(1); /* invierte colores */
+        }
+        input[type="date"]::-webkit-password {
+            filter: invert(1);
+            border-radius: 50%;
+            padding: 4px;
+        }
+        button{
+            border: none;
+            width: 15dvh;
+            height: 5dvh;
+            transition: background-color 0.3s ease;
+        }
+        button:hover{
+            cursor:pointer;
+        }
+
+}
+.button_login{
+    opacity: 0.8;
+    color: whitesmoke;
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Poppins';
+}
+.button_login:hover{
+    color: white;
+    background: rgba(0, 0, 0, 1);
+    transition: color 0.3 ease;
+}
+.button_register{
+    color: whitesmoke;
+    opacity: 0.8;
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Poppins';
+}
+.button_register:hover{
+    color: white;
+    background: rgba(0, 0, 0, 1);
+    transition: color 0.3 ease;
+}
+.login_deco_box{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    color: whitesmoke;
+        p{
+            font-family: 'Poppins';
+        }
+}
+/* Mobile Login */
+
+/* Cuando haya mas de 1000px (vista desktop) */
+
+@media (min-width: 1000px) {
+    .login-button { 
+        width: 60%;
+    }
+    .user-list-button {
+        width: 25%;
+    }
+    .no-account-button {
+        width: 15%;
+    }
+}
+
+/* Cuando haya menos de 1000px (vista tablet) */
+
+@media (max-width: 1000px) {
+    .login-button { 
+        width: 60%;
+    }
+    .user-list-button {
+        width: 40%;
+    }
+    .no-account-button {
+        width: 15%;
+    }
+}
+
+/* cuando haya menos de 600px (vista mobile) */
+
+@media (max-width: 600px) {
+    .login-button { 
+        width: auto;
+    }
+    .user-list-button {
+        width: auto;
+    }
+    .no-account-button {
+        width: auto;
+    }
+}
