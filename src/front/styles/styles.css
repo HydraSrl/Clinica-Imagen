@@ -71,6 +71,7 @@ header > div > .links-header {
 header > div > .links-header > a {
     text-decoration: none;
     color: white;
+    font-family: 'Karla';
 }
 
 header > div > .links-header> a:hover {
