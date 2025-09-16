@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="../styles/tratamientos.css" />
+    
+    <!-- Cargar estilo segun pagina actual -->
+    <?php if (isset($page_styles[$page])): // Si page actual esta en array page_styles entonces cargar css correspondiente?>
+    <link rel="stylesheet" href="css/<?= $page_styles[$page] ?>">
+    <?php endif; ?>
+    
     <link rel="icon" href="img/logomini.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Clínica Imagen</title>
 </head>
 <body>
     <!-- Header -->
+<?php if ($page != 'login' && $page != 'register'):?>
     <header id="header">
         <nav style="cursor: pointer;" class="logo-header"><img src="img/logo.png" onclick="window.location.href='index.php'"></nav>
         <div class="buttons-header">
-            <nav style="font-family: 'Karla';" class="links-header"><a href="pages/tratamientos.php">Tratamientos</a></nav>
-            <nav style="font-family: 'Karla';" class="links-header"><a href="pages/contacto.php">Contacto</a></nav>
+            <nav style="font-family: 'Karla';" class="links-header"><a href="index.php?page=tratamientos">Tratamientos</a></nav>
+            <nav style="font-family: 'Karla';" class="links-header"><a href="index.php?page=contacto">Contacto</a></nav>
         </div>
         <div class="menu-perfil-container">
             <div class="mobile-buttons-header">
@@ -28,10 +35,12 @@
                 </svg>
                 </label>
                 <div class="mobile-header-view">
-                    <nav class="links-header"><a href="pages/tratamientos.html">Tratamientos</a></nav> 
+                    <nav class="links-header"><a href="index.php?page=tratamientos">Tratamientos</a></nav> 
                     <nav class="links-header"><a href="#registro-button-section-main">Agendate</a></nav>
-                    <nav class="links-header"><a href="sobrenosotros.html">Contacto</a></nav>
+                    <nav class="links-header"><a href="index.php?page=contacto">Contacto</a></nav>
                 </div>
             </div>
         </div>
     </header>
+    <?php endif; ?>
+    

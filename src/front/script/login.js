@@ -10,7 +10,7 @@ async function verificarLogin(usuario, pass)
 {
     try 
     {
-        const response = await fetch('../../../back/auth.php', {
+        const response = await fetch('/back/auth.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

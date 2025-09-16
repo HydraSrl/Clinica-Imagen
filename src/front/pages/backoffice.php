@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/backoffice.css" />
-    <title>Toolbar Vertical Izquierda</title>
+    <title>Panel de Control</title>
 </head>
 <body>
   <div class="toolbar" id="toolbar"></div>
@@ -24,5 +24,5 @@
     </select>
   </div>
 </body>
-<script src="../script/backoffice.js"></script>
+<script src="/front/script/backoffice.js"></script>
 </html>

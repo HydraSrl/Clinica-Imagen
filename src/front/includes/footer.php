@@ -75,41 +75,5 @@
             </form>
         </section>
     </footer>
-    <script src="script/script.js"></script>
-    <script>
-        const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Solo una vez
-            }
-        });
-        });
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-            document.querySelectorAll('.fade-in4').forEach(el => {
-            observer.observe(el);
-        });
-        document.querySelectorAll('.fade-in2').forEach(el => {
-            observer.observe(el);
-        });
-        document.querySelectorAll('.fade-in3').forEach(el => {
-            observer.observe(el);
-        });
-            document.querySelectorAll('.slide-in-R').forEach(el => {
-            observer.observe(el);
-        });
-            document.querySelectorAll('.slide-in-L').forEach(el => {
-            observer.observe(el);
-        });
-            document.querySelectorAll('.slide-in').forEach(el => {
-            observer.observe(el);
-        });
-        document.querySelectorAll('.scale-in').forEach(el => {
-            observer.observe(el);
-        });
-  </script>
 </body>
 </html>

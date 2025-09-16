@@ -1,4 +1,4 @@
-<?php include '../includes/header.php'; ?>
+<?php include 'includes/header.php'; ?>
     <p></p>
     <main id="Tratsweb">
         <div class="div-text-img-tratamientos">
