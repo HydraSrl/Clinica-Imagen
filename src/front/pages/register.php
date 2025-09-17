@@ -5,7 +5,7 @@
         <section class="login">
             <div class="login_back">
                 <div class="login_box">
-                    <button class="homeButton" onclick="location.href=('index.php?page=inicio')"><img src="/front/img/IconoCasa.png"></button>
+                    <button class="homeButton" onclick="location.href=('index.php?page=inicio')"><img src="/front/img/IconoCasa.webp"></button>
                     <div class="login_deco_box">
                         <p class="hover-efect" onclick="location='index.php?page=login'">Login   </p>
                         <p class="login_actual_loc">| Register</p>

@@ -5,7 +5,7 @@
     header('Access-Control-Allow-Headers: Content-Type');
 
     $host = 'db';
-    $dbname = 'clinicas'; 
+    $dbname = 'mi_app_db'; 
     $username = 'root';     
     $password = 'root123';         
 

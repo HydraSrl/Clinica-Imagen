@@ -9,7 +9,7 @@
   <div class="toolbar" id="toolbar"></div>
   
   <div class="content">
-    <h1>Toolbar dinámica</h1>
+    <h1>Panel de control</h1>
     <label for="menu">Elige un menú:</label>
     <select id="menu">
       <option value="Caudillos">Caudillos</option>

@@ -7,7 +7,7 @@
     
     <!-- Cargar estilo segun pagina actual -->
     <?php if (isset($page_styles[$page])): // Si page actual esta en array page_styles entonces cargar css correspondiente?>
-    <link rel="stylesheet" href="css/<?= $page_styles[$page] ?>">
+    <link rel="stylesheet" href="css/<?php echo $page_styles[$page] ?>">
     <?php endif; ?>
     
     <link rel="icon" href="img/logomini.ico" type="image/x-icon">
@@ -23,8 +23,9 @@
     <header id="header">
         <nav style="cursor: pointer;" class="logo-header"><img src="img/logo.png" onclick="window.location.href='index.php'"></nav>
         <div class="buttons-header">
-            <nav style="font-family: 'Karla';" class="links-header"><a href="index.php?page=tratamientos">Tratamientos</a></nav>
-            <nav style="font-family: 'Karla';" class="links-header"><a href="index.php?page=contacto">Contacto</a></nav>
+            <?php foreach ($navpages as $slug => $title): ?>
+            <nav style="font-family: 'Karla';" class="links-header"><a href="index.php?page=<?php echo $slug ?>"><?php echo $title ?></a></nav>
+            <?php endforeach; ?>
         </div>
         <div class="menu-perfil-container">
             <div class="mobile-buttons-header">
@@ -35,9 +36,9 @@
                 </svg>
                 </label>
                 <div class="mobile-header-view">
-                    <nav class="links-header"><a href="index.php?page=tratamientos">Tratamientos</a></nav> 
-                    <nav class="links-header"><a href="#registro-button-section-main">Agendate</a></nav>
-                    <nav class="links-header"><a href="index.php?page=contacto">Contacto</a></nav>
+                    <?php foreach ($navpages as $slug => $title): ?>
+                    <a href="index.php?page=<?php echo $slug ?>"><?php echo $title ?></a>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

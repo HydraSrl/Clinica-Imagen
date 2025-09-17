@@ -20,8 +20,9 @@ html{
     width: 100%;
     display: flex;
     flex-direction: column;
-    text-align: center;
-        input{
+    text-align: left;
+}
+.info_Contact1 input{
             width: 60%;
             height: 5dvh;
             border-top: none;
@@ -34,7 +35,7 @@ html{
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-        textarea{
+.info_Contact1 textarea{
             width: 60%;
             height: 10dvh;
             border-top: none;
@@ -52,17 +53,16 @@ html{
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-        input:focus{
+.info_Contact1 input:focus{
             outline: none;
             border-color: #4169E1;
             text-align: center;
         }
-        textarea:focus{
+.info_Contact1 textarea:focus{
             outline: none;
             border-color: #4169E1;
             text-align: center;
         }
-}
 .info_Contact2 {
     width: 100%;
     margin-top: 10vh;

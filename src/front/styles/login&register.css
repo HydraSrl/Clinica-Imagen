@@ -27,7 +27,6 @@
     justify-content: center;
     width: 100%;
     z-index: 1;
-
 }
 .homeButton{
     width: 8%;
@@ -100,7 +99,6 @@
         button:hover{
             cursor:pointer;
         }
-
 }
 .button_login{
     opacity: 0.8;
