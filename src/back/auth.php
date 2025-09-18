@@ -25,21 +25,19 @@
         $email = $data['email'];
         $passw = $data['passw'];
         
-        $query = $pdo->prepare("SELECT * FROM users WHERE email = ? AND passw = ?");
-        $query->execute([$email, $passw]);
-        $result = $query->fetch();
+        $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
+        $query->execute([$email]);
+        $user = $query->fetch(PDO::FETCH_ASSOC); // Nota: devuelve array, si es que el email existe en la DB
         
-        if ($result) 
-        {
+                   //El password verify compara el input con el hash del array de $user
+        if ($user && password_verify($passw, $user['passw'])) { 
             echo json_encode(['success' => true]);
-        } else 
-        {
+        } else {
             echo json_encode(['success' => false]);
         }
-        
+
     } catch (Exception $e) 
     {
-        //echo json_encode(['success' => false, 'error' => 'Error de conexión']);
-        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+        echo json_encode(['success' => false, 'error' => 'Error de conexión']);
     }
 ?>
