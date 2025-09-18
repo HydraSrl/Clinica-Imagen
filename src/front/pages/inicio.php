@@ -12,6 +12,7 @@
             </p>
         </article>
         <img class="parallax">
+        <!--
         <div class="registro-button-section-main">
             <button class="button-register" style="cursor:pointer;" onclick="window.location='index.php?page=register'">
                 Registrate
@@ -20,6 +21,7 @@
             </svg>
             </button>
         </div>
+        -->
     </section>
     <!-- Second section -->
             <section id="second-section-main">

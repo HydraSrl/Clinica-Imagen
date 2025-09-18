@@ -38,9 +38,8 @@
       <section class="sectionContact3"></section>
     </main>
     
-  
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="../script/script.js"></script>
+<script src="/front/script/script.js"></script>
   <script>
     const slides = document.querySelector('.slides');
     const prev = document.querySelector('.prev');

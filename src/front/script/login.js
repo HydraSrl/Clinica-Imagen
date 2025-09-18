@@ -6,7 +6,7 @@ function mostrarMensaje(texto, tipo) {
     mensajeDiv.className = 'mensaje ' + tipo;
 }
 
-async function verificarLogin(usuario, pass) 
+async function verificarLogin(email, passw) 
 {
     try 
     {
@@ -16,8 +16,8 @@ async function verificarLogin(usuario, pass)
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                usuario: usuario,
-                pass: pass
+                email: email,
+                passw: passw
             })
         });
         
@@ -34,7 +34,7 @@ async function verificarLogin(usuario, pass)
 form.addEventListener('submit', async function(e) 
 {
     e.preventDefault();
-    const usuario = document.getElementById('usuario').value;
-    const pass = document.getElementById('pass').value;
-    await verificarLogin(usuario, pass);
+    const email = document.getElementById('email').value;
+    const passw = document.getElementById('passw').value;
+    await verificarLogin(email, passw);
 });
