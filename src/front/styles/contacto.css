@@ -10,37 +10,40 @@ html{
     text-align: center;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
     padding: 2.5rem 0;
 }
+
+.contactbox {
+    width: 60%;
+    margin-top: 10vh;
+    gap: 0.5rem;
+}
 .info_Contact1{
-    gap: 5px;
+    gap: 0.5rem;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     width: 100%;
     display: flex;
     flex-direction: column;
     text-align: left;
+    padding: 0.5rem 1rem 1rem 1rem;
 }
 .info_Contact1 input{
-            width: 60%;
+            width: 100%;
             height: 5dvh;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-color: rgba(0, 0, 0, 0.8);
             border-radius: 5px;
             padding-left: 2dvh;
             font-family: 'Karla';
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            background-color: #444;
+            color: white;
+            border: black;
+            padding: 0.5rem;
         }
 .info_Contact1 textarea{
-            width: 60%;
+            width: 100%;
             height: 10dvh;
-            border-top: none;
-            border-left: none;
-            border-right: none;
+            resize: none;
             border-color: rgba(0, 0, 0, 0.8);
             border-radius: 5px;
             padding-left: 2dvh;
@@ -51,7 +54,10 @@ html{
             font-family: 'Karla';
             padding-top: 1dvh;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            background-color: #444;
+            color: white;
+            border: black;
+            padding: 0.5rem;
         }
 .info_Contact1 input:focus{
             outline: none;
@@ -63,14 +69,27 @@ html{
             border-color: #4169E1;
             text-align: center;
         }
+.info_Contact1 button {
+            margin-top: 0.3rem;
+            width: 25%;
+            background-color: #303030;
+            border: solid 1px white;
+            color: white;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 .info_Contact2 {
     width: 100%;
-    margin-top: 10vh;
     text-align: center;
     color: whitesmoke;
     font-family: 'Karla';
-    .p{
+    padding: 1rem 1rem 0 1rem;
+    p{
         text-align: center;
+        margin: 0;
     }
 }
 .sectionContact2{

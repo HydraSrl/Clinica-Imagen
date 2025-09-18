@@ -3,55 +3,30 @@
 <main>
     <!-- Hero section -->
     <section id="hero-main">
-        </div>
-        <article style="font-family: 'Poppins';" class="slide-in-R">
-            <h1>Bienvenido a Clinica Imagen</h1>
-            <p>Cuidamos tu salud como si fueras de nuestra familia. <br>
-                En nuestra clínica encontrarás atención de lujo, <br>
-                profesionales comprometidos y un ambiente pensado  <br>para  tu bienestar.
-            </p>
+        <article style="font-family: 'Poppins';" class="slide-in-R hero-article">
+            <h1>ESTUDIOS DE LA <br><span class="highlight">MÁS ALTA CALIDAD</span></h1>
+            <p>Clinica Imagen inicia sus actividades en el año 2015, con el concepto principal de cuidar a nuestros pacientes, logrando estudios de la más alta calidad con la mínima radiación posible.</p>
+            <button class="hero-button" onclick="window.location='index.php?page=contacto'">Agendate para consulta</button>
         </article>
         <img class="parallax">
-        <!--
-        <div class="registro-button-section-main">
-            <button class="button-register" style="cursor:pointer;" onclick="window.location='index.php?page=register'">
-                Registrate
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-            </svg>
-            </button>
-        </div>
-        -->
     </section>
     <!-- Second section -->
-            <section id="second-section-main">
-        <div class="articles-second-section1">
-            <aside class="scale-in">
-                <img src="img/second-section1.jpg" alt="">
-            </aside>
-            <article style="font-family:'Karla', sans-serif;" class="slide-in-L">                
-                <h1 class="second-section1-text">Somos de fiabiliad</h1>
-                <p class="second-section1-text">
-                    Más que una clínica, somos<br>
-                    un equipo de expertos dedicados<br>
-                    a ofrecerte diagnósticos precisos,<br>
-                    tratamientos eficaces y un seguimiento cercano.
-                </p>
-        </article>
-        </div>
-        <div class="articles-second-section2">
-            <article style="font-family:'Karla', sans-serif;" class="slide-in-R">                
-                <h1 class="second-section2-text">Solicitá tu consulta hoy</h1>
-                <p class="second-section2-text">
-                    Siente la diferencia<br>
-                    de ser atendido con respeto,<br>
-                    calidez y compromiso real<br>
-                    con tu salud.
-                </p>
-            </article>
-            <aside class="scale-in">
-                <img src="img/second-section2.jpg" alt="">
-            </aside>
+    <section id="second-section-main">
+        <div class="second-section-container">
+            <div class="second-section-item slide-in-L">
+                <img src="img/second-section1.jpg" alt="Imagen descriptiva 1">
+                <div class="text-content">
+                    <h2>Somos de fiabilidad</h2>
+                    <p>Más que una clínica, somos un equipo de expertos dedicados a ofrecerte diagnósticos precisos, tratamientos eficaces y un seguimiento cercano.</p>
+                </div>
+            </div>
+            <div class="second-section-item slide-in-R">
+                <img src="img/second-section2.jpg" alt="Imagen descriptiva 2">
+                <div class="text-content">
+                    <h2>Solicitá tu consulta hoy</h2>
+                    <p>Siente la diferencia de ser atendido con respeto, calidez y compromiso real con tu salud.</p>
+                </div>
+            </div>
         </div>
     </section>
 

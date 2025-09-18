@@ -15,9 +15,9 @@
                         <input id="birthdate" placeholder="Fecha de nacimiento" type="date">
                         <input id="email" placeholder="Email">
                         <input id="passw" placeholder="Contraseña" type="password">
+                        <div id="mensaje"></div>
                         <button type="submit" class="button_register">Registrarse</button>
                     </form> 
-                    <div id="mensaje"></div>
                 </div>
             </div>
         </section>

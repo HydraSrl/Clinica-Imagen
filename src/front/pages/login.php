@@ -13,9 +13,9 @@
                     <div class="login_box2">
                         <input type="email" id="email" placeholder="Nombre o Email">
                         <input id="passw" placeholder="Contraseña" type="password">
+                        <div class="mensaje" id="mensaje"></div>
                         <button type="submit" class="button_login">Iniciar sesión</button>
                     </div> 
-                    <div id="mensaje"></div>
                 </form>
             </div>
         </section>
