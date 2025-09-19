@@ -26,15 +26,14 @@
         $data = json_decode(file_get_contents('php://input'), true);
         $email = $data['email'];
         $passw = $data['passw'];
-        
+
         $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
-        $query->execute([$email]);
+        $query->execute([$email]); //prepara query
         $user = $query->fetch(PDO::FETCH_ASSOC); // Nota: devuelve array, si es que el email existe en la DB
         
                    //El password verify compara el input con el hash del array de $user
         if ($user && password_verify($passw, $user['passw'])) { 
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = true;
+            setcookie("loggedin", "true", time() + 86400, "/");
             echo json_encode(['success' => true]);
         } else {
             echo json_encode(['success' => false]);
@@ -42,6 +41,6 @@
 
     } catch (Exception $e) 
     {
-        echo json_encode(['success' => false, 'error' => 'Error de conexión']);
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
 ?>
