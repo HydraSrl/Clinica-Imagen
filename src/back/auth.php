@@ -4,8 +4,6 @@
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Content-Type');
 
-    session_start();
-
     $configPath = __DIR__ .'/dbcreds.json';
 
     $config = json_decode(file_get_contents($configPath), true);

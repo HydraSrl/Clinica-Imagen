@@ -33,5 +33,8 @@
             </ul>
         </div>
     </div>
+    <div>
+        <a href="index.php?page=logout"><p>Cerrar Sesion</p></a>
+    </div>
 </body>
 </html>

@@ -5,7 +5,7 @@ define("BASE_URL", "/src/front/");
 // Si no existe, false. Solamente true, si existe y es true.
 $loggedin = ($_COOKIE['loggedin'] ?? 'false') === 'true';
 
-$valid_pages = ['inicio', 'contacto', 'tratamientos', 'login', 'register', 'backoffice', 'perfil'];
+$valid_pages = ['inicio', 'contacto', 'tratamientos', 'login', 'register', 'backoffice', 'perfil', 'logout'];
 
 $page_styles = [
   'inicio' => '../styles/tratamientos.css',
@@ -18,10 +18,10 @@ $page_styles = [
 
 if($loggedin) {
   $navpages = [
-      "contacto" => "Contacto",
-      "tratamientos" => "Tratamientos",
-      "login" => "Mi perfil"
-    ];
+    "contacto" => "Contacto",
+    "tratamientos" => "Tratamientos",
+    "login" => "Mi perfil"
+  ];
 } else {
   $navpages = [
     "contacto" => "Contacto",
