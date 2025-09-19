@@ -2,9 +2,8 @@
 // Este archivo solamente define parametros de ruteo, y un array de enlaces dinamico.
 define("BASE_URL", "/src/front/");
 
-session_start();
-$loggedin = $_SESSION['loggedin'] ?? false;
-$username = $_SESSION['username'] ?? false;
+// Si no existe, false. Solamente true, si existe y es true.
+$loggedin = ($_COOKIE['loggedin'] ?? 'false') === 'true';
 
 $valid_pages = ['inicio', 'contacto', 'tratamientos', 'login', 'register', 'backoffice', 'perfil'];
 
@@ -17,8 +16,16 @@ $page_styles = [
   'perfil' => '../styles/perfil.css'
 ];
 
-$navpages = [
+if($loggedin) {
+  $navpages = [
+      "contacto" => "Contacto",
+      "tratamientos" => "Tratamientos",
+      "login" => "Mi perfil"
+    ];
+} else {
+  $navpages = [
     "contacto" => "Contacto",
     "tratamientos" => "Tratamientos",
-    "login" => $loggedin ? "Hola $username" : "Login"
-];
+    "perfil" => "Mi perfil"
+  ];
+}
