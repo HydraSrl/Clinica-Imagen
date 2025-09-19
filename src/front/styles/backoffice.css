@@ -33,6 +33,8 @@ body {
 
 /* Contenido al costado de la barra */
 .content {
+    width: 100vw;
+    height: 100vh;
     margin-left: 80px;
     padding: 20px;
 }

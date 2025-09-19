@@ -6,7 +6,8 @@
     <title>Panel de Control</title>
 </head>
 <body>
-  <div class="toolbar" id="toolbar"></div>
+  <aside class="toolbar" id="toolbar">
+  </aside>
   
   <div class="content">
     <h1>Panel de control</h1>

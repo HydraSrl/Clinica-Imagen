@@ -67,3 +67,43 @@ cargarToolbar(menu.value);
 menu.addEventListener("change", () => {
     cargarToolbar(menu.value);
 });
+
+let whichmode = 0;
+const modebtn = document.createElement("button");
+const content = document.querySelector(".content")
+const h1 = document.querySelector("h1")
+const label = document.querySelector("label")
+toolbar.appendChild(modebtn)
+modebtn.textContent="Change theme"
+modebtn.onclick = pressToSwitch;
+
+
+function pressToSwitch() {
+    if(whichmode===0) {
+        whichmode=1;
+        console.log(whichmode)
+        switchMode(whichmode)
+    } else {
+        whichmode=0;
+        console.log(whichmode)
+        switchMode(whichmode)
+    }
+}
+function darkMode() {
+    content.style.backgroundColor = "#141414";
+    h1.style.color = "#ffffff";
+    label.style.color = "#ffffff";
+    console.log("ahora es dark mode")
+}
+function lightMode() {
+    content.style.backgroundColor = "white";
+    h1.style.color = "black";
+    label.style.color = "black";
+    console.log("ahora es light mode")
+}
+function switchMode (whichmode) {
+    if (whichmode===0) {
+        lightMode()
+    } else 
+        darkMode()
+}

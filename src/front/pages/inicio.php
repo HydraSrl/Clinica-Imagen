@@ -8,7 +8,7 @@
             <p>Clinica Imagen inicia sus actividades en el año 2015, con el concepto principal de cuidar a nuestros pacientes, logrando estudios de la más alta calidad con la mínima radiación posible.</p>
             <button class="hero-button" onclick="window.location='index.php?page=contacto'">Agendate para consulta</button>
         </article>
-        <img class="parallax">
+        <img class="parallax" src="/front/img/hero1.webp">
     </section>
     <!-- Second section -->
     <section id="second-section-main">
