@@ -1,8 +1,10 @@
 <?php
 // Este archivo solamente define parametros de ruteo, y un array de enlaces dinamico.
 define("BASE_URL", "/src/front/");
-//Linea para testing
-$loggedin = false;
+
+session_start();
+$loggedin = $_SESSION['loggedin'] ?? false;
+$username = $_SESSION['username'] ?? false;
 
 $valid_pages = ['inicio', 'contacto', 'tratamientos', 'login', 'register', 'backoffice'];
 
@@ -17,5 +19,5 @@ $page_styles = [
 $navpages = [
     "contacto" => "Contacto",
     "tratamientos" => "Tratamientos",
-    "login" => $loggedin ? "Hola Usuario" : "Login"
+    "login" => $loggedin ? "Hola $username" : "Login"
 ];

@@ -4,6 +4,8 @@
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Content-Type');
 
+    session_start();
+
     $configPath = __DIR__ .'/dbcreds.json';
 
     $config = json_decode(file_get_contents($configPath), true);
@@ -31,6 +33,8 @@
         
                    //El password verify compara el input con el hash del array de $user
         if ($user && password_verify($passw, $user['passw'])) { 
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = true;
             echo json_encode(['success' => true]);
         } else {
             echo json_encode(['success' => false]);
