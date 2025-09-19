@@ -20,12 +20,12 @@ if($loggedin) {
   $navpages = [
     "contacto" => "Contacto",
     "tratamientos" => "Tratamientos",
-    "login" => "Mi perfil"
+    "perfil" => "Mi perfil"
   ];
 } else {
   $navpages = [
     "contacto" => "Contacto",
     "tratamientos" => "Tratamientos",
-    "perfil" => "Mi perfil"
+    "login" => "Mi perfil"
   ];
 }
