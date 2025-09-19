@@ -9,7 +9,7 @@
     $config = json_decode(file_get_contents($configPath), true);
 
     if (!$config) {
-    die("Error: no se pudo leer la configuración.");
+    die("Error de acceso a DB");
     }
 
     $host = $config['host'];
