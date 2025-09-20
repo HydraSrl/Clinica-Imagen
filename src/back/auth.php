@@ -25,8 +25,8 @@
         $email = $data['email'];
         $passw = $data['passw'];
 
-        $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
-        $query->execute([$email]); //prepara query
+        $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1"); // prepara
+        $query->execute([$email]); //ejecuta query
         $user = $query->fetch(PDO::FETCH_ASSOC); // Nota: devuelve array, si es que el email existe en la DB
         
                    //El password verify compara el input con el hash del array de $user

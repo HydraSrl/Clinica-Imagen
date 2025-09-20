@@ -20,20 +20,29 @@
     try 
     {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        
         $data = json_decode(file_get_contents('php://input'), true);
-        $email= $data['email'];
+        $nombre = "Juan Granizo";
+        $birthdate = "1998-03-03";
+        $email = "juan@ejemplo.com";
+        $passw = "ejemplo123";
 
+        //echo $data['nombre'];
         $query = $pdo->prepare("SELECT 1 FROM users WHERE email = ?");
         $query->execute([$email]);
         $result = $query->fetch();
 
-        echo $result;
+        //echo $result;
         
         if ($result) 
         {
+            //aca no debo agregar el usuario porque existe
             echo json_encode(['success' => false]);
         } else 
         {
+            //no encontro a nadie, aca agregas el usuario
+            $insertQuery = $pdo -> prepare ("INSERT into users (nombre, birthdate, email, passw) VALUES ?, ?, ?, ?");
+            $insertQuery->execute([$nombre, $birthdate, $email, $passw]);
             echo json_encode(['success' => true]);
         }
     } catch (Exception $e) {

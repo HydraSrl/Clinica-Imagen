@@ -36,5 +36,9 @@ async function verificarRegister(nombre, birthdate, email, passw)
 form.addEventListener('submit', async function(e) 
 {
     e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const birthdate = document.getElementById('birthdate').value;
+    const email = document.getElementById('email').value;
+    const passw = document.getElementById('passw').value;
     await verificarRegister(nombre, birthdate, email, passw);
 });
