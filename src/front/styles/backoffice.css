@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra vertical a la izquierda */
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;         /* ancho */
+    height: 100vh;       /* toda la altura */
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.toolbar button {
+    background: none;
+    border: none;
+    color: #fff;
+    margin: 15px 0;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.toolbar button:hover {
+    color: skyblue;
+}
+
+/* Contenido al costado de la barra */
+.content {
+    width: 100vw;
+    height: 100vh;
+    margin-left: 80px;
+    padding: 20px;
+}

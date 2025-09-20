@@ -1,0 +1,4 @@
+*.yml
+comandos_docker.txt
+*.sql
+*.json
