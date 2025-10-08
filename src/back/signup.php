@@ -3,32 +3,23 @@
     header('Content-Type: application/json');
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Content-Type');
-// Por ahora este archivo es una copia de auth.php  
-    $configPath = __DIR__ .'/dbcreds.json';
+// Por ahora este archivo es una copia de auth.php 
+    include('pdo.php');
+    include('utils.php');
 
-    $config = json_decode(file_get_contents($configPath), true);
-
-    if (!$config) {
-    die("Error de acceso a DB");
-    }
-
-    $host = $config['host'];
-    $dbname = $config['dbname'];
-    $username = $config['username'];
-    $password = $config['password'];
-
-    try 
+    try
     {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $pdo = DB::getConnection();
         
         $data = json_decode(file_get_contents('php://input'), true);
-        $nombre = "Juan Granizo";
-        $birthdate = "1998-03-03";
-        $email = "juan@ejemplo.com";
-        $passw = "ejemplo123";
+        $nombre = sanitizeInput($data['nombre']);
+        $birthdate = sanitizeInput($data['birthdate']);
+        $email = sanitizeInput($data['email']);
+        $passw = $data['passw'];
+        $hashed_password = password_hash($passw, PASSWORD_DEFAULT);
 
         //echo $data['nombre'];
-        $query = $pdo->prepare("SELECT 1 FROM users WHERE email = ?");
+        $query = $pdo->prepare("SELECT * FROM users WHERE email = ?");
         $query->execute([$email]);
         $result = $query->fetch();
 
@@ -41,8 +32,8 @@
         } else 
         {
             //no encontro a nadie, aca agregas el usuario
-            $insertQuery = $pdo -> prepare ("INSERT into users (nombre, birthdate, email, passw) VALUES ?, ?, ?, ?");
-            $insertQuery->execute([$nombre, $birthdate, $email, $passw]);
+            $insertQuery = $pdo -> prepare ("INSERT into users (fullname, birthdate, email, passw) VALUES (?, ?, ?, ?)");
+            $insertQuery->execute([$nombre, $birthdate, $email, $hashed_password]);
             echo json_encode(['success' => true]);
         }
     } catch (Exception $e) {

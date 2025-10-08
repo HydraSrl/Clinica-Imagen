@@ -4,26 +4,22 @@
     header('Access-Control-Allow-Methods: POST');
     header('Access-Control-Allow-Headers: Content-Type');
 
-    $configPath = __DIR__ .'/dbcreds.json';
+    require_once 'pdo.php';
+    require_once 'utils.php';
 
-    $config = json_decode(file_get_contents($configPath), true);
+    
+        $pdo = DB::getConnection();
 
-    if (!$config) {
-    die("Error de acceso a DB");
-    }
-
-    $host = $config['host'];
-    $dbname = $config['dbname'];
-    $username = $config['username'];
-    $password = $config['password'];
-
-    try 
+    try
     {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        
         $data = json_decode(file_get_contents('php://input'), true);
-        $email = $data['email'];
+        $email = sanitizeInput($data['email']);
         $passw = $data['passw'];
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo json_encode(['success' => false, 'error' => 'Invalid email format']);
+            exit();
+        }
 
         $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1"); // prepara
         $query->execute([$email]); //ejecuta query
