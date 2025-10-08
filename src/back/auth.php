@@ -27,7 +27,7 @@
         
                    //El password verify compara el input con el hash del array de $user
         if ($user && password_verify($passw, $user['passw'])) { 
-            setcookie("loggedin", "true", time() + 86400, "/");
+            setcookie("loggedin", "true", time() + 432000, "/");
             echo json_encode(['success' => true]);
         } else {
             echo json_encode(['success' => false]);
