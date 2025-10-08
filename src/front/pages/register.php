@@ -14,6 +14,9 @@
                         <input id="nombre" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo se permiten letras y espacios"  placeholder="Nombre">
                         <input id="birthdate" placeholder="Fecha de nacimiento" type="date">
                         <input id="email" placeholder="Email">
+                        <input id="cedula" placeholder="Cedula">
+                        <input id="ciudad" placeholder="Ciudad">
+                        <input id="phonenum" placeholder="Telefono"> 
                         <input id="passw" placeholder="Contraseña" type="password">
                         <div id="mensaje"></div>
                         <button type="submit" class="button_register">Registrarse</button>
