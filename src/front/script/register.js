@@ -6,7 +6,7 @@ function mostrarMensaje(texto, tipo) {
     mensajeDiv.className = 'mensaje ' + tipo;
 }
 
-async function verificarRegister(nombre, birthdate, email, passw) 
+async function verificarRegister(nombre, birthdate, email, passw, cedula, ciudad, telefono) 
 {
     try 
     {
@@ -19,7 +19,10 @@ async function verificarRegister(nombre, birthdate, email, passw)
                 nombre: nombre,
                 birthdate: birthdate,
                 email: email,
-                passw: passw
+                passw: passw,
+                cedula: cedula,
+                ciudad: ciudad,
+                telefono: telefono
             })
         });
         
@@ -40,5 +43,8 @@ form.addEventListener('submit', async function(e)
     const birthdate = document.getElementById('birthdate').value;
     const email = document.getElementById('email').value;
     const passw = document.getElementById('passw').value;
-    await verificarRegister(nombre, birthdate, email, passw);
+    const cedula = document.getElementById('cedula').value;
+    const telefono = document.getElementById('phonenum').value;
+    const ciudad = document.getElementById('ciudad').value;
+    await verificarRegister(nombre, birthdate, email, passw, cedula, ciudad, telefono);
 });

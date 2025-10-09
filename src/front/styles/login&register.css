@@ -15,8 +15,8 @@
     position: absolute; 
     z-index: 0;
     justify-content: center;
-    width: 50%;
-    height: 50dvh;
+    width: 60%;
+    height: 60dvh;
     opacity: 0.4;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.3);

@@ -21,12 +21,12 @@
             exit();
         }
 
-        $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1"); // prepara
+        $query = $pdo->prepare("SELECT * FROM USERS WHERE email = ? LIMIT 1"); // prepara
         $query->execute([$email]); //ejecuta query
         $user = $query->fetch(PDO::FETCH_ASSOC); // Nota: devuelve array, si es que el email existe en la DB
         
                    //El password verify compara el input con el hash del array de $user
-        if ($user && password_verify($passw, $user['passw'])) { 
+        if ($user && password_verify($passw, $user['hash_passw'])) { 
             setcookie("loggedin", "true", time() + 432000, "/");
             echo json_encode(['success' => true]);
         } else {
