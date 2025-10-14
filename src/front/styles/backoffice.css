@@ -8,7 +8,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100px;         /* ancho */
+    width: 10%;       /* ancho */
+    min-width: 100px;
     height: 100vh;       /* toda la altura */
     background: #222;
     display: flex;
@@ -33,8 +34,28 @@ body {
 
 /* Contenido al costado de la barra */
 .content {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100vh;
-    margin-left: 80px;
-    padding: 20px;
+    padding: 1rem;
+    padding-left: 11%;
+    box-sizing: border-box;
+}
+
+.content > * {
+    width: 50%;
+}
+
+#formAgregarUsuario {
+    display: flex;
+    flex-direction: column;
+    input {
+        margin-bottom: 0.5rem;
+    }
+    select {
+        margin-bottom: 1rem;
+    }
 }
