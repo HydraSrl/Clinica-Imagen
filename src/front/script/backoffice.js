@@ -2,7 +2,10 @@ const toolbar = document.getElementById("toolbar");
 const menu = document.getElementById("menu");
 const SucursalesMenu = document.getElementById("SucursalesMenu")
 const buttonSucursales = document.getElementById("ButtonSucursales")
+const buttonUsuarios = document.getElementById("ButtonUsuarios")
 const AgregarUsuarioBD = document.getElementById("AgregarUsuarioBD")
+const UsuariosMenu = document.getElementById("UsuariosMenu")
+const EliminarUsuarioBD = document.getElementById("EliminarUsuarioBD")
 let Doc = 0;
 
 // Objetos con los items para cada opción
@@ -70,6 +73,7 @@ function cargarToolbar(seleccion) {
 function cargarToolbarInicial() {
     toolbar.innerHTML = "";
     toolbar.appendChild(buttonSucursales);
+    toolbar.appendChild(buttonUsuarios);
     AgregarUsuarioBD.style.display = "block"
     
     const modebtn = document.createElement("button");
@@ -82,14 +86,22 @@ function cargarToolbarInicial() {
 buttonSucursales.addEventListener('click', () => {
     cargarToolbar(menu.value);
     AgregarUsuarioBD.style.display = "none"
+    UsuariosMenu.style.display = "none"
+ });
+
+ buttonUsuarios.addEventListener('click', () => {
+    SucursalesMenu.style.display = "none";
+    UsuariosMenu.style.display = "block";
+    cargarToolbarInicial()
+    populateUsersToDelete()
 });
-
-menu.addEventListener("change", () => {
-    cargarToolbar(menu.value);
-});
-
-
-let whichmode = 0;
+ 
+ menu.addEventListener("change", () => {
+     cargarToolbar(menu.value);
+ });
+ 
+ 
+ let whichmode = 0;
 const content = document.querySelector(".content")
 const h1 = document.querySelector("h1")
 const label = document.querySelector("label")
@@ -150,4 +162,50 @@ document.getElementById('formAgregarUsuario').addEventListener('submit', functio
         mensajeDiv.textContent = 'Error en la solicitud: ' + error;
         mensajeDiv.className = 'error';
     });
+});
+
+function populateUsersToDelete() {
+   fetch('../../back/get_users.php')
+       .then(response => response.json())
+       .then(data => {
+           const select = document.getElementById('usuarioEliminar');
+           select.innerHTML = '';
+           if (data.success) {
+               data.users.forEach(user => {
+                   const option = document.createElement('option');
+                   option.value = user.id_user;
+                   option.textContent = user.nombre;
+                   select.appendChild(option);
+               });
+           } else {
+               console.error('Error fetching users:', data.message);
+           }
+       })
+       .catch(error => console.error('Error:', error));
+}
+
+document.getElementById('formEliminarUsuario').addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   const formData = new FormData(this);
+   const mensajeDiv = document.getElementById('mensajeEliminar');
+
+   fetch('../../back/delete_user.php', {
+       method: 'POST',
+       body: formData
+   })
+   .then(response => response.json())
+   .then(data => {
+       mensajeDiv.textContent = data.message;
+       if (data.success) {
+           mensajeDiv.className = 'success';
+           populateUsersToDelete(); // Refresh the list
+       } else {
+           mensajeDiv.className = 'error';
+       }
+   })
+   .catch(error => {
+       mensajeDiv.textContent = 'Error en la solicitud: ' + error;
+       mensajeDiv.className = 'error';
+   });
 });

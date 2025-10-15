@@ -59,3 +59,14 @@ body {
         margin-bottom: 1rem;
     }
 }
+
+#formEliminarUsuario {
+   display: flex;
+   flex-direction: column;
+   input {
+       margin-bottom: 0.5rem;
+   }
+   select {
+       margin-bottom: 1rem;
+   }
+}
