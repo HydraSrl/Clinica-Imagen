@@ -1,3 +1,6 @@
+<?php
+include_once __DIR__ . '/../../back/check_permission.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +9,7 @@
     <title>Panel de Control</title>
 </head>
 <body>
+  <?php if ($hasPermission): ?>
   <aside class="toolbar" id="toolbar">
     <button id="ButtonSucursales">
       Sucursales
@@ -70,6 +74,12 @@
       </div>
     </div>
   </div>
+  <script src="/front/script/backoffice.js"></script>
+  <?php else: ?>
+    <div style="text-align: center; padding: 50px;">
+        <h1>Acceso Denegado</h1>
+        <p>No tienes permiso para ver esta página.</p>
+    </div>
+  <?php endif; ?>
 </body>
-<script src="/front/script/backoffice.js"></script>
 </html>

@@ -28,11 +28,18 @@ body {
     margin-right: 30px;
 }
 
-.profile-avatar img {
+.avatar-initial {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
     border: 4px solid #E9ECEF;
 }
 
