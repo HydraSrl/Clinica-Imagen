@@ -381,7 +381,7 @@ section#hero-main {
 }
 
 .hero-button {
-    background-color: #ffffff;
+    background-color: #999fff;
     color: #000000;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -834,7 +834,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px #999fff;
 }
 
 
@@ -881,7 +881,7 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 1rem 0;
-    border-top: solid 1px white;
+    border-top: solid 1px #999fff;
 
     * {
         margin: 0;
@@ -893,6 +893,7 @@ footer {
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        color: #999fff;
     }
 }
 
@@ -930,7 +931,7 @@ footer {
 .footer-agendate-titulo {
     margin: 0;
     font-family: 'Poppins';
-    color: white;
+    color: #999fff;
     margin: 0 2px;
 }
 
@@ -976,7 +977,7 @@ footer {
     justify-content: center;
 
     &:hover {
-        background-color: white;
+        background-color: #999fff;
         color: black;
         border: solid 1px black;
         transition: 0.3s;
