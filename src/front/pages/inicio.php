@@ -4,9 +4,9 @@
     <!-- Hero section -->
     <section id="hero-main">
         <article style="font-family: 'Poppins';" class="slide-in-R hero-article">
-            <h1>ESTUDIOS DE LA <br><span class="highlight">MÁS ALTA CALIDAD</span></h1>
-            <p>Clinica Imagen inicia sus actividades en el año 2015, con el concepto principal de cuidar a nuestros pacientes, logrando estudios de la más alta calidad con la mínima radiación posible.</p>
-            <button class="hero-button" onclick="window.location='index.php?page=perfil'">Agendate para consulta</button>
+            <h1>TU BIENESTAR, <br><span class="highlight">NUESTRA PRIORIDAD</span></h1>
+            <p>En Clínica Imagen, combinamos tecnología de vanguardia con un trato cercano y personalizado. Cuidamos de ti en cada paso, garantizando diagnósticos precisos y la máxima seguridad para tu salud.</p>
+            <button class="hero-button" onclick="window.location='#grid-section-main'">Agendate para consulta</button>
         </article>
         <img class="parallax" src="/front/img/hero1.webp">
     </section>

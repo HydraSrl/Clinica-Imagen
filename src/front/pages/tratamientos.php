@@ -6,11 +6,8 @@ include 'includes/header.php';
 <p></p>
 <main id="Tratsweb">
     <div class="div-text-img-tratamientos">
-        <h1 class="text1-tratamientos-web">Lorem</h1>
-        <h2 class="text2-tratamientos-web">Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Tenetur quod ducimus fugit quam autem asperiores aut sint delectus?
-            Accusamus, quos ducimus. Quisquam, adipisci praesentium? Sint obcaecati itaque
-            dicta dolor molestiae.</h2>
+        <h1 class="text1-tratamientos-web">Nuestros Tratamientos</h1>
+        <h2 class="text2-tratamientos-web">Descubre la variedad de soluciones que ofrecemos para cuidar de tu salud bucal. En Clínica Imagen, nos especializamos en tratamientos de vanguardia para garantizarte una sonrisa sana y radiante.</h2>
         <img src="">
     </div>
     <section class="grid-tratamientos">

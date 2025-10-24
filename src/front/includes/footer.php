@@ -10,16 +10,15 @@
             </div>
             <div class="middle-footer1">
                 <div>
-                    <p class="text-apart-middle-footer">Visítanos en nuestras <br> redes sociales! </p>
-                    <p>texto temporal </p>
-                    <p>mini texto temporal </p>
-                    <a class="text-apart-middle-footer" href="pages/contacto.html">Sobre nosotros</a>
+                    <p class="text-apart-middle-footer">Navegación</p>
+                    <a href="index.php">Inicio</a>
+                    <a href="index.php?page=tratamientos">Tratamientos</a>
+                    <a href="index.php?page=contacto">Contacto</a>
                 </div>
                 <div>
-                    <p class="text-apart-middle-footer">Regístrate aquí </p>
-                    <p>texto temporal </p>
-                    <p>mini texto temporal </p>
-                    <p class="text-apart-middle-footer">texto temporal </p>
+                    <p class="text-apart-middle-footer">Mi Cuenta</p>
+                    <a href="index.php?page=login">Iniciar Sesión</a>
+                    <a href="index.php?page=register">Registrarse</a>
                 </div>
             </div>
             <div class="lower-footer1">
@@ -29,12 +28,6 @@
                         <path d="M9.22 5.72a.75.75 0 0 0 1.06 1.06l2.22-2.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L9.22 5.72Z" />
                     </svg>
                     <p>+598 92 745 398</p>
-                </nav>
-                <nav><img src="">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="bottom-footer-icons" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                    </svg>
-                    <p>gmail generico</p>
                 </nav>
             </div>
         </section>

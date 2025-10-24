@@ -34,9 +34,9 @@ $inicial = !empty($userData['nombre']) ? strtoupper(substr($userData['nombre'], 
         <div class="profile-content">
             <h2>Mis Próximas Citas</h2>
             <ul class="appointments-list">
-                <li>Control de Ortodoncia - 25 de Octubre, 2024 - 15:30</li>
-                <li>Limpieza Dental - 15 de Noviembre, 2024 - 10:00</li>
-                <li>Consulta General - 10 de Diciembre, 2024 - 09:00</li>
+                <li></li>
+                <li>No disponible</li>
+                <li></li>
             </ul>
         </div>
     </div>
