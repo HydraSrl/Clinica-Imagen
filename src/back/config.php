@@ -5,11 +5,11 @@ define("BASE_URL", "/src/front/");
 // Si no existe, false. Solamente true, si existe y es true.
 $loggedin = ($_COOKIE['loggedin'] ?? 'false') === 'true';
 
-$valid_pages = ['inicio', 'contacto', 'tratamientos', 'login', 'register', 'backoffice', 'perfil', 'logout', 'tratamientos/tratamiento_seleccionado'];
+$valid_pages = ['inicio', 'agenda', 'tratamientos', 'login', 'register', 'backoffice', 'perfil', 'logout', 'tratamientos/tratamiento_seleccionado'];
 
 $page_styles = [
   'inicio' => '../styles/tratamientos.css',
-  'contacto' => '../styles/contacto.css',
+  'agenda' => '../styles/agenda.css',
   'tratamientos' => '../styles/tratamientos.css',
   'login' => '../styles/login&register.css',
   'register' => '../styles/login&register.css',
@@ -18,14 +18,14 @@ $page_styles = [
 
 if($loggedin) {
   $navpages = [
-    "contacto" => "Contacto",
+    "agenda" => "Agenda",
     "tratamientos" => "Tratamientos",
     "perfil" => "Mi perfil"
   ];
 } else {
   $navpages = [
-    "contacto" => "Contacto",
+    "agenda" => "Agenda",
     "tratamientos" => "Tratamientos",
-    "login" => "Mi perfil"
+    "perfil" => "Mi perfil"
   ];
 }

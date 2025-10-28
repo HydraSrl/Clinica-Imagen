@@ -1,0 +1,232 @@
+/* Contacto */
+html{
+    background: rgb( 20, 20, 20);
+}
+
+.sectionContact1{
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+
+.contactbox {
+    width: 60%;
+    margin-top: 10vh;
+    gap: 0.5rem;
+}
+.info_Contact1{
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+.info_Contact1 input{
+            width: 100%;
+            height: 5dvh;
+            border-radius: 5px;
+            padding-left: 2dvh;
+            font-family: 'Karla';
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            background-color: #444;
+            color: white;
+            border: black;
+            padding: 0.5rem;
+        }
+.info_Contact1 textarea{
+            width: 100%;
+            height: 10dvh;
+            resize: none;
+            border-color: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            padding-left: 2dvh;
+            max-width: 100%;
+            min-width: 50%;
+            max-height: 300px;
+            min-height: 50px;
+            font-family: 'Karla';
+            padding-top: 1dvh;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            background-color: #444;
+            color: white;
+            border: black;
+            padding: 0.5rem;
+        }
+.info_Contact1 input:focus{
+            outline: none;
+            border-color: #4169E1;
+            text-align: center;
+        }
+.info_Contact1 textarea:focus{
+            outline: none;
+            border-color: #4169E1;
+            text-align: center;
+        }
+.info_Contact1 button {
+            margin-top: 0.3rem;
+            width: 25%;
+            background-color: #303030;
+            border: solid 1px white;
+            color: white;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+.info_Contact2 {
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Karla';
+    padding: 1rem 1rem 0 1rem;
+    p{
+        text-align: center;
+        margin: 0;
+    }
+}
+.sectionContact2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    gap: 60px;
+    padding: 1rem;
+}
+.sectionContact3{
+    padding: 1rem;
+    box-sizing: border-box;
+    gap: 60px;
+}
+#map {
+    align-items: center;
+    height: 30rem;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px;
+    border-color: gray;
+    z-index: 1;
+}
+.Titulo{
+    margin-top: 10vh;
+    text-align: center;
+    width: 300px;
+    justify-self: center;
+    color: whitesmoke;
+    font-family: 'Karla';
+}
+.SelMap{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    margin-bottom: 2.5%;
+}
+.contactSliderB{
+    flex: 0 0 calc(100% / 5);
+    width: 100px; 
+    color: black;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    border-radius: 5px;
+    height: 100%;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+
+
+.slides{
+    gap: 10px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%;
+    height: 100px;
+    margin-right: 500px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+
+.SelMap > button:hover{
+    cursor: pointer;
+    color: skyblue;
+}
+.ImgClinicas{
+    display: flex;
+    flex-direction: row;
+    img{
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    }
+}
+
+
+
+
+/* Mobile Sobre Nosotros */
+
+/* Cuando haya mas de 1000px (vista desktop) */
+
+@media (min-width: 1000px) {
+
+}
+
+/* Cuando haya menos de 1000px (vista tablet) */
+
+@media (max-width: 1000px) {
+    .sectionSobreN1 {
+        flex-direction: column;
+        width: 100%;
+    }
+    .sectionSobreN2 {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* cuando haya menos de 600px (vista mobile) */
+
+@media (max-width: 600px) {
+    .sectionSobreN1 {
+        flex-direction: column;
+    }
+    .sectionSobreN2 {
+        flex-direction: column;
+    }
+}

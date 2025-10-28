@@ -1,14 +1,4 @@
-  // Coordenadas iniciales
-  const map = L.map('map').setView([-34.9011, -56.1645], 13);
 
-  // Cargar mapa de OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
-
-
-
-  // Marcadores
 
   const clinicas = {
 
@@ -87,34 +77,4 @@
     const c = clinicas[key];
     const marker = L.marker(c.coords).addTo(map).bindPopup(`<b>${c.nombre}</b>`);
     c.marker = marker;
-  }
-
-  function centrar(nombre) {
-    const c = clinicas[nombre];
-    if (!c) return;
-
-    map.setView(c.coords, 14);
-    c.marker.openPopup();
-
-    // Referencias
-    const img = document.getElementById("clinicaImg");
-    const desc = document.getElementById("clinicaDesc");
-
-    // Resetear clases y opacidad
-    img.className = "";
-    desc.className = "";
-    img.style.opacity = 0;
-    desc.style.opacity = 0;
-
-    // Actualizar contenido
-    img.src = c.img;
-    desc.textContent = c.desc;
-
-    // Forzar reflow
-    void img.offsetWidth;
-    void desc.offsetWidth;
-
-    // Activar animaciones
-    img.classList.add("slide-in-R");
-    desc.classList.add("fade-in");
   }

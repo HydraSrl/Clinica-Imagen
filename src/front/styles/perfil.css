@@ -4,6 +4,7 @@ body {
     color: #212529;
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .profile-container {
@@ -28,7 +29,7 @@ body {
     margin-right: 30px;
 }
 
-.avatar-initial {
+.avatar_initial {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -69,6 +70,38 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    .profile-container {
+        padding: 10px;
+    }
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .avatar_initial {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-contact p {
+        justify-content: center;
+    }
+}
+
 .profile-content {
     background-color: #FFFFFF;
     border-radius: 15px;
@@ -93,4 +126,14 @@ body {
 
 .appointments-list li:last-child {
     border-bottom: none;
+}
+
+.sesion-button {
+    max-width: 900px;
+    width: 100%;
+    padding: 0 20px;
+    justify-self: center;
+    p {
+        margin: 0;
+    }
 }

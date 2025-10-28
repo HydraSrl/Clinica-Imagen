@@ -22,8 +22,14 @@ async function verificarLogin(email, passw)
         });
         
         const data = await response.json();
-        if (data.success) mostrarMensaje('¡Login exitoso!', 'exito');
-        else mostrarMensaje('Usuario o contraseña incorrectos', 'error');
+        if (data.success) {
+            mostrarMensaje('¡Login exitoso!', 'exito');
+            setTimeout(() => {
+                window.location.href = '/front/index.php';
+            }, 1000);
+        } else {
+            mostrarMensaje('Usuario o contraseña incorrectos', 'error');
+        }
     } catch (error) 
     {
         console.log(error)

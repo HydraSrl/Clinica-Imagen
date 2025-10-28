@@ -13,7 +13,7 @@
                     <p class="text-apart-middle-footer">Navegación</p>
                     <a href="index.php">Inicio</a>
                     <a href="index.php?page=tratamientos">Tratamientos</a>
-                    <a href="index.php?page=contacto">Contacto</a>
+                    <a href="index.php?page=agenda">Agenda</a>
                 </div>
                 <div>
                     <p class="text-apart-middle-footer">Mi Cuenta</p>
@@ -30,42 +30,6 @@
                     <p>+598 92 745 398</p>
                 </nav>
             </div>
-        </section>
-        <section id="footer2">
-            <h1 class="footer-agendate-titulo">Agéndate</h1>
-            <form class="agendate-formulario" action="">
-                <fieldset class="grid-agendate">
-                    <input class="agendate-input-chico" placeholder="Nombre" type="text">
-                    <input class="agendate-input-chico" placeholder="Apellido" type="text">
-                    <input class="agendate-input-chico" placeholder="Dia de la cita" type="date">
-                    <input class="agendate-input-chico" placeholder="Hora de la cita" type="time">
-                    <select name="Sucursal" class="agendate-input" id="sucursal-agendate">
-                        <option value="">Elige una Clínica</option>
-                        <option value="">Clínica Caudillos</option>
-                        <option value="">Clínica Mveo Shopping</option>
-                        <option value="">Clínica Nuevo Centro</option>
-                        <option value="">Clínica Lagomar</option>
-                        <option value="">Clínica Atlantida</option>
-                        <option value="">Clínica Colonia</option>
-                        <option value="">Clínica Libertad</option>
-                        <option value="">Clínica Punta del Este</option>
-                        <option value="">Clínica Las Piedras</option>
-                        <option value="">Clínica Carrasco </option>
-                    </select><select class="agendate-input" id="tratamiento">
-                        <option value="ops1">Brakets Metalicos</option>
-                        <option value="ops2">Brakets Esteticos</option>
-                        <option value="ops3">Alineadores Invisibles</option>
-                        <option value="ops4">Ortodoncia Lingual</option>
-                        <option value="ops5">Ortodoncia Interseptiva</option>
-                    </select>
-                    <textarea class="agendate-input-text" name="" id="agendate-textarea"></textarea>
-                </fieldset>
-                <button class="agendate-enviar-button">Enviar     
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="size-4">
-                        <path fillRule="evenodd" d="M2 8c0 .414.336.75.75.75h8.69l-1.22 1.22a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 1 0-1.06 1.06l1.22 1.22H2.75A.75.75 0 0 0 2 8Z" clipRule="evenodd" />
-                    </svg>
-                </button>
-            </form>
         </section>
     </footer>
 </body>

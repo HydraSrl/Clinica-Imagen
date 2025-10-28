@@ -16,25 +16,28 @@
     z-index: 0;
     justify-content: center;
     width: 60%;
-    height: 60dvh;
+    height: 60%;
     opacity: 0.4;
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.3);
+    max-width: 800px;
 }
 .login_box{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     z-index: 1;
 }
 .homeButton{
-    width: 8%;
+    width: 100px;
     position: absolute;
     display: flex;
     background: none;
     border: none;
-    transform: translateY(-20dvh);
+    top: 1rem;
+    left: 1rem;
         img{
             width: 100%;
         }
@@ -54,6 +57,8 @@
     color: white;
 }
 .login_box2{
+    width: 60%;
+    max-width: 400px;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -64,7 +69,7 @@
             border: none;
             background: rgba(0, 0, 0, 0.6);
             height: 5dvh;
-            width: 40dvh;
+            width: 100%;
             color: white;
             padding-left: 1dvh;
             transition: background-color 0.3s ease;
@@ -171,6 +176,10 @@
 /* cuando haya menos de 600px (vista mobile) */
 
 @media (max-width: 600px) {
+    .login_back {
+        width: 90%;
+        height: 80%;
+    }
     .login-button { 
         width: auto;
     }
