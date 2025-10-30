@@ -1,6 +1,7 @@
 <?php
 include 'includes/header.php';
 include '../back/get_patient_data.php';
+include '../back/get_appointments.php';
 
 $nombre = $userData['nombre'] ?? 'Usuario no encontrado';
 $email = $userData['email'] ?? 'No disponible';
@@ -36,9 +37,30 @@ $inicial = !empty($userData['nombre']) ? strtoupper(substr($userData['nombre'], 
         <div class="profile-content">
             <h2>Mis Próximas Citas</h2>
             <ul class="appointments-list">
-                <li></li>
-                <li>No disponible</li>
-                <li></li>
+                <?php if (!empty($appointments)): ?>
+                    <?php foreach ($appointments as $cita): ?>
+                        <li>
+                            <p><strong>Fecha y Hora:</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($cita['fecha_cita']))); ?>hs</p>
+                            <?php if (isset($cita['tratamiento_nombre'])): ?>
+                                <p><strong>Tratamiento:</strong> <?php echo htmlspecialchars($cita['tratamiento_nombre']); ?></p>
+                            <?php else: ?>
+                                <p><strong>Tipo de cita:</strong> Consulta</p>
+                            <?php endif; ?>
+                            <p><strong>Sucursal:</strong> <?php echo htmlspecialchars($cita['sucursal_nombre']); ?></p>
+                            <p><strong>Estado:</strong> <?php echo htmlspecialchars(ucfirst($cita['estado'])); ?></p>
+                            <p><strong>Fecha de Creación:</strong> <?php echo htmlspecialchars(date('d/m/Y', strtotime($cita['fecha_creacion']))); ?></p>
+                            <form action="../back/delete_appointment.php" method="POST" onsubmit="return confirm('¿Estás seguro de que quieres cancelar esta cita?');">
+                                <input type="hidden" name="appointment_id" value="<?php echo $cita['id']; ?>">
+                                <button type="submit" class="cancel-button">Cancelar Cita</button>
+                            </form>
+                        </li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li class="no-appointments">
+                        <p>No tiene próximas citas.</p>
+                        <a href="index.php?page=agenda" class="schedule-button">Agendar Cita</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>

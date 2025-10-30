@@ -129,11 +129,57 @@ body {
 }
 
 .sesion-button {
-    max-width: 900px;
-    width: 100%;
-    padding: 0 20px;
-    justify-self: center;
-    p {
-        margin: 0;
-    }
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sesion-button a {
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sesion-button a:hover {
+    background-color: #5a6268;
+}
+
+.sesion-button p {
+    margin: 0;
+}
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+.no-appointments {
+    text-align: center;
+}
+
+.schedule-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.schedule-button:hover {
+    background-color: #0056b3;
 }
