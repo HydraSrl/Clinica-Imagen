@@ -46,6 +46,9 @@ $inicial = !empty($userData['nombre']) ? strtoupper(substr($userData['nombre'], 
                             <?php else: ?>
                                 <p><strong>Tipo de cita:</strong> Consulta</p>
                             <?php endif; ?>
+                            <?php if (isset($cita['personal_nombre'])): ?>
+                                <p><strong>Atendido por:</strong> <?php echo htmlspecialchars($cita['personal_nombre']); ?></p>
+                            <?php endif; ?>
                             <p><strong>Sucursal:</strong> <?php echo htmlspecialchars($cita['sucursal_nombre']); ?></p>
                             <p><strong>Estado:</strong> <?php echo htmlspecialchars(ucfirst($cita['estado'])); ?></p>
                             <p><strong>Fecha de Creación:</strong> <?php echo htmlspecialchars(date('d/m/Y', strtotime($cita['fecha_creacion']))); ?></p>

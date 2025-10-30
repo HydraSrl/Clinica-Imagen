@@ -15,11 +15,13 @@ if (isset($_SESSION['user_id'])) {
                 s.nombre AS sucursal_nombre,
                 c.estado,
                 c.fecha_creacion,
-                t.nombre AS tratamiento_nombre
+                t.nombre AS tratamiento_nombre,
+                pe.nombre AS personal_nombre
             FROM CITAS c
             JOIN SUCURSALES s ON c.id_sucursal = s.id
             JOIN PACIENTES p ON c.id_paciente = p.id
             LEFT JOIN TRATAMIENTOS t ON c.id_tratamiento = t.id
+            LEFT JOIN PERSONAL pe ON c.id_personal = pe.id
             WHERE p.id_user = :userId
             ORDER BY c.fecha_cita ASC
         ";
