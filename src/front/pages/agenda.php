@@ -1,18 +1,28 @@
 <?php include 'includes/header.php'; ?>
-    <main>
-      <section class="sectionContact1">
-        <div class="contactbox">
-        <div class="info_Contact2">
-          <p>¡Escribenos y con gusto te leeremos!</p>
+<main>
+    <section class="sectionAgenda">
+        <h1>Agendar Cita</h1>
+        <div class="agenda-container">
+            <div class="agenda-column">
+                <h2>1. Seleccione Sucursal</h2>
+                <div class="form-group">
+                    <label for="sucursal">Sucursal:</label>
+                    <select id="sucursal" name="sucursal"></select>
+                </div>
+                
+                <h2>2. Seleccione un Día</h2>
+                <div id="calendario"></div>
+            </div>
+            <div class="agenda-column">
+                <h2>3. Seleccione un Horario</h2>
+                <div id="horarios-disponibles">
+                    <p>Por favor, seleccione una sucursal y un día para ver los horarios disponibles.</p>
+                </div>
+                <button id="btn-agendar" class="disabled" disabled>Agendar Cita</button>
+            </div>
         </div>
-        <div class="info_Contact1">
-          <input placeholder="Nombre">
-          <input  type="email" placeholder="Email">
-          <input placeholder="Asunto">
-          <textarea placeholder="Mensaje"></textarea>
-          <button>Enviar</button>
-        </div>
-        </div>
-      </section>
+    </section>
+</main>
+<script src="script/agenda.js"></script>
 </body>
 </html>
