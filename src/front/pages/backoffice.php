@@ -11,34 +11,18 @@ include_once __DIR__ . '/../../back/check_permission.php';
 <body>
   <?php if ($hasPermission): ?>
   <aside class="toolbar" id="toolbar">
-    <button id="ButtonSucursales">
-      Sucursales
-    </button>
     <button id="ButtonUsuarios">
-      Usuarios
+      Personal
+    </button>
+    <button id="ButtonPacientes">
+      Pacientes
     </button>
   </aside>
   
   <div class="content">
-    <div id="SucursalesMenu">
-      <h1>Panel de control</h1>
-      <label for="menu">Elige un menú:</label>
-      <select id="menu">
-        <option value="Caudillos">Caudillos</option>
-        <option value="Mveo_Shopping">Mveo Shopping</option>
-        <option value="Nuevo_Centro">Nuevo Centro</option>
-        <option value="Lagomar">Lagomar</option>
-        <option value="Las_Piedras">Las Piedras</option>
-        <option value="Atlantida">Atlantida</option>
-        <option value="Colonia">Colonia</option>
-        <option value="Libertad">Libertad</option>
-        <option value="Punta_del_Este">Punta del Este</option>
-      </select>
-    </div>
-
-    <div id="UsuariosMenu" style="display: none;">
+    <div id="UsuariosMenu">
       <div id="AgregarUsuarioBD">
-        <h2>Agregar Nuevo Usuario</h2>
+        <h2>Agregar Nuevo Personal</h2>
         <form id="formAgregarUsuario">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" name="nombre" required>
@@ -56,21 +40,34 @@ include_once __DIR__ . '/../../back/check_permission.php';
             <option value="Recepcionista">Recepcionista</option>
           </select>
           
-          <button type="submit">Agregar Usuario</button>
+          <button type="submit">Agregar Personal</button>
         </form>
         <div id="mensaje"></div>
       </div>
 
       <div id="EliminarUsuarioBD">
-        <h2>Eliminar Usuario</h2>
+        <h2>Eliminar Personal</h2>
         <form id="formEliminarUsuario">
-          <label for="usuarioEliminar">Seleccionar usuario:</label>
+          <label for="usuarioEliminar">Seleccionar personal:</label>
           <select id="usuarioEliminar" name="id_user" required>
             <!-- Options will be populated by JavaScript -->
           </select>
-          <button type="submit">Eliminar Usuario</button>
+          <button type="submit">Eliminar Personal</button>
         </form>
         <div id="mensajeEliminar"></div>
+      </div>
+    </div>
+
+    <div id="PacientesMenu" style="display: none;">
+      <div id="EliminarPacienteBD">
+        <h2>Modificar o Eliminar Paciente</h2>
+        <form id="formBuscarPaciente">
+          <label for="cedulaPacienteBuscar">Cédula del paciente:</label>
+          <input type="text" id="cedulaPacienteBuscar" name="cedula" required>
+          <button type="submit">Buscar Paciente</button>
+        </form>
+        <div id="paciente-card-container"></div>
+        <div id="mensajeEliminarPaciente"></div>
       </div>
     </div>
   </div>

@@ -1,72 +1,146 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+:root {
+    --primary-bg: #f0f2f5;
+    --secondary-bg: #ffffff;
+    --primary-text: #333333;
+    --secondary-text: #555555;
+    --border-color: #dddddd;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --button-hover-bg: #0056b3;
+    --danger-bg: #dc3545;
+    --danger-hover-bg: #c82333;
 }
 
-/* Barra vertical a la izquierda */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    --primary-bg: #18191a;
+    --secondary-bg: #242526;
+    --primary-text: #e4e6eb;
+    --secondary-text: #b0b3b8;
+    --border-color: #3a3b3c;
+    --button-bg: #007bff;
+    --button-hover-bg: #0056b3;
+}
+
 .toolbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 10%;       /* ancho */
-    min-width: 100px;
-    height: 100vh;       /* toda la altura */
-    background: #222;
+    width: 200px;
+    height: 100vh;
+    background: var(--secondary-bg);
+    border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .toolbar button {
     background: none;
     border: none;
-    color: #fff;
+    color: var(--primary-text);
     margin: 15px 0;
-    font-size: 22px;
+    font-size: 16px;
     cursor: pointer;
     transition: color 0.3s;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
 }
 
 .toolbar button:hover {
-    color: skyblue;
+    background-color: var(--primary-bg);
 }
 
-/* Contenido al costado de la barra */
 .content {
+    margin-left: 220px;
+    padding: 2rem;
+}
+
+.content h2 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+form {
+    background: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    top: 0;
-    left: 0;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form select {
     width: 100%;
-    height: 100vh;
-    padding: 1rem;
-    padding-left: 11%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
     box-sizing: border-box;
 }
 
-.content > * {
-    width: 50%;
+form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--button-text);
 }
 
-#formAgregarUsuario {
-    display: flex;
-    flex-direction: column;
-    input {
-        margin-bottom: 0.5rem;
-    }
-    select {
-        margin-bottom: 1rem;
-    }
+form button[type="submit"] {
+    background-color: var(--button-bg);
 }
 
-#formEliminarUsuario {
-   display: flex;
-   flex-direction: column;
-   input {
-       margin-bottom: 0.5rem;
-   }
-   select {
-       margin-bottom: 1rem;
-   }
+form button[type="submit"]:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.delete-patient-btn {
+    background-color: var(--danger-bg);
+}
+
+.delete-patient-btn:hover {
+    background-color: var(--danger-hover-bg);
+}
+
+#paciente-card-container {
+    margin-top: 20px;
+}
+
+.patient-card {
+    background: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
 }

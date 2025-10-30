@@ -1,141 +1,38 @@
 const toolbar = document.getElementById("toolbar");
-const menu = document.getElementById("menu");
-const SucursalesMenu = document.getElementById("SucursalesMenu")
-const buttonSucursales = document.getElementById("ButtonSucursales")
-const buttonUsuarios = document.getElementById("ButtonUsuarios")
-const AgregarUsuarioBD = document.getElementById("AgregarUsuarioBD")
-const UsuariosMenu = document.getElementById("UsuariosMenu")
-const EliminarUsuarioBD = document.getElementById("EliminarUsuarioBD")
-let Doc = 0;
-
-// Objetos con los items para cada opción
-const opciones = {
-    Caudillos: [{nombre: "Hiara", accion: ()=> Doc==11}, 
-                {nombre: "Camila", accion: ()=> Doc==12}, 
-                {nombre: "Nicolas", accion: ()=> Doc==13}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-    Mveo_Shopping: [{nombre: "Ramiel", accion: ()=> Doc==21}, 
-                {nombre: "Michael", accion: ()=> Doc==22}, 
-                {nombre: "Lizandro", accion: ()=> Doc==23}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-    Nuevo_Centro: [{nombre: "Christina", accion: ()=> Doc==31}, 
-                {nombre: "Eduardo", accion: ()=> Doc==32}, 
-                {nombre: "XD", accion: ()=> Doc==33}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-            
-    Lagomar: [{nombre: "Clara", accion: ()=> Doc==41}, 
-                {nombre: "Maria", accion: ()=> Doc==42}, 
-                {nombre: "Miguel", accion: ()=> Doc==43}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-
-    Las_Piedras: [{nombre: "Valeria", accion: ()=> Doc==51}, 
-                {nombre: "Rodrigo", accion: ()=> Doc==52}, 
-                {nombre: "Carlos", accion: ()=> Doc==53}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-    Atlantida: [{nombre: "Javier", accion: ()=> Doc==51}, 
-                {nombre: "Ana", accion: ()=> Doc==52}, 
-                {nombre: "Diego", accion: ()=> Doc==53}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-    Colonia: [{nombre: "Sahaquiel", accion: ()=> Doc==61}, 
-                {nombre: "Sandalphon", accion: ()=> Doc==62}, 
-                {nombre: "Gagiel", accion: ()=> Doc==63}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-    Libertad: [{nombre: "Meruel", accion: ()=> Doc==71}, 
-                {nombre: "Tabris", accion: ()=> Doc==72}, 
-                {nombre: "Armisael", accion: ()=> Doc==73}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ],
-    Punta_del_Este: [{nombre: "Mahito", accion: ()=> Doc==81}, 
-                {nombre: "Itadori", accion: ()=> Doc==82}, 
-                {nombre: "Jinji", accion: ()=> Doc==83}, 
-                {nombre: "Volver", accion: cargarToolbarInicial}
-            ]
-};
-
-function cargarToolbar(seleccion) {
-  toolbar.innerHTML = "";
-  opciones[seleccion].forEach(item => {
-    const btn = document.createElement("button");
-    btn.textContent = item.nombre;
-    btn.onclick = item.accion;
-    toolbar.appendChild(btn);
-    SucursalesMenu.style.display = "block"
-  });
-}
-
-function cargarToolbarInicial() {
-    toolbar.innerHTML = "";
-    toolbar.appendChild(buttonSucursales);
-    toolbar.appendChild(buttonUsuarios);
-    AgregarUsuarioBD.style.display = "block"
-    
-    const modebtn = document.createElement("button");
-    modebtn.textContent="Change theme"
-    modebtn.onclick = pressToSwitch;
-    toolbar.appendChild(modebtn)
-    SucursalesMenu.style.display = "none"
-}
-
-buttonSucursales.addEventListener('click', () => {
-    cargarToolbar(menu.value);
-    AgregarUsuarioBD.style.display = "none"
-    UsuariosMenu.style.display = "none"
+ const buttonUsuarios = document.getElementById("ButtonUsuarios")
+ const buttonPacientes = document.getElementById("ButtonPacientes")
+ const AgregarUsuarioBD = document.getElementById("AgregarUsuarioBD")
+ const UsuariosMenu = document.getElementById("UsuariosMenu")
+ const PacientesMenu = document.getElementById("PacientesMenu")
+ const EliminarUsuarioBD = document.getElementById("EliminarUsuarioBD")
+ let Doc = 0;
+ 
+ function cargarToolbarInicial() {
+     toolbar.innerHTML = "";
+     toolbar.appendChild(buttonUsuarios);
+     toolbar.appendChild(buttonPacientes);
+     
+     const modebtn = document.createElement("button");
+     modebtn.textContent="Change theme"
+     modebtn.onclick = pressToSwitch;
+     toolbar.appendChild(modebtn)
+ }
+ 
+  buttonUsuarios.addEventListener('click', () => {
+     UsuariosMenu.style.display = "block";
+     PacientesMenu.style.display = "none";
+     populateUsersToDelete()
  });
-
- buttonUsuarios.addEventListener('click', () => {
-    SucursalesMenu.style.display = "none";
-    UsuariosMenu.style.display = "block";
-    cargarToolbarInicial()
-    populateUsersToDelete()
+ 
+ buttonPacientes.addEventListener('click', () => {
+    UsuariosMenu.style.display = "none";
+    PacientesMenu.style.display = "block";
 });
  
- menu.addEventListener("change", () => {
-     cargarToolbar(menu.value);
- });
- 
- 
- let whichmode = 0;
-const content = document.querySelector(".content")
-const h1 = document.querySelector("h1")
-const label = document.querySelector("label")
-
 cargarToolbarInicial()
 
 function pressToSwitch() {
-    if(whichmode===0) {
-        whichmode=1;
-        console.log(whichmode)
-        switchMode(whichmode)
-    } else {
-        whichmode=0;
-        console.log(whichmode)
-        switchMode(whichmode)
-    }
-}
-function darkMode() {
-    content.style.backgroundColor = "#141414";
-    h1.style.color = "#ffffff";
-    label.style.color = "#ffffff";
-    AgregarUsuarioBD.style.color = "#ffffff"
-}
-function lightMode() {
-    content.style.backgroundColor = "white";
-    h1.style.color = "black";
-    label.style.color = "black";
-    AgregarUsuarioBD.style.color = "black"
-}
-function switchMode (whichmode) {
-    if (whichmode===0) {
-        lightMode()
-    } else 
-        darkMode()
+    document.body.classList.toggle('dark-mode');
 }
 
 document.getElementById('formAgregarUsuario').addEventListener('submit', function(event) {
@@ -208,4 +105,97 @@ document.getElementById('formEliminarUsuario').addEventListener('submit', functi
        mensajeDiv.textContent = 'Error en la solicitud: ' + error;
        mensajeDiv.className = 'error';
    });
+});
+
+document.getElementById('formBuscarPaciente').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const cedula = document.getElementById('cedulaPacienteBuscar').value;
+    const mensajeDiv = document.getElementById('mensajeEliminarPaciente');
+    const cardContainer = document.getElementById('paciente-card-container');
+    cardContainer.innerHTML = '';
+    mensajeDiv.textContent = '';
+
+    fetch(`../../back/get_patient_by_cedula.php?cedula=${cedula}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.patient) {
+                const patient = data.patient;
+                const form = document.createElement('form');
+                form.id = 'formModificarPaciente';
+                form.innerHTML = `
+                    <input type="hidden" name="id" value="${patient.id}">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="${patient.nombre}" required>
+                    
+                    <label for="cedula">Cédula:</label>
+                    <input type="text" id="cedula" name="cedula" value="${patient.cedula}" required>
+                    
+                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="${patient.fecha_nacimiento}" required>
+                    
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" value="${patient.telefono}" required>
+                    
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad" value="${patient.ciudad}" required>
+                    
+                    <button type="submit">Guardar Cambios</button>
+                    <button type="button" class="delete-patient-btn" data-cedula="${patient.cedula}">Eliminar Paciente</button>
+                `;
+                cardContainer.appendChild(form);
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    fetch('../../back/update_patient.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(updateData => {
+                        mensajeDiv.textContent = updateData.message;
+                        mensajeDiv.className = updateData.success ? 'success' : 'error';
+                    })
+                    .catch(error => {
+                        mensajeDiv.textContent = 'Error al actualizar: ' + error;
+                        mensajeDiv.className = 'error';
+                    });
+                });
+
+                document.querySelector('.delete-patient-btn').addEventListener('click', function() {
+                    const cedulaToDelete = this.getAttribute('data-cedula');
+                    const formData = new FormData();
+                    formData.append('cedula', cedulaToDelete);
+
+                    fetch('../../back/delete_patient.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(deleteData => {
+                        mensajeDiv.textContent = deleteData.message;
+                        if (deleteData.success) {
+                            mensajeDiv.className = 'success';
+                            cardContainer.innerHTML = '';
+                            document.getElementById('cedulaPacienteBuscar').value = '';
+                        } else {
+                            mensajeDiv.className = 'error';
+                        }
+                    })
+                    .catch(error => {
+                        mensajeDiv.textContent = 'Error en la solicitud de eliminación: ' + error;
+                        mensajeDiv.className = 'error';
+                    });
+                });
+
+            } else {
+                mensajeDiv.textContent = data.message;
+                mensajeDiv.className = 'error';
+            }
+        })
+        .catch(error => {
+            mensajeDiv.textContent = 'Error en la solicitud de búsqueda: ' + error;
+            mensajeDiv.className = 'error';
+        });
 });
