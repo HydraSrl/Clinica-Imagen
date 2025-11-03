@@ -1,6 +1,21 @@
 <?php include 'includes/header.php'; ?>
 
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Imágen</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <?php 
+        $aux = "raiz";
+    ?>
+    <?php include 'includes/header.php' ; ?>
+
+    <main>
     <!-- Hero section -->
     <section id="hero-main">
         <article style="font-family: 'Poppins';" class="slide-in-R hero-article">
@@ -55,11 +70,13 @@
             </article>            
         </div>
     </section>
-</main>
+    </main>
 
-<?php include 'includes/footer.php' ; ?>
 
-<script src="script/script.js"></script>
+
+    <?php include 'includes/footer.php' ; ?>
+
+    <script src="script/script.js"></script>
     <script>
         const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -95,3 +112,8 @@
             observer.observe(el);
         });
   </script>
+
+</body>
+</html>
+
+

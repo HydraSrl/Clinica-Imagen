@@ -5,11 +5,12 @@ define("BASE_URL", "/src/front/");
 // Si no existe, false. Solamente true, si existe y es true.
 $loggedin = ($_COOKIE['loggedin'] ?? 'false') === 'true';
 
-$valid_pages = ['inicio', 'agenda', 'tratamientos', 'login', 'register', 'backoffice', 'perfil', 'logout', 'tratamientos/tratamiento_seleccionado'];
+$valid_pages = ['inicio', 'sobrenosotros','agenda', 'tratamientos', 'login', 'register', 'backoffice', 'perfil', 'logout', 'tratamientos/tratamiento_seleccionado'];
 
 $page_styles = [
   'inicio' => '../styles/tratamientos.css',
   'agenda' => '../styles/agenda.css',
+  'sobrenosotros' => '../styles/sobrenosotros.css',
   'tratamientos' => '../styles/tratamientos.css',
   'login' => '../styles/login&register.css',
   'register' => '../styles/login&register.css',
