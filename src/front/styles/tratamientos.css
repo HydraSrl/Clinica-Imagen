@@ -102,8 +102,8 @@ body {
         transition: 0.2s;
     }
     button:hover {
-        border: solid 1px white;
-        background-color: black;
+        border: solid 1px #007bff;
+        background-color: #007bff;
         color: white;
     }
 }

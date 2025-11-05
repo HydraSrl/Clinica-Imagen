@@ -22,9 +22,108 @@
     <main>
         <!-- portada -->
         <section class="portada_ab">
-            <p>Sobre Nosotros</p>
+            <p>Encuéntranos</p>
         </section>
 
+        <section class="sedes-container">
+            <div class="sedes-grid">
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Caudillos</h3>
+                    <p><i class="icon-location"></i> Bv. Artigas esq. Rivera 1443, oficina 121, Montevideo.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 8:00 a 20:00 hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 9:00 a 14:00 hs.</p>
+                    <p><i class="icon-phone"></i> 2602 6631 - 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Montevideo Shopping</h3>
+                    <p><i class="icon-location"></i> Luis A. de Herrera 1248, oficina 321, Montevideo.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 8:00 a 20:00 hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 8:00 a 13:00 hs.</p>
+                    <p><i class="icon-phone"></i> 2602 6631 - 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Nuevo Centro</h3>
+                    <p><i class="icon-location"></i> Bv Artigas 3126, apto. 1103, Montevideo.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 8:00 a 20:00 hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 9:00 a 14:00 hs.</p>
+                    <p><i class="icon-phone"></i> 2602 6631 - 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Carrasco</h3>
+                    <p><i class="icon-location"></i> Portal de las Américas, loc. 109. Av. De las Américas.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 8:00 a 20:00 hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 9:00 a 14:00 hs.</p>
+                    <p><i class="icon-phone"></i> 2602 6631 - 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Lagomar</h3>
+                    <p><i class="icon-location"></i> Av. Giannattasio, 236, y Av. Secco García, Lagomar Norte</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 8:00 a 20:00 hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 9:00 a 14:00 hs.</p>
+                    <p><i class="icon-phone"></i> 2602 6631 - 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Atlántida</h3>
+                    <p>(Solo periapicales)</p>
+                    <p><i class="icon-location"></i> Calle 22 esq. calle 7</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes:</strong> 8:00 a 14:00hs</p>
+                    <p><i class="icon-clock"></i> <strong>Martes, jueves y viernes:</strong> 8:00 a 16:00hs.</p>
+                    <p><i class="icon-phone"></i> 2602 6631 - 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Colonia</h3>
+                    <p><i class="icon-location"></i> 18 de julio esq. Lavalleja. Paseo Imagen, entrada por 18 de Julio. Colonia del Sacramento.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 08:00 a 20:00hs</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 09:00 a 13:00hs.</p>
+                    <p><i class="icon-phone"></i> 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Libertad</h3>
+                    <p><i class="icon-location"></i> Gral. José Artigas 815, Libertad, San José.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes:</strong> 14:00 a 18:30hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Martes y viernes:</strong> 9:00 a 12:00hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Miércoles:</strong> 9:00 a 12:00, 14:00 a 18:30hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Jueves:</strong> 17:00 a 20:00hs</p>
+                    <p><i class="icon-phone"></i> 092 390 847</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Punta del Este</h3>
+                    <p><i class="icon-location"></i> Avda. Roosvelt 1246 esq. Camacho, apt 1605. Edificio More Atlántico, Maldonado.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a jueves:</strong> 10:00 a 18:00hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Viernes:</strong> 09:00 a 20:00hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 09:00 a 13:00hs.</p>
+                    <p><i class="icon-phone"></i> 092 745 398</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+                <div class="sede-card">
+                    <div class="sede-icon"></div>
+                    <h3>Sede Las Piedras</h3>
+                    <p><i class="icon-location"></i> Gral. Leandro Gómez 618, Las Piedras, Canelones.</p>
+                    <p><i class="icon-clock"></i> <strong>Lunes a viernes:</strong> 8:30 a 12:30hs, 15:00 a 19:00hs.</p>
+                    <p><i class="icon-clock"></i> <strong>Sábados:</strong> 8:00 a 14:00hs.</p>
+                    <p><i class="icon-phone"></i> 098 786 833</p>
+                    <a href="#" class="btn-ubicacion">VER UBICACIÓN</a>
+                </div>
+            </div>
+        </section>
+        
         <!-- info contenidos -->
         <section class="textos_ab">
             <!-- mision -->

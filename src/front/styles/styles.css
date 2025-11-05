@@ -371,7 +371,7 @@ section#hero-main {
 }
 
 .hero-article .highlight {
-    color: #999fff;
+    color: #007bff;
 }
 
 .hero-article p {
@@ -381,7 +381,7 @@ section#hero-main {
 }
 
 .hero-button {
-    background-color: #999fff;
+    background-color: #007bff;
     color: #000000;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -876,7 +876,7 @@ footer {
 
 .text-apart-middle-footer {
     font-weight: bold;
-    color: #999fff;
+    color: #007bff;
     margin-bottom: 0.5rem;
 }
 
@@ -929,7 +929,7 @@ footer {
 .footer-agendate-titulo {
     margin: 0;
     font-family: 'Poppins';
-    color: #999fff;
+    color: #007bff;
     margin: 0 2px;
 }
 
@@ -975,7 +975,7 @@ footer {
     justify-content: center;
 
     &:hover {
-        background-color: #999fff;
+        background-color: #007bff;
         color: black;
         border: solid 1px black;
         transition: 0.3s;
