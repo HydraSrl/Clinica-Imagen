@@ -49,22 +49,22 @@
     <section id="grid-section-main">
         <div class="article-container">
             <article class="fade-in2">
-                <img src="img/Javier-De-Lima-260x240.jpg" alt="">
+                <img src="img/Javier-De-Lima-260x240.jpg" alt="Imagen descriptiva">
                 <h2 style="font-family: 'Poppins';";>Dr.Javier De Lima Moreno</h1>
                 <h3 style="font-family: 'Karla';">Director</h3>
             </article>
             <article class="fade-in3">
-                <img src="img/Laura-Duque-260x240.jpg" alt="">
+                <img src="img/Laura-Duque-260x240.jpg" alt="Imagen descriptiva">
                 <h2 style="font-family: 'Poppins';">Dra.Laura Duque</h1>
                 <h3 style="font-family: 'Karla';">Odontología / Imagenología</h3>
             </article>
             <article class="fade-in4">
-                <img src="img/Sabrina-Nieves-260x240.jpg" alt="">
+                <img src="img/Sabrina-Nieves-260x240.jpg" alt="Imagen descriptiva">
                 <h2 style="font-family: 'Poppins';">Dra.Sabrina Nieves</h1>
                 <h3 style="font-family: 'Karla';">Ortodoncia / Trazados Cefalométricos</h3>
             </article>       
             <article class="fade-in4">
-                <img src="img/Rosina-Canavero-260x240.jpg" alt="">
+                <img src="img/Rosina-Canavero-260x240.jpg" alt="Imagen descriptiva">
                 <h2 style="font-family: 'Poppins';">Rosina Canavero</h1>
                 <h3 style="font-family: 'Karla';">Secretaría y Coordinación</h3>
             </article>            

@@ -15,7 +15,7 @@
     <?php
         $page = "sobrenosotros";
         $aux = "pages";
-        include '../includes/header.php' ; 
+        include 'includes/header.php' ; 
     ?>
     <link rel="stylesheet" href="../styles/sobrenosotros.css">
 

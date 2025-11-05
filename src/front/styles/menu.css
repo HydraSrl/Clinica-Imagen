@@ -6,6 +6,7 @@
     padding: 0!important;
     box-sizing: border-box;
     display: block;
+    z-index: 3;
 }
 
 #header>nav 
