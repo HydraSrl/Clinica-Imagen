@@ -1,6 +1,5 @@
 <?php
-header('Content-Type: application/json');
-
+require_once 'cors.php';
 require_once 'pdo.php';
 require_once 'utils.php';
 
@@ -30,15 +29,28 @@ try {
     $hora_apertura = new DateTime($horario_sucursal['hora_apertura']);
     $hora_cierre = new DateTime($horario_sucursal['hora_cierre']);
 
-    // 2. Obtener las citas ya agendadas para ese día y sucursal
-    $stmt_citas = $pdo->prepare("SELECT fecha_cita FROM CITAS WHERE DATE(fecha_cita) = :fecha AND id_sucursal = :id_sucursal");
+    // 2. Obtener las citas ya agendadas para ese día y sucursal CON SU DURACIÓN
+    $stmt_citas = $pdo->prepare("SELECT fecha_cita, duracion FROM CITAS WHERE DATE(fecha_cita) = :fecha AND id_sucursal = :id_sucursal");
     $stmt_citas->execute(['fecha' => $fecha, 'id_sucursal' => $id_sucursal]);
-    $citas_agendadas = $stmt_citas->fetchAll(PDO::FETCH_COLUMN, 0);
+    $citas_agendadas = $stmt_citas->fetchAll(PDO::FETCH_ASSOC);
 
+    // Calcular todos los slots ocupados considerando la duración de cada cita
     $booked_slots = [];
     foreach ($citas_agendadas as $cita) {
-        $booked_slots[] = (new DateTime($cita))->format('H:i');
+        $inicio_cita = new DateTime($cita['fecha_cita']);
+        $duracion_minutos = $cita['duracion'] ?? 60; // Default 60 si no tiene duración
+
+        // Bloquear todos los slots de 30 min que están dentro de la duración de la cita
+        $num_slots_bloqueados = ceil($duracion_minutos / 30);
+        for ($i = 0; $i < $num_slots_bloqueados; $i++) {
+            $slot_bloqueado = clone $inicio_cita;
+            $slot_bloqueado->add(new DateInterval('PT' . ($i * 30) . 'M'));
+            $booked_slots[] = $slot_bloqueado->format('H:i');
+        }
     }
+
+    // Eliminar duplicados
+    $booked_slots = array_unique($booked_slots);
 
     // 3. Generar todos los posibles slots de 30 minutos y filtrar los disponibles
     $available_slots = [];

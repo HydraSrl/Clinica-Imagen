@@ -34,8 +34,9 @@ CREATE TABLE `CITAS` (
   `id_tratamiento` int DEFAULT NULL,
   `id_sucursal` int NOT NULL,
   `fecha_cita` datetime NOT NULL,
+  `duracion` int DEFAULT 60 COMMENT 'Duración en minutos',
   `estado` enum('pendiente','confirmada') NOT NULL,
-  `fecha_creacion` timestamp NOT NULL
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------

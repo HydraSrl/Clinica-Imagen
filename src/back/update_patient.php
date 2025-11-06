@@ -1,24 +1,64 @@
 <?php
-require_once 'pdo.php';
+require_once 'cors.php';
 
-header('Content-Type: application/json');
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once 'pdo.php';
 
 $response = ['success' => false, 'message' => ''];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'] ?? '';
-    $nombre = $_POST['nombre'] ?? '';
-    $cedula = $_POST['cedula'] ?? '';
-    $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
-    $telefono = $_POST['telefono'] ?? '';
-    $ciudad = $_POST['ciudad'] ?? '';
+// Check if user has permission
+if (!isset($_SESSION['user_id'])) {
+    $response['message'] = 'No autorizado - no hay sesión activa';
+    echo json_encode($response);
+    exit;
+}
 
-    if (empty($id) || empty($nombre) || empty($cedula) || empty($fecha_nacimiento) || empty($telefono) || empty($ciudad)) {
-        $response['message'] = 'Todos los campos son requeridos.';
-    } else {
-        $pdo = DB::getConnection();
-        
-        try {
+try {
+    $pdo = DB::getConnection();
+
+    // Verify user is in PERSONAL table
+    $checkPermission = $pdo->prepare("SELECT id FROM PERSONAL WHERE id_user = :userId");
+    $checkPermission->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
+    $checkPermission->execute();
+
+    if ($checkPermission->rowCount() === 0) {
+        $response['message'] = 'No tienes permisos para actualizar pacientes';
+        echo json_encode($response);
+        exit;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id = $_POST['id'] ?? $_POST['id_paciente'] ?? '';
+        $nombre = $_POST['nombre'] ?? '';
+        $cedula = $_POST['cedula'] ?? '';
+        $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
+        $telefono = $_POST['telefono'] ?? '';
+        $ciudad = $_POST['ciudad'] ?? '';
+        $email = $_POST['email'] ?? '';
+
+        if (empty($id) || empty($nombre) || empty($cedula) || empty($fecha_nacimiento) || empty($telefono) || empty($ciudad) || empty($email)) {
+            $response['message'] = 'Todos los campos son requeridos.';
+        } else {
+            // Verify patient exists and get id_user
+            $checkPatient = $pdo->prepare("SELECT id_user FROM PACIENTES WHERE id = :id");
+            $checkPatient->bindParam(':id', $id, PDO::PARAM_INT);
+            $checkPatient->execute();
+
+            if ($checkPatient->rowCount() === 0) {
+                $response['message'] = 'El paciente no existe';
+                echo json_encode($response);
+                exit;
+            }
+
+            $patientData = $checkPatient->fetch(PDO::FETCH_ASSOC);
+            $id_user = $patientData['id_user'];
+
+            $pdo->beginTransaction();
+
+            // Update PACIENTES table
             $sql = "UPDATE PACIENTES SET nombre = :nombre, cedula = :cedula, fecha_nacimiento = :fecha_nacimiento, telefono = :telefono, ciudad = :ciudad WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
@@ -30,14 +70,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'ciudad' => $ciudad
             ]);
 
+            // Update USERS table
+            $sqlUser = "UPDATE USERS SET email = :email WHERE id = :id_user";
+            $stmtUser = $pdo->prepare($sqlUser);
+            $stmtUser->execute([
+                'email' => $email,
+                'id_user' => $id_user
+            ]);
+
+            $pdo->commit();
+
             $response['success'] = true;
             $response['message'] = 'Paciente actualizado correctamente.';
-        } catch (PDOException $e) {
-            $response['message'] = 'Error al actualizar el paciente: ' . $e->getMessage();
         }
+    } else {
+        $response['message'] = 'Método de solicitud no válido.';
     }
-} else {
-    $response['message'] = 'Método de solicitud no válido.';
+} catch (PDOException $e) {
+    if (isset($pdo) && $pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
+    $response['message'] = 'Error al actualizar el paciente: ' . $e->getMessage();
 }
 
 echo json_encode($response);

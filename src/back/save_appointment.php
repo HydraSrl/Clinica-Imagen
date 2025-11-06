@@ -1,6 +1,5 @@
 <?php
-header('Content-Type: application/json');
-
+require_once 'cors.php';
 require_once 'pdo.php';
 require_once 'utils.php';
 
@@ -33,22 +32,42 @@ try {
 
     $fecha_cita = $data['fecha_cita'];
     $id_sucursal = (int)$data['id_sucursal'];
-    
+    $duracion = isset($data['duracion']) ? (int)$data['duracion'] : 60; // Default 60 minutos
+
     // Validar que el slot de tiempo no esté ya ocupado (doble chequeo)
-    $stmt_check = $pdo->prepare("SELECT id FROM CITAS WHERE fecha_cita = :fecha_cita AND id_sucursal = :id_sucursal");
-    $stmt_check->execute(['fecha_cita' => $fecha_cita, 'id_sucursal' => $id_sucursal]);
-    if ($stmt_check->fetch()) {
-        http_response_code(409); // Conflict
-        throw new Exception("El horario seleccionado ya no está disponible.");
+    // Ahora verificamos que no haya conflictos con citas existentes considerando su duración
+    $fecha_cita_dt = new DateTime($fecha_cita);
+    $stmt_check = $pdo->prepare("SELECT fecha_cita, duracion FROM CITAS WHERE DATE(fecha_cita) = :fecha AND id_sucursal = :id_sucursal");
+    $stmt_check->execute([
+        'fecha' => $fecha_cita_dt->format('Y-m-d'),
+        'id_sucursal' => $id_sucursal
+    ]);
+
+    $citas_existentes = $stmt_check->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($citas_existentes as $cita_existente) {
+        $inicio_existente = new DateTime($cita_existente['fecha_cita']);
+        $duracion_existente = $cita_existente['duracion'] ?? 60;
+        $fin_existente = clone $inicio_existente;
+        $fin_existente->add(new DateInterval('PT' . $duracion_existente . 'M'));
+
+        $fin_nueva = clone $fecha_cita_dt;
+        $fin_nueva->add(new DateInterval('PT' . $duracion . 'M'));
+
+        // Verificar si hay solapamiento
+        if ($fecha_cita_dt < $fin_existente && $fin_nueva > $inicio_existente) {
+            http_response_code(409); // Conflict
+            throw new Exception("El horario seleccionado ya no está disponible.");
+        }
     }
 
-    $sql = "INSERT INTO CITAS (id_paciente, id_sucursal, fecha_cita, estado, fecha_creacion) VALUES (:id_paciente, :id_sucursal, :fecha_cita, 'pendiente', NOW())";
+    $sql = "INSERT INTO CITAS (id_paciente, id_sucursal, fecha_cita, duracion, estado, fecha_creacion) VALUES (:id_paciente, :id_sucursal, :fecha_cita, :duracion, 'pendiente', NOW())";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
         'id_paciente' => $id_paciente,
         'id_sucursal' => $id_sucursal,
-        'fecha_cita' => $fecha_cita
+        'fecha_cita' => $fecha_cita,
+        'duracion' => $duracion
     ]);
 
     echo json_encode(['success' => true, 'message' => 'Cita agendada correctamente.']);

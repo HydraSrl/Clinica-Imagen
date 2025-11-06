@@ -1,7 +1,6 @@
 <?php
+require_once 'cors.php';
 require_once 'pdo.php';
-
-header('Content-Type: application/json');
 
 $response = ['success' => false, 'message' => ''];
 
