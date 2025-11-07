@@ -94,7 +94,7 @@ body {
 }
 
 .calendar .day.today {
-    background-color: #f0e68c; /* A light yellow to highlight */
+    background-color: #f0e68c; 
     color: #121212;
     font-weight: bold;
 }
@@ -173,7 +173,6 @@ body {
     font-weight: bold;
 }
 
-/* Schedule Button */
 #btn-agendar {
     margin-top: 20px;
     padding: 15px 30px;
@@ -196,9 +195,9 @@ body {
     cursor: not-allowed;
 }
 
-/* Responsive Design */
+/* Responsive */
 
-/* Tablet View */
+/* Tablet */
 @media (max-width: 1001px) {
     .agenda-container {
         flex-direction: column;
@@ -210,7 +209,7 @@ body {
     }
 }
 
-/* Mobile View */
+/* Mobile */
 @media (max-width: 600px) {
     .sectionAgenda {
         padding: 4rem 20px 20px;
@@ -238,7 +237,7 @@ body {
     }
 }
 
-/* Narrow Mobile View */
+/* Mobile chico */
 @media (max-width: 480px) {
     .agenda-column {
         padding: 10px;

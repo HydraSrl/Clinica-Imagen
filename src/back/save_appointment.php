@@ -32,7 +32,7 @@ try {
 
     $fecha_cita = sanitizeInput($data['fecha_cita']);
     $id_sucursal = (int)sanitizeInput($data['id_sucursal']);
-    $duracion = isset($data['duracion']) ? (int)sanitizeInput($data['duracion']) : 60; // Por defecto 60 minutos
+    $duracion = isset($data['duracion']) ? (int)sanitizeInput($data['duracion']) : 30; // Por defecto 30 minutos
 
     // Validar que el espacio de tiempo no esté ya ocupado (doble verificación)
     // Ahora verificamos que no haya conflictos con citas existentes considerando su duración

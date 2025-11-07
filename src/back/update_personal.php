@@ -9,7 +9,6 @@ require_once 'pdo.php';
 
 $response = ['success' => false, 'message' => ''];
 
-// Check if user has permission
 if (!isset($_SESSION['user_id'])) {
     $response['message'] = 'No autorizado - no hay sesión activa';
     echo json_encode($response);
@@ -19,7 +18,6 @@ if (!isset($_SESSION['user_id'])) {
 try {
     $pdo = DB::getConnection();
 
-    // Verify user is in PERSONAL table
     $checkPermission = $pdo->prepare("SELECT id FROM PERSONAL WHERE id_user = :userId");
     $checkPermission->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
     $checkPermission->execute();
@@ -30,20 +28,17 @@ try {
         exit;
     }
 
-    // Get POST data
     $id_personal = $_POST['id_personal'] ?? null;
     $nombre = $_POST['nombre'] ?? null;
     $email = $_POST['email'] ?? null;
     $rol = $_POST['rol'] ?? null;
 
-    // Validate required fields
     if (!$id_personal || !$nombre || !$email || !$rol) {
         $response['message'] = 'Faltan campos requeridos';
         echo json_encode($response);
         exit;
     }
 
-    // Verify personal exists and get id_user
     $checkPersonal = $pdo->prepare("SELECT id_user FROM PERSONAL WHERE id = :id_personal");
     $checkPersonal->bindParam(':id_personal', $id_personal, PDO::PARAM_INT);
     $checkPersonal->execute();
@@ -59,7 +54,6 @@ try {
 
     $pdo->beginTransaction();
 
-    // Update PERSONAL table
     $queryPersonal = "
         UPDATE PERSONAL
         SET nombre = :nombre, rol = :rol
@@ -72,7 +66,6 @@ try {
     $stmtPersonal->bindParam(':id_personal', $id_personal, PDO::PARAM_INT);
     $stmtPersonal->execute();
 
-    // Update USERS table
     $queryUser = "
         UPDATE USERS
         SET email = :email

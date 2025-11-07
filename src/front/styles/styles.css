@@ -10,32 +10,7 @@ body {
     box-sizing: border-box;
 }
 
-/* PRESET DESKTOP TABLET AND MOBILE
-
-/* Mobile (section name) */
-
-/* When there are more than 1000px (desktop view) */
-/*
-@media (min-width: 1000px) {
-
-}
-
-/* When there are less than 1000px (tablet view) */
-/*
-@media (max-width: 1000px) {
-
-}
-
-/* when there are less than 600px (mobile view) */
-/*
-@media (max-width: 600px) {
-
-}
-
-
-
-/* (SOME OF THE BORDERS ARE FOR VISUALIZATION THEN THEY ARE REMOVED AS IT IS FUNDAMENTAL STRUCTURE) */
-/* Header starts */
+/* Comienza Header */
 
 header {
     width: 100%;
@@ -98,9 +73,9 @@ header > nav.logo-header > img {
     aspect-ratio: 3/1;
 }
 
-/* Mobile Header */
+/* Header para Móviles */
 
-/* When there are more than 1000px (desktop view) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
 @media (min-width: 1000px) {
     .mobile-buttons-header * {
@@ -111,7 +86,7 @@ header > nav.logo-header > img {
     }
 }
 
-/* When there are less than 1000px (tablet view) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     header > nav.logo-header > img {
@@ -136,7 +111,7 @@ header > nav.logo-header > img {
     }
 }
 
-/* when there are less than 600px (mobile view) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     .mobile-header-view {
@@ -152,7 +127,7 @@ header > nav.logo-header > img {
     }
 }
 
-/* Treatments hamburger menu */
+/* Menú de hamburguesa de tratamientos */
 
 #tratamientos-toggle {
     display: none;
@@ -195,7 +170,7 @@ header > nav.logo-header > img {
     gap: 0.5rem;
 }
 
-/*Mobile hamburger menu*/
+/*Menú de hamburguesa para móviles*/
 
 #mobile-header-toggle {
     display: none;
@@ -236,11 +211,11 @@ header > nav.logo-header > img {
     flex-direction: column;
     position: absolute;
     gap: 0.5rem;
-    top: 10vh;
+    top: calc(10vh + 30px);
     right: 0;
 }
 
-/*Mobile treatments menu*/
+/*Menú de tratamientos para móviles*/
 
 .tratamientos-menu-mobile {
     display: flex;
@@ -283,13 +258,13 @@ header > nav.logo-header > img {
     gap: 0.5rem;
 }
 
-/*Menu controller */
+/*Controlador de menú*/
 
 #toggle-menu {
     display: none;
 }
 
-/*Menu Button */
+/*Botón de menú*/
 
 .menu-btn {
     background-color: #333;
@@ -300,7 +275,7 @@ header > nav.logo-header > img {
     cursor: pointer;
 }
 
-/* Menu window */
+/* Ventana de menú */
 
 .menu-ventana {
     display: none;
@@ -328,16 +303,16 @@ header > nav.logo-header > img {
   border-radius: 10px;
 }
 
-/*Show menu */
+/*Mostrar menú*/
 
 #toggle-menu:checked + label + .menu-ventana {
     display: block;
 }
 
-/*End of Profile menu*/
-/* End header */
+/*Fin del menú de perfil*/
+/* Fin del header */
 /* ---------------------------------- */
-/* First section begins: #hero-main */
+/* Comienza la primera sección: #hero-main */
 section#hero-main {
     width: 100%;
     height: 100dvh;
@@ -413,9 +388,9 @@ section#hero-main > img {
     background-size: cover;
 }
  
-/* Mobile hero */
+/* Hero para móviles */
 
-/* When there are more than 1000px (desktop view) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
 @media (min-width: 1001px) {
     section#hero-main > article > h1 {
@@ -427,7 +402,7 @@ section#hero-main > img {
     }
 }
 
-/* When there are less than 1000px (tablet view) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     section#hero-main {
@@ -442,7 +417,7 @@ section#hero-main > img {
     }
 }
 
-/* when there are less than 600px (mobile view) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     section#hero-main {
@@ -475,9 +450,9 @@ section#hero-main > img {
 }
 
 
-/* End of first section: #hero-main */
+/* Fin de la primera sección: #hero-main */
 /* ---------------------------------- */
-/* Second section begins: #second-section-main */
+/* Comienza la segunda sección: #second-section-main */
 
 
 section#second-section-main {
@@ -555,13 +530,13 @@ section#second-section-main {
 }
 
 
-/* End of second section: #second-section-main */
+/* Fin de la segunda sección: #second-section-main */
 /* ---------------------------------- */
-/* Section transition begins: .section-transition */
+/* Comienza la transición de la sección: .section-transition */
 
-/* End of section transition: .section-transition */
+/* Fin de la transición de la sección: .section-transition */
 /* ---------------------------------- */
-/* Third section begins: #grid-section-main */
+/* Comienza la tercera sección: #grid-section-main */
 
 section#grid-section-main {
     width: 100%;
@@ -629,11 +604,11 @@ section#grid-section-main > div.article-container > article > h2 {
 }
 
 
-/* PRESET DESKTOP TABLET AND MOBILE
+/* PREAJUSTES ESCRITORIO TABLETA Y MÓVIL
 
-/* Mobile #grid-section-main */
+/* Móvil #grid-section-main */
 
-/* When there are more than 1400px (desktop view) */
+/* Cuando hay más de 1400px (vista de escritorio) */
 
 @media (min-width: 1001px) {
     section#grid-section-main > div.article-container {
@@ -641,7 +616,7 @@ section#grid-section-main > div.article-container > article > h2 {
     }
 }
 
-/* When there are less than 1400px (laptop view) */
+/* Cuando hay menos de 1400px (vista de portátil) */
 
 @media (max-width: 1400px) {
     section#grid-section-main > div.article-container * {
@@ -649,7 +624,7 @@ section#grid-section-main > div.article-container > article > h2 {
     }
 }
 
-/* When there are less than 1000px (tablet view) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     section#grid-section-main > div.article-container {
@@ -661,7 +636,7 @@ section#grid-section-main > div.article-container > article > h2 {
     }
 }
 
-/* when there are less than 600px (mobile view) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     section#grid-section-main > div.article-container {
@@ -689,9 +664,9 @@ section#grid-section-main > div.article-container > article > h2 {
 
 
 
-/* End of fourth section: #fourth-section-main */
+/* Fin de la cuarta sección: #fourth-section-main */
 /* ---------------------------------- */
-/* Fifth section begins: #registro-button-section-main */
+/* Comienza la quinta sección: #registro-button-section-main */
 
 .registro-button-section-main {
     width: auto;
@@ -733,9 +708,9 @@ section#grid-section-main > div.article-container > article > h2 {
     border-radius: 2rem;
     box-sizing: border-box;
 }
-/* Mobile registro-button-section-main */
+/* Móvil registro-button-section-main */
 
-/* When there are more than 1000px (desktop view) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
 @media (min-width: 1001px) {
     .registro-button-section-main {
@@ -755,7 +730,7 @@ section#grid-section-main > div.article-container > article > h2 {
     }
 }
 
-/* When there are less than 1000px (tablet view) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     .registro-button-section-main {
@@ -775,7 +750,7 @@ section#grid-section-main > div.article-container > article > h2 {
     }
 }
 
-/* when there are less than 600px (mobile view) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     .registro-button-section-main {
@@ -797,9 +772,9 @@ section#grid-section-main > div.article-container > article > h2 {
 }
 
 
-/* End of fifth section: #registro-button-section-main */
+/* Fin de la quinta sección: #registro-button-section-main */
 /* ---------------------------------- */
-/* Footer begins */
+/* Comienza el footer */
 
 footer {
     width: 100%;
@@ -818,7 +793,7 @@ footer {
     gap: 4rem;
 }
 
-/* Brand Column */
+/* Columna de la marca */
 .footer-column.footer-brand {
     display: flex;
     flex-direction: column;
@@ -866,7 +841,7 @@ footer {
     height: 20px;
 }
 
-/* Links Column */
+/* Columna de enlaces */
 .footer-column.footer-links h3 {
     color: #ffffff;
     font-size: 1.1rem;
@@ -896,7 +871,7 @@ footer {
     padding-left: 5px;
 }
 
-/* Contact Column */
+/* Columna de contacto */
 .footer-column.footer-contact h3 {
     color: #ffffff;
     font-size: 1.1rem;
@@ -937,7 +912,7 @@ footer {
     gap: 0.3rem;
 }
 
-/* Responsive Design */
+/* Diseño responsivo */
 @media (max-width: 1000px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
@@ -978,7 +953,7 @@ footer {
 
 /* Termina footer */
 
-/* Animations */
+/* Animaciones */
 
 .fade-in2 {
     opacity: 0;
@@ -1089,7 +1064,7 @@ footer {
     text-align: center;
 }
 
-/*create form*/
+/*crear formulario*/
 .formularios{
     background-color: aliceblue;
     border-radius: 2rem;
@@ -1149,7 +1124,7 @@ footer {
     margin-right: 20%;
     margin-left: 20%;
 }
-/* Profile Avatar Header */
+/* Encabezado del avatar de perfil */
 .profile-avatar-header {
     display: flex;
     align-items: center;

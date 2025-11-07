@@ -1,5 +1,5 @@
 
-/* Grid Treatments web */
+/* Grid de tratamientos web */
 body {
     background-color: #2d2d2d;
 }
@@ -118,11 +118,11 @@ body {
 }
 
 
-/* End Treatments web */
+/* Fin de tratamientos web */
 
-/* Mobile Treatments web */
+/* Tratamientos web para móviles */
 
-/* When there are less than 1400px (laptop view) */
+/* Cuando hay menos de 1400px (vista de portátil) */
 
 @media (max-width: 1399px) {
     .grid-tratamientos {
@@ -134,7 +134,7 @@ body {
     font-size: 3.5rem;
 }
 
-/* When there are less than 1000px (tablet view) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 999px) {
     .grid-tratamientos {
@@ -148,7 +148,7 @@ body {
     }
 }
 
-/* when there are less than 800px (semi-mobile view) */
+/* Cuando hay menos de 800px (vista semi-móvil) */
 
 @media (max-width: 799px) {
     .grid-tratamientos {
@@ -167,7 +167,7 @@ body {
     }
 }
 
-/* when there are less than 600px (mobile view) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 599px) {
     .grid-tratamientos {
@@ -202,8 +202,8 @@ body {
 }
 
 
-/* Treatments */
-/* Treatments first template */
+/* Tratamientos */
+/* Primera plantilla de tratamientos */
 
 #SectionTrat-plantilla1{
     width: 100%;
@@ -287,7 +287,7 @@ body {
     background-color: #57534D;
 }
 
-/* Treatments second template */
+/* Segunda plantilla de tratamientos */
 
 #SectionTrat-plantilla2 {
     width: 100%;
@@ -347,7 +347,7 @@ body {
     border-bottom-left-radius: 300px;
 }
 
-/* Treatments third template */
+/* Tercera plantilla de tratamientos */
 
 #SectionTrat-plantilla3 {
     width: 100%;
@@ -424,16 +424,16 @@ body {
     margin: 0;
 }
 
-/* Mobile Treatments */
+/* Tratamientos para móviles */
 
-/* When there are more than 1000px (desktop view) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
 @media (min-width: 1001px) {}
 
-/* When there are less than 1000px (tablet view) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1001px) {
-    /* Template 1 */
+    /* Plantilla 1 */
     #SectionTrat-plantilla1 {
         flex-direction: column;
     }
@@ -451,7 +451,7 @@ body {
         min-height: 0;
     }
 
-    /* Template 2 */
+    /* Plantilla 2 */
     #SectionTrat-plantilla2 {
         flex-direction: column-reverse;
         justify-content: center;
@@ -470,7 +470,7 @@ body {
         height: auto;
     }
 
-    /* Template 3 */
+    /* Plantilla 3 */
     #SectionTrat-plantilla3 {
         flex-direction: column;
         padding-top: 10vh;
@@ -484,10 +484,10 @@ body {
     }
 }
 
-/* when there are less than 600px (mobile view) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
-    /* Template 1 */
+    /* Plantilla 1 */
     .trat-imagen-plantilla1 {
         width: 90%;
     }
@@ -503,7 +503,7 @@ body {
     .trat-info-divs-plantilla1 p {
         font-size: 0.7rem;
     }
-    /* Template 2 */
+    /* Plantilla 2 */
     .right-div-plantilla2 {
         width: 80%;
     }
@@ -517,7 +517,7 @@ body {
     .left-div-plantilla2 p {
         font-size: 0.8rem;
     }
-    /* Template 3 */
+    /* Plantilla 3 */
     #SectionTrat-plantilla3 {
         flex-direction: column;
         padding-top: 10vh;

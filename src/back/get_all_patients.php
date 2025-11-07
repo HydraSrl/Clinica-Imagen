@@ -9,7 +9,6 @@ require_once 'pdo.php';
 
 $response = ['success' => false, 'message' => '', 'data' => []];
 
-// Check if user has permission
 if (!isset($_SESSION['user_id'])) {
     $response['message'] = 'No autorizado - no hay sesión activa';
     echo json_encode($response);
@@ -19,7 +18,6 @@ if (!isset($_SESSION['user_id'])) {
 try {
     $pdo = DB::getConnection();
 
-    // Verify user is in PERSONAL table
     $checkPermission = $pdo->prepare("SELECT id FROM PERSONAL WHERE id_user = :userId");
     $checkPermission->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
     $checkPermission->execute();
@@ -30,7 +28,6 @@ try {
         exit;
     }
 
-    // Build query with filters
     $query = "
         SELECT
             p.id,
@@ -48,25 +45,25 @@ try {
 
     $params = [];
 
-    // Filter by name
+    // Filtrado por nombre
     if (isset($_GET['nombre']) && $_GET['nombre'] !== '') {
         $query .= " AND p.nombre LIKE :nombre";
         $params[':nombre'] = '%' . $_GET['nombre'] . '%';
     }
 
-    // Filter by cedula
+    // Filtrado por cedula
     if (isset($_GET['cedula']) && $_GET['cedula'] !== '') {
         $query .= " AND p.cedula = :cedula";
         $params[':cedula'] = $_GET['cedula'];
     }
 
-    // Filter by city
+    // Filtrado por ciudad
     if (isset($_GET['ciudad']) && $_GET['ciudad'] !== '') {
         $query .= " AND p.ciudad LIKE :ciudad";
         $params[':ciudad'] = '%' . $_GET['ciudad'] . '%';
     }
 
-    // Filter by email
+    // Filtrado por mail
     if (isset($_GET['email']) && $_GET['email'] !== '') {
         $query .= " AND u.email LIKE :email";
         $params[':email'] = '%' . $_GET['email'] . '%';

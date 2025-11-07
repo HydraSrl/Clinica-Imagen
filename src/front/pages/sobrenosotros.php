@@ -11,7 +11,6 @@
 
 </head>
 <body>
-    <!-- Configuration of routes and dependencies -->
     <?php
         $page = "sobrenosotros";
         $aux = "pages";
@@ -20,7 +19,6 @@
     <link rel="stylesheet" href="../styles/sobrenosotros.css">
 
     <main>
-        <!-- Cover -->
         <section class="portada_ab">
             <p>Encuéntranos</p>
         </section>
@@ -124,9 +122,7 @@
             </div>
         </section>
         
-        <!-- Content info -->
         <section class="textos_ab">
-            <!-- Mission -->
             <div>
                 <div>
                     <p>Nuestra misión</p>
@@ -155,7 +151,6 @@
             </div>
         </section>
 
-        <!-- Personal gallery -->
         <section class="galeria_ab">
             <div>
                 <img src="img/Javier-De-Lima-260x240.jpg" alt="CEO de la empresa Clinica Imagen">

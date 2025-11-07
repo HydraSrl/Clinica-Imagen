@@ -35,8 +35,6 @@ if (isset($_SESSION['user_id'])) {
         }
 
     } catch (PDOException $e) {
-        // Optionally handle the error, e.g., log it
-        // For now, we'll just let $userData remain null
     }
 }
 ?>

@@ -16,7 +16,7 @@
     <?php include 'includes/header.php' ; ?>
 
     <main>
-    <!-- Sección de Héroe -->
+    <!-- Sección Hero -->
     <section id="hero-main">
         <article style="font-family: 'Poppins';" class="slide-in-R hero-article">
             <h1>TU BIENESTAR, <br><span class="highlight">NUESTRA PRIORIDAD</span></h1>

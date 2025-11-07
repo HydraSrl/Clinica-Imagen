@@ -32,7 +32,6 @@ if (isset($_SESSION['user_id'])) {
         $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     } catch (PDOException $e) {
-        // For now, we'll just let $appointments remain an empty array
     }
 }
 ?>

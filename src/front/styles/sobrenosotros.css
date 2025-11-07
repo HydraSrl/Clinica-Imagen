@@ -193,7 +193,14 @@
     background-color: #007a6e;
 }
 
-/* Font-Awesome like icons */
+@media (max-width: 1000px) {
+    .portada_ab {
+        p {
+            font-size: 2rem;
+        }
+    }
+}
+
 @font-face {
   font-family: 'FontAwesome';
   src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');

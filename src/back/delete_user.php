@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo = DB::getConnection();
         
         try {
-            // The ON DELETE CASCADE constraint will handle the deletion from the PERSONAL table
             $sql = "DELETE FROM USERS WHERE id = :id_user";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(['id_user' => $id_user]);

@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo = DB::getConnection();
         
         try {
-            // First, get the id_user from the PACIENTES table
             $sql_get_user = "SELECT id_user FROM PACIENTES WHERE cedula = :cedula";
             $stmt_get_user = $pdo->prepare($sql_get_user);
             $stmt_get_user->execute(['cedula' => $cedula]);
@@ -22,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($patient) {
                 $id_user = $patient['id_user'];
 
-                // The ON DELETE CASCADE constraint on fk_id_user will handle deletion from PACIENTES table
                 $sql_delete_user = "DELETE FROM USERS WHERE id = :id_user";
                 $stmt_delete_user = $pdo->prepare($sql_delete_user);
                 $stmt_delete_user->execute(['id_user' => $id_user]);

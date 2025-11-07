@@ -81,7 +81,6 @@
     font-size: 18px;
 }
 
-/* Hide PC elements in mobile mode */
 @media (max-width: 1001px) {
     .desktop-nav-item {
         display: none !important;

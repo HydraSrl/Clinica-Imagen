@@ -9,7 +9,6 @@ require_once 'pdo.php';
 
 $response = ['success' => false, 'message' => '', 'data' => []];
 
-// Check if user has permission
 if (!isset($_SESSION['user_id'])) {
     $response['message'] = 'No autorizado - no hay sesión activa';
     echo json_encode($response);
@@ -19,7 +18,6 @@ if (!isset($_SESSION['user_id'])) {
 try {
     $pdo = DB::getConnection();
 
-    // Verify user is in PERSONAL table
     $checkPermission = $pdo->prepare("SELECT id FROM PERSONAL WHERE id_user = :userId");
     $checkPermission->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
     $checkPermission->execute();
@@ -30,7 +28,6 @@ try {
         exit;
     }
 
-    // Get all personal (staff)
     $query = "SELECT id, nombre, rol FROM PERSONAL ORDER BY nombre ASC";
     $stmt = $pdo->query($query);
     $personal = $stmt->fetchAll(PDO::FETCH_ASSOC);

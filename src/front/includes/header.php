@@ -18,8 +18,7 @@ $inicial = $nombre ? strtoupper(substr($nombre, 0, 1)) : '?';
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Clínica Imagen</title>
     </head>
-<!-- Load style according to current page -->
-    <?php if (isset($page_styles[$page])): // If current page is in page_styles array then load corresponding css?>
+    <?php if (isset($page_styles[$page])):?>
     <link rel="stylesheet" href="css/<?php echo $page_styles[$page] ?>">
     <link rel="stylesheet" href="styles/styles.css">
     <?php endif; ?>    

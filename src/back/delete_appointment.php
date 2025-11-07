@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['appointment_id'])) {
         $appointmentId = $_POST['appointment_id'];
         $userId = $_SESSION['user_id'];
 
-        // Verify that the appointment belongs to the current user before deleting
+        // Verificar que la cita corresponda al usuario actual antes de borrar
         $query = "
             DELETE c FROM CITAS c
             JOIN PACIENTES p ON c.id_paciente = p.id

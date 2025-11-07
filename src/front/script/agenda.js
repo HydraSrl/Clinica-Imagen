@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedDate = null;
     let selectedSlot = null;
 
-    // --- Load Branches and Treatments ---
     function loadInitialData() {
-        // Load Branches (this should come from an endpoint in the future)
         const sucursales = [
             { id: 1, nombre: 'Sede Caudillos' },
             { id: 2, nombre: 'Sede Montevideo Shopping' },
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // --- Calendar Logic ---
     function renderCalendar() {
         calendarioDiv.innerHTML = '';
         const month = currentDate.getMonth();
@@ -102,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Schedule Logic ---
     function fetchAvailableSlots(date, sucursalId) {
         horariosDiv.innerHTML = '<p>Cargando horarios...</p>';
         const url = `../back/get_available_slots.php?fecha=${date}&id_sucursal=${sucursalId}`;
@@ -138,14 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
     
-    // --- Scheduling Logic ---
     function bookAppointment() {
         if (!selectedDate || !selectedSlot || !sucursalSelect.value) {
             alert('Por favor, seleccione una sucursal, un día y una hora.');
             return;
         }
 
-        // Verify that the selected slot is available
         const availableSlots = document.querySelectorAll('.time-slot');
         let slotExists = false;
         availableSlots.forEach(slot => {
@@ -180,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(result => {
             if (result.success) {
                 alert(result.message);
-                // Reset selection
                 selectedDate = null;
                 selectedSlot = null;
                 renderCalendar();
@@ -200,9 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- Event Listeners ---
     sucursalSelect.addEventListener('change', () => {
-        // Clear time selection when changing branch
         selectedSlot = null;
         document.querySelectorAll('.time-slot.selected').forEach(s => s.classList.remove('selected'));
         agendarBtn.classList.add('disabled');
@@ -239,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     agendarBtn.addEventListener('click', bookAppointment);
 
-    // --- Initialization ---
     loadInitialData();
     renderCalendar();
 });
