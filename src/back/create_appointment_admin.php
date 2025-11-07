@@ -1,5 +1,6 @@
 <?php
 require_once 'cors.php';
+require_once 'utils.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -9,7 +10,7 @@ require_once 'pdo.php';
 
 $response = ['success' => false, 'message' => ''];
 
-// Check if user has permission
+// Verificar si el usuario tiene permiso
 if (!isset($_SESSION['user_id'])) {
     $response['message'] = 'No autorizado - no hay sesión activa';
     echo json_encode($response);
@@ -19,7 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 try {
     $pdo = DB::getConnection();
 
-    // Verify user is in PERSONAL table
+    // Verificar si el usuario está en la tabla PERSONAL
     $checkPermission = $pdo->prepare("SELECT id FROM PERSONAL WHERE id_user = :userId");
     $checkPermission->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
     $checkPermission->execute();
@@ -30,23 +31,23 @@ try {
         exit;
     }
 
-    // Get POST data
-    $id_paciente = $_POST['id_paciente'] ?? null;
-    $id_personal = $_POST['id_personal'] ?? null;
-    $id_tratamiento = $_POST['id_tratamiento'] ?? null;
-    $id_sucursal = $_POST['id_sucursal'] ?? null;
-    $fecha_cita = $_POST['fecha_cita'] ?? null;
-    $duracion = $_POST['duracion'] ?? 60;
-    $estado = $_POST['estado'] ?? 'pendiente';
+    // Obtener datos POST
+    $id_paciente = isset($_POST['id_paciente']) ? sanitizeInput($_POST['id_paciente']) : null;
+    $id_personal = isset($_POST['id_personal']) ? sanitizeInput($_POST['id_personal']) : null;
+    $id_tratamiento = isset($_POST['id_tratamiento']) ? sanitizeInput($_POST['id_tratamiento']) : null;
+    $id_sucursal = isset($_POST['id_sucursal']) ? sanitizeInput($_POST['id_sucursal']) : null;
+    $fecha_cita = isset($_POST['fecha_cita']) ? sanitizeInput($_POST['fecha_cita']) : null;
+    $duracion = isset($_POST['duracion']) ? sanitizeInput($_POST['duracion']) : 60;
+    $estado = isset($_POST['estado']) ? sanitizeInput($_POST['estado']) : 'pendiente';
 
-    // Validate required fields
+    // Validar campos requeridos
     if (!$id_paciente || !$id_sucursal || !$fecha_cita) {
         $response['message'] = 'Faltan campos requeridos (paciente, sucursal, fecha)';
         echo json_encode($response);
         exit;
     }
 
-    // Verify patient exists
+    // Verificar si el paciente existe
     $checkPatient = $pdo->prepare("SELECT id FROM PACIENTES WHERE id = :id_paciente");
     $checkPatient->bindParam(':id_paciente', $id_paciente, PDO::PARAM_INT);
     $checkPatient->execute();
@@ -57,7 +58,7 @@ try {
         exit;
     }
 
-    // Verify sucursal exists
+    // Verificar si la sucursal existe
     $checkSucursal = $pdo->prepare("SELECT id FROM SUCURSALES WHERE id = :id_sucursal");
     $checkSucursal->bindParam(':id_sucursal', $id_sucursal, PDO::PARAM_INT);
     $checkSucursal->execute();
@@ -68,7 +69,7 @@ try {
         exit;
     }
 
-    // Insert appointment
+    // Insertar cita
     $query = "
         INSERT INTO CITAS (id_paciente, id_personal, id_tratamiento, id_sucursal, fecha_cita, duracion, estado)
         VALUES (:id_paciente, :id_personal, :id_tratamiento, :id_sucursal, :fecha_cita, :duracion, :estado)
@@ -77,7 +78,7 @@ try {
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':id_paciente', $id_paciente, PDO::PARAM_INT);
 
-    // Handle null values for optional fields
+    // Manejar valores nulos para campos opcionales
     if ($id_personal === '' || $id_personal === null) {
         $stmt->bindValue(':id_personal', null, PDO::PARAM_NULL);
     } else {

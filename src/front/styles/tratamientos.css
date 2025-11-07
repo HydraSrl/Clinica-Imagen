@@ -1,5 +1,5 @@
 
-/* Grid Tratamientos web */
+/* Grid Treatments web */
 body {
     background-color: #2d2d2d;
 }
@@ -7,7 +7,6 @@ body {
 #Tratsweb{
     background-color: rgb(45, 45, 45, 0.6);
     width: 100%;
-    height: 100%;
     min-height: 100vh;
     padding: 10vh 2rem 2rem 2rem;
     color: white;
@@ -31,17 +30,18 @@ body {
     min-height: 400px;
     gap: 1rem;
     padding: 1rem;
-    * {
-        margin: 0;
-    }
+}
+
+.div-text-img-tratamientos * {
+    margin: 0;
 }
 
 .grid-tratamientos {
-    grid-template-columns: repeat(5, 1fr);
     width: 100%;
     max-width: calc((240px + 1rem) * 5);
     height: auto;
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
     background-color: rgb(29, 25, 24, 0.7);
     border: solid 1px #1C1917;
     border-radius: 20px;
@@ -77,35 +77,39 @@ body {
     border-radius: 20px;
     border-color: #1C1917;
     text-decoration: none;
-    div{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-        padding: 1.5rem;   
-        color: white;
-        h2 {
-            margin: 0;
-            text-wrap: balance;
-        }
-    }
-    button {
-        width: 80%;
-        height: 1.5rem;
-        color: black;
-        border: solid 1px white;
-        background-color: white;
-        border-radius: 5px;
-        transition: 0.2s;
-    }
-    button:hover {
-        border: solid 1px #007bff;
-        background-color: #007bff;
-        color: white;
-    }
+}
+
+.Tratlinks div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    color: white;
+}
+
+.Tratlinks div h2 {
+    margin: 0;
+    text-wrap: balance;
+}
+
+.Tratlinks button {
+    width: 80%;
+    height: 1.5rem;
+    color: black;
+    border: solid 1px white;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.Tratlinks button:hover {
+    border: solid 1px #007bff;
+    background-color: #007bff;
+    color: white;
 }
 
 .Tratlinksbot{
@@ -114,77 +118,92 @@ body {
 }
 
 
-/* Termina Tratamientos web */
+/* End Treatments web */
 
-/* Mobile Tratamientos web */
+/* Mobile Treatments web */
 
-/* Cuando haya mas de 1000px (vista desktop) */
+/* When there are less than 1400px (laptop view) */
 
-@media (min-width: 1400px) {
-        .grid-tratamientos {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-}
-
-/* Cuando haya menos de 1400px (vista laptop) */
-
-@media (max-width: 1200px) {
+@media (max-width: 1399px) {
     .grid-tratamientos {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .div-text-img-tratamientos {
-        h1 {
-            font-size: 3.5rem;
-        }
-    }
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+.div-text-img-tratamientos h1 {
+    font-size: 3.5rem;
+}
 
-@media (max-width: 1000px) {
+/* When there are less than 1000px (tablet view) */
+
+@media (max-width: 999px) {
     .grid-tratamientos {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .div-text-img-tratamientos {
-        h1 {
-            font-size: 3rem;
-        }
+}
+
+@media (max-width: 999px) {
+    .div-text-img-tratamientos h1 {
+        font-size: 3rem;
     }
 }
 
-/* cuando haya menos de 600px (vista semi-mobile) */
+/* when there are less than 800px (semi-mobile view) */
 
-@media (max-width: 800px) {
+@media (max-width: 799px) {
     .grid-tratamientos {
-        grid-template-columns: 1fr 1fr; 
-    }
-    .div-text-img-tratamientos {
-        h1 {
-            font-size: 2rem;
-        }
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+        padding: 0.75rem;
     }
 }
 
-/* cuando haya menos de 600px (vista mobile) */
-
-@media (max-width: 600px) {
-    .grid-tratamientos {
-        grid-template-columns: 1fr; 
+@media (max-width: 799px) {
+    .div-text-img-tratamientos h1 {
+        font-size: 2rem;
     }
+    .Tratlinks {
+        min-height: 200px;
+    }
+}
+
+/* when there are less than 600px (mobile view) */
+
+@media (max-width: 599px) {
+    .grid-tratamientos {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 599px) {
     .div-text-img-tratamientos {
         min-height: 300px;
-        h1 {
-            font-size: 1.8rem;
-        }
-        h2 {
-            font-size: 0.8rem;
-        }
+    }
+
+    .div-text-img-tratamientos h1 {
+        font-size: 1.8rem;
+    }
+
+    .div-text-img-tratamientos h2 {
+        font-size: 0.8rem;
+    }
+    .Tratlinks {
+        min-height: 180px;
+    }
+    .Tratlinks div {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+    .Tratlinks h2 {
+        font-size: 1.1rem;
     }
 }
 
 
-/* Tratamientos */
-/* Tratamientos primera plantilla */
+/* Treatments */
+/* Treatments first template */
 
 #SectionTrat-plantilla1{
     width: 100%;
@@ -195,16 +214,17 @@ body {
     gap: 1rem;
     margin-top: 10vh;
     background-color: black;
-    .background-plantilla1 {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-        position: absolute;
-        z-index: 1;
-        opacity: 0.3;
-        top: 0;
-        left: 0;
-    }
+}
+
+#SectionTrat-plantilla1 .background-plantilla1 {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
 }
 
 
@@ -217,17 +237,19 @@ body {
     width: 30%;
     height: 60%;
     z-index: 2;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: relative;
-    }
-    h1 {
-        position: absolute;
-        z-index: 1;
-        font-family: 'Poppins';
-    }
+}
+
+.trat-imagen-plantilla1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.trat-imagen-plantilla1 h1 {
+    position: absolute;
+    z-index: 1;
+    font-family: 'Poppins';
 }
 
 .trat-info-divs-plantilla1 {
@@ -243,12 +265,14 @@ body {
     font-family: 'Karla', sans-serif;
     font-size: 0.8rem;
     text-align: left;
-    svg {
-        width: 3rem;
-    }
-    p {
-        min-height: 150px;
-    }
+}
+
+.trat-info-divs-plantilla1 svg {
+    width: 3rem;
+}
+
+.trat-info-divs-plantilla1 p {
+    min-height: 150px;
 }
 
 .color-div1-plantilla1 {
@@ -263,7 +287,7 @@ body {
     background-color: #57534D;
 }
 
-/* Tratamientos segunda plantilla */
+/* Treatments second template */
 
 #SectionTrat-plantilla2 {
     width: 100%;
@@ -274,14 +298,15 @@ body {
     gap: 10%;
     background-color: #222;
     z-index: 1;
-    .background-plantilla2 {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-        opacity: 0.4;
-    }
+}
+
+#SectionTrat-plantilla2 .background-plantilla2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4;
 }
 
 .left-div-plantilla2 {
@@ -294,9 +319,10 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: white;
-    h1 {
-        font-size: 1.75rem;
-    }
+}
+
+.left-div-plantilla2 h1 {
+    font-size: 1.75rem;
 }
 
 .left-div-plantilla2 > * {
@@ -310,17 +336,18 @@ body {
 .right-div-plantilla2 {
     width: 45%;
     z-index: 1;
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 2/1;
-        border-top-left-radius: 300px;
-        border-bottom-left-radius: 300px;
-    }
 }
 
-/* Tratamientos tercera plantilla */
+.right-div-plantilla2 img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/1;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius: 300px;
+}
+
+/* Treatments third template */
 
 #SectionTrat-plantilla3 {
     width: 100%;
@@ -385,27 +412,28 @@ body {
     height: 40%;
     color: white;
     font-family:'Karla', sans-serif;
-    h1 {
-        font-size: 1.75rem;
-        margin: 0;
-    }
-    p {
-        font-size: 1.4rem;
-        margin: 0;
-    }
 }
 
-/* Mobile Tratamientos */
-
-/* Cuando haya mas de 1000px (vista desktop) */
-
-@media (min-width: 1000px) {
+.right-div-plantilla3 h1 {
+    font-size: 1.75rem;
+    margin: 0;
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+.right-div-plantilla3 p {
+    font-size: 1.4rem;
+    margin: 0;
+}
 
-@media (max-width: 1000px) {
-    /* Plantilla 1 */
+/* Mobile Treatments */
+
+/* When there are more than 1000px (desktop view) */
+
+@media (min-width: 1001px) {}
+
+/* When there are less than 1000px (tablet view) */
+
+@media (max-width: 1001px) {
+    /* Template 1 */
     #SectionTrat-plantilla1 {
         flex-direction: column;
     }
@@ -417,19 +445,21 @@ body {
         width: 70%;
         height: 10%;
         padding: 1rem;
-        p {
-            min-height: 0;
-        }
     }
 
-    /* Plantilla 2 */
+    .trat-info-divs-plantilla1 p {
+        min-height: 0;
+    }
+
+    /* Template 2 */
     #SectionTrat-plantilla2 {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: flex-end;
-        .background-plantilla2 {
-            top: 0;
-        }
+    }
+
+    #SectionTrat-plantilla2 .background-plantilla2 {
+        top: 0;
     }
     .right-div-plantilla2 {
         width: 70%;
@@ -440,7 +470,7 @@ body {
         height: auto;
     }
 
-    /* Plantilla 3 */
+    /* Template 3 */
     #SectionTrat-plantilla3 {
         flex-direction: column;
         padding-top: 10vh;
@@ -454,36 +484,40 @@ body {
     }
 }
 
-/* cuando haya menos de 600px (vista mobile) */
+/* when there are less than 600px (mobile view) */
 
 @media (max-width: 600px) {
-    /* Plantilla 1 */
+    /* Template 1 */
     .trat-imagen-plantilla1 {
         width: 90%;
-        h1 {
-            font-size: 1rem;
-        }
+    }
+
+    .trat-imagen-plantilla1 h1 {
+        font-size: 1rem;
     }
     .trat-info-divs-plantilla1 {
         width: 90%;
         height: 20%;
-        p {
-            font-size: 0.7rem;
-        }
     }
-    /* Plantilla 2 */
+
+    .trat-info-divs-plantilla1 p {
+        font-size: 0.7rem;
+    }
+    /* Template 2 */
     .right-div-plantilla2 {
         width: 80%;
     }
     .left-div-plantilla2 {
-        h1 {
-            font-size: 1.2rem;
-        }
-        p {
-            font-size:0.8rem;
-        }
     }
-    /* Plantilla 3 */
+
+    .left-div-plantilla2 h1 {
+        font-size: 1.2rem;
+    }
+
+    .left-div-plantilla2 p {
+        font-size: 0.8rem;
+    }
+    /* Template 3 */
     #SectionTrat-plantilla3 {
         flex-direction: column;
         padding-top: 10vh;
@@ -495,12 +529,14 @@ body {
     .right-div-plantilla3 {
         width: 100%;
         height: auto;
-        h2 {
-            font-size: 1rem;
-        }
-        p {
-            font-size: 0.8rem;
-        }
+    }
+
+    .right-div-plantilla3 h2 {
+        font-size: 1rem;
+    }
+
+    .right-div-plantilla3 p {
+        font-size: 0.8rem;
     }
     .grid-plantilla3 > div {
         font-size: 1rem;

@@ -70,7 +70,7 @@ include_once __DIR__ . '/../../back/check_permission.php';
           <button id="btnNuevoPersonal" class="btn-primary">+ Nuevo Personal</button>
         </div>
         <div id="tablaPersonalContainer">
-          <!-- Table populated by JavaScript -->
+          <!-- Tabla poblada por JavaScript -->
         </div>
       </div>
 
@@ -154,7 +154,7 @@ include_once __DIR__ . '/../../back/check_permission.php';
       <div id="ListaPacientes">
         <h2>Lista de Pacientes</h2>
         <div id="tablaPacientesContainer">
-          <!-- Table populated by JavaScript -->
+          <!-- Tabla poblada por JavaScript -->
         </div>
       </div>
 
@@ -212,7 +212,7 @@ include_once __DIR__ . '/../../back/check_permission.php';
           <label for="filtroSucursal">Sucursal:</label>
           <select id="filtroSucursal" name="id_sucursal">
             <option value="">Todas</option>
-            <!-- Options populated by JavaScript -->
+            <!-- Opciones pobladas por JavaScript -->
           </select>
 
           <label for="filtroFechaDesde">Fecha desde:</label>
@@ -232,7 +232,7 @@ include_once __DIR__ . '/../../back/check_permission.php';
           <button id="btnNuevaCita" class="btn-primary">+ Nueva Cita</button>
         </div>
         <div id="tablaCitasContainer">
-          <!-- Table populated by JavaScript -->
+          <!-- Tabla poblada por JavaScript -->
         </div>
       </div>
 
@@ -251,19 +251,19 @@ include_once __DIR__ . '/../../back/check_permission.php';
 
           <label for="editSucursal">Sucursal:</label>
           <select id="editSucursal" name="id_sucursal" required>
-            <!-- Options populated by JavaScript -->
+            <!-- Opciones pobladas por JavaScript -->
           </select>
 
           <label for="editPersonal">Doctor/Personal:</label>
           <select id="editPersonal" name="id_personal">
             <option value="">Sin asignar</option>
-            <!-- Options populated by JavaScript -->
+            <!-- Opciones pobladas por JavaScript -->
           </select>
 
           <label for="editTratamiento">Tratamiento:</label>
           <select id="editTratamiento" name="id_tratamiento">
             <option value="">Sin asignar</option>
-            <!-- Options populated by JavaScript -->
+            <!-- Opciones pobladas por JavaScript -->
           </select>
 
           <label for="editFechaCita">Fecha y Hora:</label>
@@ -316,19 +316,19 @@ include_once __DIR__ . '/../../back/check_permission.php';
             <label for="nuevaCitaSucursal">Sucursal:</label>
             <select id="nuevaCitaSucursal" name="id_sucursal" required>
               <option value="">Seleccione una sucursal</option>
-              <!-- Options populated by JavaScript -->
+              <!-- Opciones pobladas por JavaScript -->
             </select>
 
             <label for="nuevaCitaPersonal">Doctor/Personal:</label>
             <select id="nuevaCitaPersonal" name="id_personal">
               <option value="">Sin asignar</option>
-              <!-- Options populated by JavaScript -->
+              <!-- Opciones pobladas por JavaScript -->
             </select>
 
             <label for="nuevaCitaTratamiento">Tratamiento:</label>
             <select id="nuevaCitaTratamiento" name="id_tratamiento">
               <option value="">Sin asignar</option>
-              <!-- Options populated by JavaScript -->
+              <!-- Opciones pobladas por JavaScript -->
             </select>
 
             <label for="nuevaCitaFecha">Fecha y Hora:</label>

@@ -38,9 +38,10 @@
     border: none;
     top: 1rem;
     left: 1rem;
-        img{
-            width: 100%;
-        }
+}
+
+.homeButton img {
+    width: 100%;
 }
 .homeButton:hover{
     cursor: pointer;
@@ -65,45 +66,53 @@
     gap: 10px;
     flex-direction: column;
     align-items: center;
-        input{
-            border: none;
-            background: rgba(0, 0, 0, 0.6);
-            height: 5dvh;
-            width: 100%;
-            color: white;
-            padding-left: 1dvh;
-            transition: background-color 0.3s ease;
-        }
-        input::placeholder{
-            color: whitesmoke;
-            font-family: 'Roboto';
-        }
-        input:focus {
-            outline: none;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        input[type="date"]::-webkit-calendar-picker-indicator {
-            filter: invert(1);
-            border-radius: 50%;
-            padding: 4px;
-        }
-        input[type="password"]::-ms-reveal {
-            filter: invert(1); /* invierte colores */
-        }
-        input[type="date"]::-webkit-password {
-            filter: invert(1);
-            border-radius: 50%;
-            padding: 4px;
-        }
-        button{
-            border: none;
-            width: 15dvh;
-            height: 5dvh;
-            transition: background-color 0.3s ease;
-        }
-        button:hover{
-            cursor:pointer;
-        }
+}
+
+.login_box2 input {
+    border: none;
+    background: rgba(0, 0, 0, 0.6);
+    height: 5dvh;
+    width: 100%;
+    color: white;
+    padding-left: 1dvh;
+    transition: background-color 0.3s ease;
+}
+
+.login_box2 input::placeholder {
+    color: whitesmoke;
+    font-family: 'Roboto';
+}
+
+.login_box2 input:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.login_box2 input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.login_box2 input[type="password"]::-ms-reveal {
+    filter: invert(1);
+}
+
+.login_box2 input[type="date"]::-webkit-password {
+    filter: invert(1);
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.login_box2 button {
+    border: none;
+    width: 15dvh;
+    height: 5dvh;
+    transition: background-color 0.3s ease;
+}
+
+.login_box2 button:hover {
+    cursor: pointer;
 }
 
 .mensaje {
@@ -139,15 +148,16 @@
     flex-direction: row;
     gap: 3px;
     color: whitesmoke;
-        p{
-            font-family: 'Poppins';
-        }
+}
+
+.login_deco_box p {
+    font-family: 'Poppins';
 }
 /* Mobile Login */
 
 /* Cuando haya mas de 1000px (vista desktop) */
 
-@media (min-width: 1000px) {
+@media (min-width: 1001px) {
     .login-button { 
         width: 60%;
     }
@@ -161,7 +171,7 @@
 
 /* Cuando haya menos de 1000px (vista tablet) */
 
-@media (max-width: 1000px) {
+@media (max-width: 1001px) {
     .login-button { 
         width: 60%;
     }

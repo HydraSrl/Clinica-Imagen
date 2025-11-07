@@ -51,7 +51,7 @@ function pressToSwitch() {
 }
 
 // ============================================
-// DASHBOARD FUNCTIONALITY
+// FUNCIONALIDAD DEL DASHBOARD
 // ============================================
 
 function loadDashboard() {
@@ -62,7 +62,7 @@ function loadDashboard() {
                 const welcomeMessage = document.getElementById('welcomeMessage');
                 welcomeMessage.textContent = `Hola, ${data.nombre} (${data.rol})`;
 
-                // Si es doctor, mostrar las estadísticas de citas
+                // If it is a doctor, show the appointment statistics
                 if (data.rol === 'Doctor' && data.total_citas !== undefined) {
                     const doctorStats = document.getElementById('doctorStats');
                     const totalCitas = document.getElementById('totalCitas');
@@ -79,7 +79,7 @@ function loadDashboard() {
 }
 
 // ============================================
-// PERSONAL MENU FUNCTIONALITY
+// FUNCIONALIDAD DEL MENÚ DE PERSONAL
 // ============================================
 
 function loadPersonalMenu() {
@@ -186,19 +186,19 @@ window.editarPersonal = function(idPersonal) {
         .catch(error => console.error('Error:', error));
 }
 
-// Form filtrar personal
+// Formulario para filtrar personal
 document.getElementById('formFiltrarPersonal').addEventListener('submit', function(e) {
     e.preventDefault();
     buscarPersonal();
 });
 
-// Limpiar filtros personal
+// Limpiar filtros de personal
 document.getElementById('btnLimpiarFiltrosPersonal').addEventListener('click', function() {
     document.getElementById('formFiltrarPersonal').reset();
     buscarPersonal();
 });
 
-// Form editar personal
+// Formulario para editar personal
 document.getElementById('formEditarPersonal').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
@@ -227,21 +227,21 @@ document.getElementById('formEditarPersonal').addEventListener('submit', functio
     });
 });
 
-// Cancelar edición personal
+// Cancelar edición de personal
 document.getElementById('btnCancelarEdicionPersonal').addEventListener('click', function() {
     document.getElementById('FormEditarPersonal').style.display = 'none';
     document.getElementById('ListaPersonal').style.display = 'block';
     document.getElementById('FiltrosPersonal').style.display = 'block';
 });
 
-// Volver desde edición personal
+// Volver desde la edición de personal
 document.getElementById('btnVolverDesdeEdicionPersonal').addEventListener('click', function() {
     document.getElementById('FormEditarPersonal').style.display = 'none';
     document.getElementById('ListaPersonal').style.display = 'block';
     document.getElementById('FiltrosPersonal').style.display = 'block';
 });
 
-// Botón nuevo personal
+// Botón para nuevo personal
 document.getElementById('btnNuevoPersonal').addEventListener('click', function() {
     document.getElementById('ListaPersonal').style.display = 'none';
     document.getElementById('FiltrosPersonal').style.display = 'none';
@@ -249,7 +249,7 @@ document.getElementById('btnNuevoPersonal').addEventListener('click', function()
     document.getElementById('formAgregarUsuario').reset();
 });
 
-// Form agregar personal
+// Formulario para agregar personal
 document.getElementById('formAgregarUsuario').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -297,7 +297,7 @@ document.getElementById('btnVolverDesdeNuevoPersonal').addEventListener('click',
 });
 
 // ============================================
-// PACIENTES MENU FUNCTIONALITY
+// FUNCIONALIDAD DEL MENÚ DE PACIENTES
 // ============================================
 
 function loadPacientesMenu() {
@@ -414,19 +414,19 @@ window.editarPaciente = function(idPaciente) {
         .catch(error => console.error('Error:', error));
 }
 
-// Form filtrar pacientes
+// Formulario para filtrar pacientes
 document.getElementById('formFiltrarPacientes').addEventListener('submit', function(e) {
     e.preventDefault();
     buscarPacientes();
 });
 
-// Limpiar filtros pacientes
+// Limpiar filtros de pacientes
 document.getElementById('btnLimpiarFiltrosPacientes').addEventListener('click', function() {
     document.getElementById('formFiltrarPacientes').reset();
     buscarPacientes();
 });
 
-// Form editar paciente
+// Formulario para editar paciente
 document.getElementById('formEditarPaciente').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
@@ -455,14 +455,14 @@ document.getElementById('formEditarPaciente').addEventListener('submit', functio
     });
 });
 
-// Cancelar edición paciente
+// Cancelar edición de paciente
 document.getElementById('btnCancelarEdicionPaciente').addEventListener('click', function() {
     document.getElementById('FormEditarPaciente').style.display = 'none';
     document.getElementById('ListaPacientes').style.display = 'block';
     document.getElementById('FiltrosPacientes').style.display = 'block';
 });
 
-// Volver desde edición paciente
+// Volver desde la edición de paciente
 document.getElementById('btnVolverDesdeEdicionPaciente').addEventListener('click', function() {
     document.getElementById('FormEditarPaciente').style.display = 'none';
     document.getElementById('ListaPacientes').style.display = 'block';
@@ -504,7 +504,7 @@ document.getElementById('btnEliminarPaciente').addEventListener('click', functio
 });
 
 // ============================================
-// CITAS MENU FUNCTIONALITY
+// FUNCIONALIDAD DEL MENÚ DE CITAS
 // ============================================
 
 function loadCitasMenu() {
@@ -514,7 +514,7 @@ function loadCitasMenu() {
     buscarCitas();
 }
 
-// Populate dropdowns
+// Poblar menús desplegables
 function populateSucursalesDropdowns() {
     fetch('../../back/get_sucursales_list.php')
         .then(response => response.json())
@@ -719,7 +719,7 @@ window.editarCita = function(idCita) {
         .catch(error => console.error('Error:', error));
 }
 
-// Form filtrar citas
+// Formulario para filtrar citas
 document.getElementById('formFiltrarCitas').addEventListener('submit', function(e) {
     e.preventDefault();
     buscarCitas();
@@ -731,7 +731,7 @@ document.getElementById('btnLimpiarFiltros').addEventListener('click', function(
     buscarCitas();
 });
 
-// Form editar cita
+// Formulario para editar cita
 document.getElementById('formEditarCita').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
@@ -767,7 +767,7 @@ document.getElementById('btnCancelarEdicion').addEventListener('click', function
     document.getElementById('FiltrosCitas').style.display = 'block';
 });
 
-// Volver desde edición
+// Volver desde la edición
 document.getElementById('btnVolverDesdeEdicion').addEventListener('click', function() {
     document.getElementById('FormEditarCita').style.display = 'none';
     document.getElementById('ListaCitas').style.display = 'block';
@@ -807,7 +807,7 @@ document.getElementById('btnCancelarCita').addEventListener('click', function() 
     }
 });
 
-// Botón nueva cita
+// Botón para nueva cita
 document.getElementById('btnNuevaCita').addEventListener('click', function() {
     document.getElementById('ListaCitas').style.display = 'none';
     document.getElementById('FiltrosCitas').style.display = 'none';
@@ -849,7 +849,7 @@ document.getElementById('formBuscarPacienteCita').addEventListener('submit', fun
         });
 });
 
-// Form crear cita
+// Formulario para crear cita
 document.getElementById('formCrearCita').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);

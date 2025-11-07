@@ -1,12 +1,25 @@
 <?php
-// Incluir el archivo para obtener los datos del usuario
+// Include the file to get user data
 include_once __DIR__ . '/../../back/get_patient_data.php';
 
 $nombre = $userData['nombre'] ?? null;
 $inicial = $nombre ? strtoupper(substr($nombre, 0, 1)) : '?';
 ?>
-<!-- Cargar estilo segun pagina actual -->
-    <?php if (isset($page_styles[$page])): // Si page actual esta en array page_styles entonces cargar css correspondiente?>
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+    <link rel="icon" href="img/logomini.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Clínica Imagen</title>
+    </head>
+<!-- Load style according to current page -->
+    <?php if (isset($page_styles[$page])): // If current page is in page_styles array then load corresponding css?>
     <link rel="stylesheet" href="css/<?php echo $page_styles[$page] ?>">
     <link rel="stylesheet" href="styles/styles.css">
     <?php endif; ?>    
@@ -20,10 +33,10 @@ $inicial = $nombre ? strtoupper(substr($nombre, 0, 1)) : '?';
             <img src="img/logo.png" onclick="window.location.href='index.php'">
 
             <ul>
-                <li><a href="index.php?page=sobrenosotros">Sobre nosotros</a></li>
-                <li><a href="index.php?page=agenda">Agenda</a></li>
-                <li><a href="index.php?page=tratamientos">Tratamientos</a></li>
-                <li class="profile-avatar-header">
+                <li class="desktop-nav-item"><a href="index.php?page=sobrenosotros">Sobre nosotros</a></li>
+                <li class="desktop-nav-item"><a href="index.php?page=agenda">Agenda</a></li>
+                <li class="desktop-nav-item"><a href="index.php?page=tratamientos">Tratamientos</a></li>
+                <li class="profile-avatar-header desktop-nav-item">
                     <?php if (isset($_SESSION['user_id']) && $nombre): ?>
                         <a href="index.php?page=perfil">
                             <div class="avatar-initial"><?php echo $inicial; ?></div>
@@ -37,6 +50,21 @@ $inicial = $nombre ? strtoupper(substr($nombre, 0, 1)) : '?';
                             </svg>
                         </a>
                     <?php endif; ?>
+                </li>
+                <li class="menu-perfil-container">
+                    <div class="mobile-buttons-header">
+                        <input type="checkbox" id="mobile-header-toggle">
+                        <label for="mobile-header-toggle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </label>
+                        <div class="mobile-header-view">
+                            <a href="index.php?page=sobrenosotros">Sobre nosotros</a>
+                            <?php foreach ($navpages as $slug => $title): ?>
+                                <a href="index.php?page=<?php echo $slug ?>"><?php echo $title ?></a>
+                            <?php endforeach; ?>
+                    </div>
                 </li>
             </ul>
         </nav>

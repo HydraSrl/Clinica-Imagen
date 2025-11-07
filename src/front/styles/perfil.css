@@ -64,13 +64,14 @@ body {
 .profile-contact .icon {
     margin-right: 10px;
     font-size: 1.2rem;
-    svg {
-        width: 20px;
-        height: 15px;
-    }
 }
 
-@media (max-width: 768px) {
+.profile-contact .icon svg {
+    width: 20px;
+    height: 15px;
+}
+
+@media (max-width: 767px) {
     body {
         padding: 0;
     }

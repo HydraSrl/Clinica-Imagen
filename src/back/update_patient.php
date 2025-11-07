@@ -6,10 +6,11 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 require_once 'pdo.php';
+require_once 'utils.php';
 
 $response = ['success' => false, 'message' => ''];
 
-// Check if user has permission
+// Verificar si el usuario tiene permiso
 if (!isset($_SESSION['user_id'])) {
     $response['message'] = 'No autorizado - no hay sesión activa';
     echo json_encode($response);
@@ -19,7 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 try {
     $pdo = DB::getConnection();
 
-    // Verify user is in PERSONAL table
+    // Verificar si el usuario está en la tabla PERSONAL
     $checkPermission = $pdo->prepare("SELECT id FROM PERSONAL WHERE id_user = :userId");
     $checkPermission->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
     $checkPermission->execute();
@@ -31,18 +32,18 @@ try {
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $id = $_POST['id'] ?? $_POST['id_paciente'] ?? '';
-        $nombre = $_POST['nombre'] ?? '';
-        $cedula = $_POST['cedula'] ?? '';
-        $fecha_nacimiento = $_POST['fecha_nacimiento'] ?? '';
-        $telefono = $_POST['telefono'] ?? '';
-        $ciudad = $_POST['ciudad'] ?? '';
-        $email = $_POST['email'] ?? '';
+        $id = isset($_POST['id']) ? sanitizeInput($_POST['id']) : (isset($_POST['id_paciente']) ? sanitizeInput($_POST['id_paciente']) : '');
+        $nombre = isset($_POST['nombre']) ? sanitizeInput($_POST['nombre']) : '';
+        $cedula = isset($_POST['cedula']) ? sanitizeInput($_POST['cedula']) : '';
+        $fecha_nacimiento = isset($_POST['fecha_nacimiento']) ? sanitizeInput($_POST['fecha_nacimiento']) : '';
+        $telefono = isset($_POST['telefono']) ? sanitizeInput($_POST['telefono']) : '';
+        $ciudad = isset($_POST['ciudad']) ? sanitizeInput($_POST['ciudad']) : '';
+        $email = isset($_POST['email']) ? sanitizeInput($_POST['email']) : '';
 
         if (empty($id) || empty($nombre) || empty($cedula) || empty($fecha_nacimiento) || empty($telefono) || empty($ciudad) || empty($email)) {
             $response['message'] = 'Todos los campos son requeridos.';
         } else {
-            // Verify patient exists and get id_user
+            // Verificar si el paciente existe y obtener el id_user
             $checkPatient = $pdo->prepare("SELECT id_user FROM PACIENTES WHERE id = :id");
             $checkPatient->bindParam(':id', $id, PDO::PARAM_INT);
             $checkPatient->execute();
@@ -58,7 +59,7 @@ try {
 
             $pdo->beginTransaction();
 
-            // Update PACIENTES table
+            // Actualizar la tabla PACIENTES
             $sql = "UPDATE PACIENTES SET nombre = :nombre, cedula = :cedula, fecha_nacimiento = :fecha_nacimiento, telefono = :telefono, ciudad = :ciudad WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
@@ -70,7 +71,7 @@ try {
                 'ciudad' => $ciudad
             ]);
 
-            // Update USERS table
+            // Actualizar la tabla USERS
             $sqlUser = "UPDATE USERS SET email = :email WHERE id = :id_user";
             $stmtUser = $pdo->prepare($sqlUser);
             $stmtUser->execute([

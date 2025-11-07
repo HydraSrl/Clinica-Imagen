@@ -154,7 +154,7 @@ form button[type="submit"]:hover {
 }
 
 /* ============================================
-   CITAS MENU STYLES
+   APPOINTMENTS MENU STYLES
    ============================================ */
 
 #CitasMenu {
@@ -202,7 +202,7 @@ form button[type="submit"]:hover {
     background-color: #5a6268;
 }
 
-/* Botones de formulario - asegurar contraste en modo claro */
+/* Form buttons - ensure contrast in light mode */
 form button[type="submit"],
 form button[type="button"] {
     color: #ffffff;
@@ -231,7 +231,7 @@ form button[type="button"] {
     background-color: #5a6268;
 }
 
-/* Tabla de Citas */
+/* Appointments Table */
 .citas-table {
     width: 100%;
     border-collapse: collapse;
@@ -262,7 +262,7 @@ form button[type="button"] {
     border-bottom: none;
 }
 
-/* Badges para Estado */
+/* Badges for Status */
 .badge {
     padding: 4px 12px;
     border-radius: 12px;
@@ -281,7 +281,7 @@ form button[type="button"] {
     color: #fff;
 }
 
-/* Botón Editar */
+/* Edit Button */
 .btn-edit {
     background-color: #17a2b8;
     color: white;
@@ -297,7 +297,7 @@ form button[type="button"] {
     background-color: #138496;
 }
 
-/* Form Editar/Nueva Cita */
+/* Form Edit/New Appointment */
 #FormEditarCita,
 #FormNuevaCita {
     background: var(--secondary-bg);
@@ -332,7 +332,7 @@ form button[type="button"] {
     color: var(--primary-text);
 }
 
-/* Paciente Encontrado */
+/* Patient Found */
 .paciente-info {
     background-color: var(--primary-bg);
     padding: 15px;
@@ -350,7 +350,7 @@ form button[type="button"] {
     margin: 8px 0;
 }
 
-/* Secciones dentro de Nueva Cita */
+/* Sections within New Appointment */
 #BuscarPacienteCita,
 #DatosCita {
     background: var(--secondary-bg);
@@ -368,7 +368,7 @@ form button[type="button"] {
     padding-bottom: 10px;
 }
 
-/* Responsive adjustments */
+/* Ajustes responsivos */
 @media (max-width: 768px) {
     .citas-table {
         font-size: 14px;
@@ -384,7 +384,7 @@ form button[type="button"] {
     }
 }
 
-/* Dark mode específico para menú de Citas */
+/* Dark mode specific to Appointments menu */
 body.dark-mode .citas-table thead {
     background-color: #0056b3;
 }
@@ -432,7 +432,7 @@ body.dark-mode .btn-secondary:hover {
     background-color: #5a6268;
 }
 
-/* Botones dentro de formularios en dark mode */
+/* Botones dentro de formularios en modo oscuro */
 body.dark-mode form button[type="submit"],
 body.dark-mode form button[type="button"] {
     background-color: #007bff;
@@ -480,7 +480,7 @@ body.dark-mode .form-group-readonly {
     border: 1px solid #3a3b3c;
 }
 
-/* Inputs y selects en dark mode */
+/* Entradas y selecciones en modo oscuro */
 body.dark-mode #CitasMenu input[type="text"],
 body.dark-mode #CitasMenu input[type="date"],
 body.dark-mode #CitasMenu input[type="datetime-local"],
@@ -494,7 +494,7 @@ body.dark-mode #CitasMenu input[type="text"]::placeholder {
     color: #8a8d91;
 }
 
-/* Mensajes de éxito y error en dark mode */
+/* Mensajes de éxito y error en modo oscuro */
 body.dark-mode .success {
     color: #4caf50;
     background-color: #1e3a1e;
@@ -585,7 +585,7 @@ body.dark-mode .error {
     font-size: 16px;
 }
 
-/* Dark mode para dashboard */
+/* Dark mode for dashboard */
 body.dark-mode .dashboard-welcome {
     background: var(--secondary-bg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);

@@ -68,7 +68,7 @@
     cursor: pointer;
 } 
 
-#header ul>li:last-child>a>div 
+#header ul>li:last-child>a>div
 {
     background: blue;
     width: 40px;
@@ -79,4 +79,11 @@
     border-radius: 50%;
     font-weight: 700;
     font-size: 18px;
+}
+
+/* Hide PC elements in mobile mode */
+@media (max-width: 1001px) {
+    .desktop-nav-item {
+        display: none !important;
+    }
 }

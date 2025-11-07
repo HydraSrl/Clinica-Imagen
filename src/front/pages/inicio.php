@@ -16,7 +16,7 @@
     <?php include 'includes/header.php' ; ?>
 
     <main>
-    <!-- Hero section -->
+    <!-- Sección de Héroe -->
     <section id="hero-main">
         <article style="font-family: 'Poppins';" class="slide-in-R hero-article">
             <h1>TU BIENESTAR, <br><span class="highlight">NUESTRA PRIORIDAD</span></h1>
@@ -25,7 +25,7 @@
         </article>
         <img class="parallax" src="/front/img/hero1.webp">
     </section>
-    <!-- Second section -->
+    <!-- Segunda sección -->
     <section id="second-section-main">
         <div class="second-section-container">
             <div class="second-section-item slide-in-L">
@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <!-- Tercera section -->
+    <!-- Tercera sección -->
     <section id="grid-section-main">
         <div class="article-container">
             <article class="fade-in2">
@@ -82,7 +82,7 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Solo una vez
+            observer.unobserve(entry.target); // Only once
             }
         });
         });

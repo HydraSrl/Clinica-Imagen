@@ -30,11 +30,11 @@ try {
         throw new Exception("No se encontró un paciente asociado a este usuario.");
     }
 
-    $fecha_cita = $data['fecha_cita'];
-    $id_sucursal = (int)$data['id_sucursal'];
-    $duracion = isset($data['duracion']) ? (int)$data['duracion'] : 60; // Default 60 minutos
+    $fecha_cita = sanitizeInput($data['fecha_cita']);
+    $id_sucursal = (int)sanitizeInput($data['id_sucursal']);
+    $duracion = isset($data['duracion']) ? (int)sanitizeInput($data['duracion']) : 60; // Por defecto 60 minutos
 
-    // Validar que el slot de tiempo no esté ya ocupado (doble chequeo)
+    // Validar que el espacio de tiempo no esté ya ocupado (doble verificación)
     // Ahora verificamos que no haya conflictos con citas existentes considerando su duración
     $fecha_cita_dt = new DateTime($fecha_cita);
     $stmt_check = $pdo->prepare("SELECT fecha_cita, duracion FROM CITAS WHERE DATE(fecha_cita) = :fecha AND id_sucursal = :id_sucursal");
@@ -53,9 +53,9 @@ try {
         $fin_nueva = clone $fecha_cita_dt;
         $fin_nueva->add(new DateInterval('PT' . $duracion . 'M'));
 
-        // Verificar si hay solapamiento
+        // Verificar si hay superposición
         if ($fecha_cita_dt < $fin_existente && $fin_nueva > $inicio_existente) {
-            http_response_code(409); // Conflict
+            http_response_code(409); // Conflicto
             throw new Exception("El horario seleccionado ya no está disponible.");
         }
     }

@@ -5,7 +5,7 @@ require_once '../back/utils.php';
 $slug = $_GET['slug'] ?? null;
 
 if (!$slug) {
-    // Redirect to treatments page or show an error
+    // Redirigir a la página de tratamientos o mostrar un error
     header('Location: ../tratamientos.php');
     exit;
 }
@@ -13,14 +13,14 @@ if (!$slug) {
 $tratamiento = getTratamientoBySlug(sanitizeInput($slug));
 
 if (!$tratamiento) {
-    // Handle case where treatment is not found
+    // Manejar el caso en que no se encuentra el tratamiento
     echo "Tratamiento no encontrado.";
     exit;
 }
 
 $detalles = json_decode($tratamiento['detalles_pagina'], true);
 
-// Include header
+// Incluir encabezado
 include 'includes/header.php';
 ?>
 
@@ -30,13 +30,14 @@ include 'includes/header.php';
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($tratamiento['nombre']); ?></title>
     <link rel="stylesheet" href="styles/tratamiento_seleccionado.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <main class="tratamiento-main-container">
         <img class="background-img" src="img/benyamin-bohlouli-B_sK_xgzwVA-unsplash.jpg" alt="Lobby de odontologia">
         <div class="tratamiento-grid">
             <div class="grid-item image-1">
-                <img src="<?php echo htmlspecialchars($detalles['imagen_grid_1'] ?? ''); ?>" alt="<?php echo htmlspecialchars($tratamiento['nombre']); ?> 1">
+                <img src="img/logo.png" alt="Logo Clinica Imagen">
             </div>
             <div class="grid-item title-card">
                 <h1><?php echo htmlspecialchars($tratamiento['nombre']); ?></h1>

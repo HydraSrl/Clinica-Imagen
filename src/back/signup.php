@@ -17,7 +17,7 @@
         $passw = $data['passw'];
         $hashed_password = password_hash($passw, PASSWORD_DEFAULT);
 
-        // Validar formato de email
+        // Validar formato de correo electrónico
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo json_encode(['success' => false, 'error' => 'Formato de email inválido']);
             exit();
@@ -33,7 +33,7 @@
             exit();
         }
 
-        // Verificar si el email ya existe
+        // Verificar si el correo electrónico ya existe
         $query = $pdo->prepare("SELECT * FROM USERS WHERE email = ?");
         $query->execute([$email]);
         $result = $query->fetch();
@@ -68,7 +68,7 @@
 
         $pdo->commit();
 
-        // Autologin después del registro
+        // Autenticación automática después del registro
         session_start();
         $_SESSION['user_id'] = $userId;
         setcookie("loggedin", "true", time() + 432000, "/");

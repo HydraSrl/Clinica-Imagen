@@ -66,7 +66,7 @@ body {
     margin-top: 20px;
 }
 
-/* Estilos del Calendario */
+/* Calendar Styles */
 .calendar {
     width: 100%;
     border-collapse: collapse;
@@ -94,7 +94,7 @@ body {
 }
 
 .calendar .day.today {
-    background-color: #f0e68c; /* Un amarillo claro para destacar */
+    background-color: #f0e68c; /* A light yellow to highlight */
     color: #121212;
     font-weight: bold;
 }
@@ -137,7 +137,7 @@ body {
     background: #7a7aff;
 }
 
-/* Horarios Disponibles */
+/* Available Times */
 #horarios-disponibles {
     margin-top: 20px;
 }
@@ -173,7 +173,7 @@ body {
     font-weight: bold;
 }
 
-/* Botón Agendar */
+/* Schedule Button */
 #btn-agendar {
     margin-top: 20px;
     padding: 15px 30px;
@@ -199,7 +199,7 @@ body {
 /* Responsive Design */
 
 /* Tablet View */
-@media (max-width: 1000px) {
+@media (max-width: 1001px) {
     .agenda-container {
         flex-direction: column;
         align-items: center;

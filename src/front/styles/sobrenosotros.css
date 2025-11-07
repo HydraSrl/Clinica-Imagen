@@ -1,7 +1,7 @@
 .portada_ab 
 {
     width: 100%;
-    height: calc(70vh - 130px);
+    height: calc(50vh - 130px);
     display:flex;
     justify-content: center;
     align-items: flex-end;
