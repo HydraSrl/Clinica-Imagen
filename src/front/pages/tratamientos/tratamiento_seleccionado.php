@@ -33,7 +33,7 @@ include 'includes/header.php';
 </head>
 <body>
     <main class="tratamiento-main-container">
-        <img class="background-img" src="img/benyamin-bohlouli-B_sK_xgzwVA-unsplash.jpg" alt="">
+        <img class="background-img" src="img/benyamin-bohlouli-B_sK_xgzwVA-unsplash.jpg" alt="Lobby de odontologia">
         <div class="tratamiento-grid">
             <div class="grid-item image-1">
                 <img src="<?php echo htmlspecialchars($detalles['imagen_grid_1'] ?? ''); ?>" alt="<?php echo htmlspecialchars($tratamiento['nombre']); ?> 1">

@@ -29,14 +29,14 @@
     <section id="second-section-main">
         <div class="second-section-container">
             <div class="second-section-item slide-in-L">
-                <img src="img/second-section1.jpg" alt="Imagen descriptiva 1">
+                <img src="img/second-section1.webp" alt="Imagen sobre Escaner 3d para dientes">
                 <div class="text-content">
                     <h2>Somos de fiabilidad</h2>
                     <p>Más que una clínica, somos un equipo de expertos dedicados a ofrecerte diagnósticos precisos, tratamientos eficaces y un seguimiento cercano.</p>
                 </div>
             </div>
             <div class="second-section-item slide-in-R">
-                <img src="img/second-section2.jpg" alt="Imagen descriptiva 2">
+                <img src="img/second-sectrion2.jpg" alt="Imagen sobre maquina para radiografias">
                 <div class="text-content">
                     <h2>Solicitá tu consulta hoy</h2>
                     <p>Siente la diferencia de ser atendido con respeto, calidez y compromiso real con tu salud.</p>
@@ -49,22 +49,22 @@
     <section id="grid-section-main">
         <div class="article-container">
             <article class="fade-in2">
-                <img src="img/Javier-De-Lima-260x240.jpg" alt="Imagen descriptiva">
+                <img src="img/Javier-De-Lima-260x240.jpg" alt="CEO de la empresa Clinica Imagen">
                 <h2 style="font-family: 'Poppins';";>Dr.Javier De Lima Moreno</h1>
                 <h3 style="font-family: 'Karla';">Director</h3>
             </article>
             <article class="fade-in3">
-                <img src="img/Laura-Duque-260x240.jpg" alt="Imagen descriptiva">
+                <img src="img/Laura-Duque-260x240.jpg" alt="Odontologa imagenologica">
                 <h2 style="font-family: 'Poppins';">Dra.Laura Duque</h1>
                 <h3 style="font-family: 'Karla';">Odontología / Imagenología</h3>
             </article>
             <article class="fade-in4">
-                <img src="img/Sabrina-Nieves-260x240.jpg" alt="Imagen descriptiva">
+                <img src="img/Sabrina-Nieves-260x240.jpg" alt="Odontologa de ortodoncia">
                 <h2 style="font-family: 'Poppins';">Dra.Sabrina Nieves</h1>
                 <h3 style="font-family: 'Karla';">Ortodoncia / Trazados Cefalométricos</h3>
             </article>       
             <article class="fade-in4">
-                <img src="img/Rosina-Canavero-260x240.jpg" alt="Imagen descriptiva">
+                <img src="img/Rosina-Canavero-260x240.jpg" alt="Secretaria Jefe">
                 <h2 style="font-family: 'Poppins';">Rosina Canavero</h1>
                 <h3 style="font-family: 'Karla';">Secretaría y Coordinación</h3>
             </article>            
