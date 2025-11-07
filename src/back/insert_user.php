@@ -13,9 +13,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($nombre) || empty($email) || empty($password) || empty($rol)) {
         $response['message'] = 'Todos los campos son obligatorios.';
     } else {
+        // Validar formato de email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $response['message'] = 'Formato de email inválido.';
+            echo json_encode($response);
+            exit();
+        }
+
         $pdo = DB::getConnection();
-        
+
         try {
+            // Verificar si el email ya existe en USERS
+            $checkEmailQuery = $pdo->prepare("SELECT id FROM USERS WHERE email = ?");
+            $checkEmailQuery->execute([$email]);
+            if ($checkEmailQuery->fetch()) {
+                $response['message'] = 'El correo electrónico ya está registrado.';
+                echo json_encode($response);
+                exit();
+            }
+
             $pdo->beginTransaction();
 
             // Insert into USERS table

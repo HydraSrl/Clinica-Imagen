@@ -9,29 +9,55 @@
     try
     {
         $data = json_decode(file_get_contents('php://input'), true);
-        $email = sanitizeInput($data['email']);
+        $identifier = sanitizeInput($data['email']); // Puede ser email o nombre
         $passw = $data['passw'];
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo json_encode(['success' => false, 'error' => 'Invalid email format']);
-            exit();
+        // Buscar por email o por nombre
+        if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
+            // Es un email válido
+            $query = $pdo->prepare("SELECT * FROM USERS WHERE email = ? LIMIT 1");
+            $query->execute([$identifier]);
+        } else {
+            // Es un nombre, buscar en la tabla PACIENTES
+            $query = $pdo->prepare("
+                SELECT u.* FROM USERS u
+                INNER JOIN PACIENTES p ON u.id = p.id_user
+                WHERE p.nombre = ? LIMIT 1
+            ");
+            $query->execute([$identifier]);
         }
 
-        $query = $pdo->prepare("SELECT * FROM USERS WHERE email = ? LIMIT 1"); // prepara
-        $query->execute([$email]); //ejecuta query
-        $user = $query->fetch(PDO::FETCH_ASSOC); // Nota: devuelve array, si es que el email existe en la DB
-        
-                   //El password verify compara el input con el hash del array de $user
+        $user = $query->fetch(PDO::FETCH_ASSOC);
+
         if ($user && password_verify($passw, $user['hash_passw'])) {
+            // Verificar edad del usuario
+            $userIdCheck = $user['id'];
+            $ageQuery = $pdo->prepare("
+                SELECT fecha_nacimiento FROM PACIENTES WHERE id_user = ? LIMIT 1
+            ");
+            $ageQuery->execute([$userIdCheck]);
+            $patientData = $ageQuery->fetch(PDO::FETCH_ASSOC);
+
+            if ($patientData) {
+                $birthDateTime = new DateTime($patientData['fecha_nacimiento']);
+                $today = new DateTime();
+                $age = $today->diff($birthDateTime)->y;
+
+                if ($age < 18) {
+                    echo json_encode(['success' => false, 'error' => 'Debes ser mayor de 18 años para acceder']);
+                    exit();
+                }
+            }
+
             session_start();
             $_SESSION['user_id'] = $user['id'];
             setcookie("loggedin", "true", time() + 432000, "/");
             echo json_encode(['success' => true]);
         } else {
-            echo json_encode(['success' => false]);
+            echo json_encode(['success' => false, 'error' => 'Usuario o contraseña incorrectos']);
         }
 
-    } catch (Exception $e) 
+    } catch (Exception $e)
     {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }

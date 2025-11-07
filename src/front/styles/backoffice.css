@@ -208,12 +208,26 @@ form button[type="button"] {
     color: #ffffff;
 }
 
-#btnLimpiarFiltros {
+#btnLimpiarFiltros,
+#btnLimpiarFiltrosPersonal,
+#btnLimpiarFiltrosPacientes,
+#btnCancelarEdicion,
+#btnCancelarEdicionPersonal,
+#btnCancelarEdicionPaciente,
+#btnCancelarNuevoPersonal,
+#btnCancelarNuevaCita {
     background-color: #6c757d;
     color: #ffffff;
 }
 
-#btnLimpiarFiltros:hover {
+#btnLimpiarFiltros:hover,
+#btnLimpiarFiltrosPersonal:hover,
+#btnLimpiarFiltrosPacientes:hover,
+#btnCancelarEdicion:hover,
+#btnCancelarEdicionPersonal:hover,
+#btnCancelarEdicionPaciente:hover,
+#btnCancelarNuevoPersonal:hover,
+#btnCancelarNuevaCita:hover {
     background-color: #5a6268;
 }
 

@@ -6,9 +6,9 @@ function mostrarMensaje(texto, tipo) {
     mensajeDiv.className = 'mensaje ' + tipo;
 }
 
-async function verificarLogin(email, passw) 
+async function verificarLogin(email, passw)
 {
-    try 
+    try
     {
         const response = await fetch('/back/auth.php', {
             method: 'POST',
@@ -20,17 +20,17 @@ async function verificarLogin(email, passw)
                 passw: passw
             })
         });
-        
+
         const data = await response.json();
         if (data.success) {
-            mostrarMensaje('¡Login exitoso!', 'exito');
+            mostrarMensaje('¡Login exitoso! Redirigiendo...', 'exito');
             setTimeout(() => {
-                window.location.href = '/front/index.php';
-            }, 1000);
+                window.location.href = '/front/index.php?page=perfil';
+            }, 1500);
         } else {
-            mostrarMensaje('Usuario o contraseña incorrectos', 'error');
+            mostrarMensaje(data.error || 'Usuario o contraseña incorrectos', 'error');
         }
-    } catch (error) 
+    } catch (error)
     {
         console.log(error)
         mostrarMensaje('Error de conexión', 'error');

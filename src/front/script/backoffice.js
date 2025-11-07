@@ -774,6 +774,39 @@ document.getElementById('btnVolverDesdeEdicion').addEventListener('click', funct
     document.getElementById('FiltrosCitas').style.display = 'block';
 });
 
+// Cancelar cita
+document.getElementById('btnCancelarCita').addEventListener('click', function() {
+    const idCita = document.getElementById('editCitaId').value;
+    const mensajeDiv = document.getElementById('mensajeEditarCita');
+
+    if (confirm('¿Está seguro de que desea cancelar esta cita?')) {
+        const formData = new FormData();
+        formData.append('id_cita', idCita);
+
+        fetch('../../back/cancel_appointment.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            mensajeDiv.textContent = data.message;
+            mensajeDiv.className = data.success ? 'success' : 'error';
+            if (data.success) {
+                setTimeout(() => {
+                    document.getElementById('FormEditarCita').style.display = 'none';
+                    document.getElementById('ListaCitas').style.display = 'block';
+                    document.getElementById('FiltrosCitas').style.display = 'block';
+                    buscarCitas();
+                }, 1500);
+            }
+        })
+        .catch(error => {
+            mensajeDiv.textContent = 'Error: ' + error;
+            mensajeDiv.className = 'error';
+        });
+    }
+});
+
 // Botón nueva cita
 document.getElementById('btnNuevaCita').addEventListener('click', function() {
     document.getElementById('ListaCitas').style.display = 'none';

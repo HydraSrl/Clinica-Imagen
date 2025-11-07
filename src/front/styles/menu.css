@@ -62,9 +62,10 @@
 }
 
 /*logo*/
-#header>nav>img 
+#header>nav>img
 {
     height: 65%;
+    cursor: pointer;
 } 
 
 #header ul>li:last-child>a>div 

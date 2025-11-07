@@ -145,6 +145,23 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Verificar que el slot seleccionado esté disponible
+        const availableSlots = document.querySelectorAll('.time-slot');
+        let slotExists = false;
+        availableSlots.forEach(slot => {
+            if (slot.dataset.slot === selectedSlot) {
+                slotExists = true;
+            }
+        });
+
+        if (!slotExists) {
+            alert('La hora seleccionada no está disponible para esta sucursal. Por favor, seleccione otra hora.');
+            selectedSlot = null;
+            agendarBtn.classList.add('disabled');
+            agendarBtn.disabled = true;
+            return;
+        }
+
         const fechaCita = `${selectedDate} ${selectedSlot}`;
         const data = {
             fecha_cita: fechaCita,
@@ -185,8 +202,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Event Listeners ---
     sucursalSelect.addEventListener('change', () => {
+        // Limpiar selección de hora al cambiar sucursal
+        selectedSlot = null;
+        document.querySelectorAll('.time-slot.selected').forEach(s => s.classList.remove('selected'));
+        agendarBtn.classList.add('disabled');
+        agendarBtn.disabled = true;
+
         if (selectedDate) {
             fetchAvailableSlots(selectedDate, sucursalSelect.value);
+        } else {
+            horariosDiv.innerHTML = '<p>Por favor, seleccione un día para ver los horarios disponibles.</p>';
         }
     });
 

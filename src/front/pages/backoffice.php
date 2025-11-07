@@ -287,6 +287,7 @@ include_once __DIR__ . '/../../back/check_permission.php';
 
           <button type="submit">Guardar Cambios</button>
           <button type="button" id="btnCancelarEdicion">Cancelar</button>
+          <button type="button" id="btnCancelarCita" class="delete-patient-btn">Cancelar Cita</button>
         </form>
         <div id="mensajeEditarCita"></div>
       </div>
