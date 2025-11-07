@@ -1,50 +1,82 @@
 <?php
-    header('Access-Control-Allow-Origin: *');
-    header('Content-Type: application/json');
-    header('Access-Control-Allow-Methods: POST');
-    header('Access-Control-Allow-Headers: Content-Type');
-// Por ahora este archivo es una copia de auth.php  
-    $configPath = __DIR__ .'/dbcreds.json';
+    require_once 'cors.php';
+    include('pdo.php');
+    include('utils.php');
 
-    $config = json_decode(file_get_contents($configPath), true);
-
-    if (!$config) {
-    die("Error de acceso a DB");
-    }
-
-    $host = $config['host'];
-    $dbname = $config['dbname'];
-    $username = $config['username'];
-    $password = $config['password'];
-
-    try 
+    try
     {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $pdo = DB::getConnection();
         
         $data = json_decode(file_get_contents('php://input'), true);
-        $nombre = "Juan Granizo";
-        $birthdate = "1998-03-03";
-        $email = "juan@ejemplo.com";
-        $passw = "ejemplo123";
+        $nombre = sanitizeInput($data['nombre']);
+        $birthdate = sanitizeInput($data['birthdate']);
+        $email = sanitizeInput($data['email']);
+        $cedula = sanitizeInput($data['cedula']);
+        $ciudad = sanitizeInput($data['ciudad']);
+        $telefono = sanitizeInput($data['telefono']);
+        $passw = $data['passw'];
+        $hashed_password = password_hash($passw, PASSWORD_DEFAULT);
 
-        //echo $data['nombre'];
-        $query = $pdo->prepare("SELECT 1 FROM users WHERE email = ?");
+        // Validar formato de correo electrónico
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo json_encode(['success' => false, 'error' => 'Formato de email inválido']);
+            exit();
+        }
+
+        // Validar edad mínima
+        $birthDateTime = new DateTime($birthdate);
+        $today = new DateTime();
+        $age = $today->diff($birthDateTime)->y;
+
+        if ($age < 18) {
+            echo json_encode(['success' => false, 'error' => 'Debes ser mayor de 18 años para registrarte']);
+            exit();
+        }
+
+        // Verificar si el correo electrónico ya existe
+        $query = $pdo->prepare("SELECT * FROM USERS WHERE email = ?");
         $query->execute([$email]);
         $result = $query->fetch();
 
-        //echo $result;
-        
-        if ($result) 
+        if ($result)
         {
-            //aca no debo agregar el usuario porque existe
-            echo json_encode(['success' => false]);
-        } else 
-        {
-            //no encontro a nadie, aca agregas el usuario
-            $insertQuery = $pdo -> prepare ("INSERT into users (nombre, birthdate, email, passw) VALUES ?, ?, ?, ?");
-            $insertQuery->execute([$nombre, $birthdate, $email, $passw]);
-            echo json_encode(['success' => true]);
+            echo json_encode(['success' => false, 'error' => 'El correo electrónico ya está registrado']);
+            exit();
         }
+
+        // Verificar si la cédula ya existe
+        $queryCedula = $pdo->prepare("SELECT * FROM PACIENTES WHERE cedula = ?");
+        $queryCedula->execute([$cedula]);
+        $resultCedula = $queryCedula->fetch();
+
+        if ($resultCedula)
+        {
+            echo json_encode(['success' => false, 'error' => 'La cédula ya está registrada']);
+            exit();
+        }
+
+        // Si no existe, crear el usuario
+        $pdo->beginTransaction();
+
+        $insertUserQuery = $pdo->prepare("INSERT INTO USERS (email, hash_passw) VALUES (?, ?)");
+        $insertUserQuery->execute([$email, $hashed_password]);
+
+        $userId = $pdo->lastInsertId();
+
+        $insertPatientQuery = $pdo->prepare("INSERT INTO PACIENTES (id_user, nombre, fecha_nacimiento, cedula, ciudad, telefono) VALUES (?, ?, ?, ?, ?, ?)");
+        $insertPatientQuery->execute([$userId, $nombre, $birthdate, $cedula, $ciudad, $telefono]);
+
+        $pdo->commit();
+
+        // Autenticación automática después del registro
+        session_start();
+        $_SESSION['user_id'] = $userId;
+        setcookie("loggedin", "true", time() + 432000, "/");
+
+        echo json_encode(['success' => true]);
     } catch (Exception $e) {
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
 }

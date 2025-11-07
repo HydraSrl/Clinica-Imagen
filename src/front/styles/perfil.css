@@ -4,12 +4,13 @@ body {
     color: #212529;
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .profile-container {
     max-width: 900px;
     margin: 40px auto;
-    margin-top: 10vh;
+    margin-top: 20vh;
     padding: 20px;
 }
 
@@ -28,11 +29,18 @@ body {
     margin-right: 30px;
 }
 
-.profile-avatar img {
+.avatar_initial {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
     border: 4px solid #E9ECEF;
 }
 
@@ -56,9 +64,42 @@ body {
 .profile-contact .icon {
     margin-right: 10px;
     font-size: 1.2rem;
-    svg {
-        width: 20px;
-        height: 15px;
+}
+
+.profile-contact .icon svg {
+    width: 20px;
+    height: 15px;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 0;
+    }
+    .profile-container {
+        padding: 10px;
+    }
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .avatar_initial {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-contact p {
+        justify-content: center;
     }
 }
 
@@ -86,4 +127,60 @@ body {
 
 .appointments-list li:last-child {
     border-bottom: none;
+}
+
+.sesion-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sesion-button a {
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.sesion-button a:hover {
+    background-color: #5a6268;
+}
+
+.sesion-button p {
+    margin: 0;
+}
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+.no-appointments {
+    text-align: center;
+}
+
+.schedule-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.schedule-button:hover {
+    background-color: #0056b3;
 }

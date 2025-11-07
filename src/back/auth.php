@@ -1,43 +1,63 @@
 <?php
-    header('Access-Control-Allow-Origin: *');
-    header('Content-Type: application/json:');
-    header('Access-Control-Allow-Methods: POST');
-    header('Access-Control-Allow-Headers: Content-Type');
+    require_once 'cors.php';
+    require_once 'pdo.php';
+    require_once 'utils.php';
 
-    $configPath = __DIR__ .'/dbcreds.json';
+    
+        $pdo = DB::getConnection();
 
-    $config = json_decode(file_get_contents($configPath), true);
-
-    if (!$config) {
-    die("Error de acceso a DB");
-    }
-
-    $host = $config['host'];
-    $dbname = $config['dbname'];
-    $username = $config['username'];
-    $password = $config['password'];
-
-    try 
+    try
     {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        
         $data = json_decode(file_get_contents('php://input'), true);
-        $email = $data['email'];
+        $identifier = sanitizeInput($data['email']); // Puede ser email o nombre
         $passw = $data['passw'];
 
-        $query = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1"); // prepara
-        $query->execute([$email]); //ejecuta query
-        $user = $query->fetch(PDO::FETCH_ASSOC); // Nota: devuelve array, si es que el email existe en la DB
-        
-                   //El password verify compara el input con el hash del array de $user
-        if ($user && password_verify($passw, $user['passw'])) { 
-            setcookie("loggedin", "true", time() + 86400, "/");
-            echo json_encode(['success' => true]);
+        // Buscar por email o por nombre
+        if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
+            // Es un email válido
+            $query = $pdo->prepare("SELECT * FROM USERS WHERE email = ? LIMIT 1");
+            $query->execute([$identifier]);
         } else {
-            echo json_encode(['success' => false]);
+            // Es un nombre, buscar en la tabla PACIENTES
+            $query = $pdo->prepare("
+                SELECT u.* FROM USERS u
+                INNER JOIN PACIENTES p ON u.id = p.id_user
+                WHERE p.nombre = ? LIMIT 1
+            ");
+            $query->execute([$identifier]);
         }
 
-    } catch (Exception $e) 
+        $user = $query->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && password_verify($passw, $user['hash_passw'])) {
+            // Verificar edad del usuario
+            $userIdCheck = $user['id'];
+            $ageQuery = $pdo->prepare("
+                SELECT fecha_nacimiento FROM PACIENTES WHERE id_user = ? LIMIT 1
+            ");
+            $ageQuery->execute([$userIdCheck]);
+            $patientData = $ageQuery->fetch(PDO::FETCH_ASSOC);
+
+            if ($patientData) {
+                $birthDateTime = new DateTime($patientData['fecha_nacimiento']);
+                $today = new DateTime();
+                $age = $today->diff($birthDateTime)->y;
+
+                if ($age < 18) {
+                    echo json_encode(['success' => false, 'error' => 'Debes ser mayor de 18 años para acceder']);
+                    exit();
+                }
+            }
+
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            setcookie("loggedin", "true", time() + 432000, "/");
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false, 'error' => 'Usuario o contraseña incorrectos']);
+        }
+
+    } catch (Exception $e)
     {
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }

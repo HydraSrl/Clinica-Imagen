@@ -1,27 +1,42 @@
-<?php include 'includes/header.php' ; ?>
+<?php include 'includes/header.php'; ?>
 
-<main>
-    <!-- Hero section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Imágen</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <?php 
+        $aux = "raiz";
+    ?>
+    <?php include 'includes/header.php' ; ?>
+
+    <main>
+    <!-- Sección Hero -->
     <section id="hero-main">
         <article style="font-family: 'Poppins';" class="slide-in-R hero-article">
-            <h1>ESTUDIOS DE LA <br><span class="highlight">MÁS ALTA CALIDAD</span></h1>
-            <p>Clinica Imagen inicia sus actividades en el año 2015, con el concepto principal de cuidar a nuestros pacientes, logrando estudios de la más alta calidad con la mínima radiación posible.</p>
-            <button class="hero-button" onclick="window.location='index.php?page=perfil'">Agendate para consulta</button>
+            <h1>TU BIENESTAR, <br><span class="highlight">NUESTRA PRIORIDAD</span></h1>
+            <p>En Clínica Imagen, combinamos tecnología de vanguardia con un trato cercano y personalizado. Cuidamos de ti en cada paso, garantizando diagnósticos precisos y la máxima seguridad para tu salud.</p>
+            <button class="hero-button" onclick="window.location='index.php?page=agenda'">Agendate para consulta</button>
         </article>
         <img class="parallax" src="/front/img/hero1.webp">
     </section>
-    <!-- Second section -->
+    <!-- Segunda sección -->
     <section id="second-section-main">
         <div class="second-section-container">
             <div class="second-section-item slide-in-L">
-                <img src="img/second-section1.jpg" alt="Imagen descriptiva 1">
+                <img src="img/second-section1.webp" alt="Imagen sobre Escaner 3d para dientes">
                 <div class="text-content">
                     <h2>Somos de fiabilidad</h2>
                     <p>Más que una clínica, somos un equipo de expertos dedicados a ofrecerte diagnósticos precisos, tratamientos eficaces y un seguimiento cercano.</p>
                 </div>
             </div>
             <div class="second-section-item slide-in-R">
-                <img src="img/second-section2.jpg" alt="Imagen descriptiva 2">
+                <img src="img/second-sectrion2.jpg" alt="Imagen sobre maquina para radiografias">
                 <div class="text-content">
                     <h2>Solicitá tu consulta hoy</h2>
                     <p>Siente la diferencia de ser atendido con respeto, calidez y compromiso real con tu salud.</p>
@@ -30,42 +45,44 @@
         </div>
     </section>
 
-    <!-- Tercera section -->
+    <!-- Tercera sección -->
     <section id="grid-section-main">
         <div class="article-container">
             <article class="fade-in2">
-                <img src="img/Javier-De-Lima-260x240.jpg" alt="">
+                <img src="img/Javier-De-Lima-260x240.jpg" alt="CEO de la empresa Clinica Imagen">
                 <h2 style="font-family: 'Poppins';";>Dr.Javier De Lima Moreno</h1>
                 <h3 style="font-family: 'Karla';">Director</h3>
             </article>
             <article class="fade-in3">
-                <img src="img/Laura-Duque-260x240.jpg" alt="">
+                <img src="img/Laura-Duque-260x240.jpg" alt="Odontologa imagenologica">
                 <h2 style="font-family: 'Poppins';">Dra.Laura Duque</h1>
                 <h3 style="font-family: 'Karla';">Odontología / Imagenología</h3>
             </article>
             <article class="fade-in4">
-                <img src="img/Sabrina-Nieves-260x240.jpg" alt="">
+                <img src="img/Sabrina-Nieves-260x240.jpg" alt="Odontologa de ortodoncia">
                 <h2 style="font-family: 'Poppins';">Dra.Sabrina Nieves</h1>
                 <h3 style="font-family: 'Karla';">Ortodoncia / Trazados Cefalométricos</h3>
             </article>       
             <article class="fade-in4">
-                <img src="img/Rosina-Canavero-260x240.jpg" alt="">
+                <img src="img/Rosina-Canavero-260x240.jpg" alt="Secretaria Jefe">
                 <h2 style="font-family: 'Poppins';">Rosina Canavero</h1>
                 <h3 style="font-family: 'Karla';">Secretaría y Coordinación</h3>
             </article>            
         </div>
     </section>
-</main>
+    </main>
 
-<?php include 'includes/footer.php' ; ?>
 
-<script src="script/script.js"></script>
+
+    <?php include 'includes/footer.php' ; ?>
+
+    <script src="script/script.js"></script>
     <script>
         const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Solo una vez
+            observer.unobserve(entry.target); // Only once
             }
         });
         });
@@ -95,3 +112,8 @@
             observer.observe(el);
         });
   </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,258 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.sectionAgenda {
+    padding: 20vh 40px 20px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.sectionAgenda h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.agenda-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.agenda-column {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    width: 45%;
+}
+
+.agenda-column h2 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+#calendario {
+    margin-top: 20px;
+}
+
+/* Calendar Styles */
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar th {
+    padding: 10px;
+    background-color: #007bff;
+    color: #121212;
+    font-size: 1.1em;
+}
+
+.calendar td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #444;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar td:not(.disabled):hover {
+    background-color: #333;
+}
+
+.calendar .day.today {
+    background-color: #f0e68c; 
+    color: #121212;
+    font-weight: bold;
+}
+
+.calendar .day.selected {
+    background-color: #007bff;
+    color: #121212;
+}
+
+.calendar .day.disabled {
+    color: #555;
+    cursor: not-allowed;
+    background-color: #2a2a2a;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#month-year {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+#prev-month, #next-month {
+    background: #007bff;
+    color: #121212;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#prev-month:hover, #next-month:hover {
+    background: #7a7aff;
+}
+
+/* Available Times */
+#horarios-disponibles {
+    margin-top: 20px;
+}
+
+#horarios-disponibles p {
+    color: #aaa;
+    font-style: italic;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.time-slot {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.time-slot:hover {
+    background-color: #444;
+}
+
+.time-slot.selected {
+    background-color: #007bff;
+    color: #121212;
+    font-weight: bold;
+}
+
+#btn-agendar {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn-agendar:hover:not(.disabled) {
+    background-color: #7a7aff;
+}
+
+#btn-agendar.disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (max-width: 1001px) {
+    .agenda-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .agenda-column {
+        width: 90%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .sectionAgenda {
+        padding: 4rem 20px 20px;
+    }
+
+    .sectionAgenda h1 {
+        font-size: 2em;
+    }
+
+    .agenda-column {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .agenda-column h2 {
+        font-size: 1.5em;
+    }
+
+    .calendar td {
+        padding: 10px;
+    }
+
+    .time-slots {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+/* Mobile chico */
+@media (max-width: 480px) {
+    .agenda-column {
+        padding: 10px;
+    }
+
+    .calendar th, .calendar td {
+        padding: 8px 4px;
+        font-size: 0.85em;
+    }
+
+    #month-year {
+        font-size: 1.2em;
+    }
+
+    #prev-month, #next-month {
+        padding: 8px 12px;
+    }
+}

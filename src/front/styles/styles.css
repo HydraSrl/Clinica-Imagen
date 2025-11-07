@@ -10,32 +10,7 @@ body {
     box-sizing: border-box;
 }
 
-/* PRESET DESKTOP TABLET Y MOBILE
-
-/* Mobile (nombre secion) */
-
-/* Cuando haya mas de 1000px (vista desktop) */
-/*
-@media (min-width: 1000px) {
-
-}
-
-/* Cuando haya menos de 1000px (vista tablet) */
-/*
-@media (max-width: 1000px) {
-
-}
-
-/* cuando haya menos de 600px (vista mobile) */
-/*
-@media (max-width: 600px) {
-
-}
-
-
-
-/* (ALGUNOS DE LOS BORDER SON PARA VISUALIZACION LUEGO SE QUITAN YA QUE ES ESTRUCTURA FUNDAMENTAL) */
-/* Comienza header */
+/* Comienza Header */
 
 header {
     width: 100%;
@@ -49,7 +24,7 @@ header {
     top: 0;
     left: 0;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0,8);
+    background-color: rgba(0, 0, 0, 0.8);
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(3px);
 }
@@ -98,9 +73,9 @@ header > nav.logo-header > img {
     aspect-ratio: 3/1;
 }
 
-/* Mobile Header */
+/* Header para Móviles */
 
-/* Cuando haya mas de 1000px (vista desktop) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
 @media (min-width: 1000px) {
     .mobile-buttons-header * {
@@ -111,7 +86,7 @@ header > nav.logo-header > img {
     }
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     header > nav.logo-header > img {
@@ -128,15 +103,15 @@ header > nav.logo-header > img {
         font-size: 1.2rem;
         background-color: #141414;
         opacity: 0.8;
-        a {
-            text-align: end;
-            text-decoration: none;
-            color: white;
-        }
+    }
+    .mobile-header-view a {
+        text-align: end;
+        text-decoration: none;
+        color: white;
     }
 }
 
-/* cuando haya menos de 600px (vista mobile) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     .mobile-header-view {
@@ -144,15 +119,15 @@ header > nav.logo-header > img {
         font-size: 1.2rem;
         background-color: #141414;
         opacity: 0.8;
-        a {
-            text-align: end;
-            text-decoration: none;
-            color: white;
-        }
+    }
+    .mobile-header-view a {
+        text-align: end;
+        text-decoration: none;
+        color: white;
     }
 }
 
-/* Menú hamburguesa Tratamientos */
+/* Menú de hamburguesa de tratamientos */
 
 #tratamientos-toggle {
     display: none;
@@ -195,7 +170,7 @@ header > nav.logo-header > img {
     gap: 0.5rem;
 }
 
-/*Menú hamburguesa de mobile*/
+/*Menú de hamburguesa para móviles*/
 
 #mobile-header-toggle {
     display: none;
@@ -236,11 +211,11 @@ header > nav.logo-header > img {
     flex-direction: column;
     position: absolute;
     gap: 0.5rem;
-    top: 10vh;
+    top: calc(10vh + 30px);
     right: 0;
 }
 
-/*Menú de tratamientos mobile*/
+/*Menú de tratamientos para móviles*/
 
 .tratamientos-menu-mobile {
     display: flex;
@@ -283,13 +258,13 @@ header > nav.logo-header > img {
     gap: 0.5rem;
 }
 
-/*Controlador del menú */
+/*Controlador de menú*/
 
 #toggle-menu {
     display: none;
 }
 
-/*Boton de Menú */
+/*Botón de menú*/
 
 .menu-btn {
     background-color: #333;
@@ -300,7 +275,7 @@ header > nav.logo-header > img {
     cursor: pointer;
 }
 
-/* Ventana del menú */
+/* Ventana de menú */
 
 .menu-ventana {
     display: none;
@@ -328,16 +303,16 @@ header > nav.logo-header > img {
   border-radius: 10px;
 }
 
-/*Mostrar el menú */
+/*Mostrar menú*/
 
 #toggle-menu:checked + label + .menu-ventana {
     display: block;
 }
 
-/*Termina el menú de Perfil*/
-/* Termina header */
+/*Fin del menú de perfil*/
+/* Fin del header */
 /* ---------------------------------- */
-/* Comienza primera sección: #hero-main */
+/* Comienza la primera sección: #hero-main */
 section#hero-main {
     width: 100%;
     height: 100dvh;
@@ -371,7 +346,7 @@ section#hero-main {
 }
 
 .hero-article .highlight {
-    color: #4169E1;
+    color: #007bff;
 }
 
 .hero-article p {
@@ -381,7 +356,7 @@ section#hero-main {
 }
 
 .hero-button {
-    background-color: #ffffff;
+    background-color: #007bff;
     color: #000000;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -413,28 +388,25 @@ section#hero-main > img {
     background-size: cover;
 }
  
-/* Mobile hero */
+/* Hero para móviles */
 
-/* Cuando haya mas de 1000px (vista desktop) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
-@media (min-width: 1000px) {
+@media (min-width: 1001px) {
     section#hero-main > article > h1 {
-    font-size: 1.5rem;
+        font-size: 3rem;
     }
 
     section#hero-main > article > p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
-
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     section#hero-main {
         justify-content: center;
-    }
-    .hero-article {
     }
     section#hero-main > article > h1 {
     font-size: 2rem;
@@ -445,7 +417,7 @@ section#hero-main > img {
     }
 }
 
-/* cuando haya menos de 600px (vista mobile) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     section#hero-main {
@@ -478,9 +450,9 @@ section#hero-main > img {
 }
 
 
-/* Termina primera sección: #hero-main */
+/* Fin de la primera sección: #hero-main */
 /* ---------------------------------- */
-/* Comienza segunda sección: #second-section-main */
+/* Comienza la segunda sección: #second-section-main */
 
 
 section#second-section-main {
@@ -531,12 +503,12 @@ section#second-section-main {
 
 .second-section-item p {
     font-size: 1rem;
-    color: #a0a0a0;
+    color: #E8ECEF;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Responsive Design */
+/* Diseño responsivo */
 @media (max-width: 1000px) {
     .second-section-container {
         grid-template-columns: 1fr;
@@ -558,13 +530,13 @@ section#second-section-main {
 }
 
 
-/* Termina segunda sección: #second-section-main */
+/* Fin de la segunda sección: #second-section-main */
 /* ---------------------------------- */
-/* Comienza transicion de sección: .section-transition */
+/* Comienza la transición de la sección: .section-transition */
 
-/* Termina transicion de sección: .section-transition */
+/* Fin de la transición de la sección: .section-transition */
 /* ---------------------------------- */
-/* Comienza tercera sección: #grid-section-main */
+/* Comienza la tercera sección: #grid-section-main */
 
 section#grid-section-main {
     width: 100%;
@@ -601,23 +573,25 @@ section#grid-section-main > div.article-container > article {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-        grid-column: span 1;
-        grid-row: span 1;
-        img {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            aspect-ratio: 1/1;
-        }
-        h3 {
-            display: flex;
-            justify-content: center;
-            white-space: nowrap;
-            color: #bbbbbb;
-            padding-bottom: 0.5rem;
-            box-sizing: border-box;
-            margin: 0;
-        }
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+section#grid-section-main > div.article-container > article img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+section#grid-section-main > div.article-container > article h3 {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    color: #bbbbbb;
+    padding-bottom: 0.5rem;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 section#grid-section-main > div.article-container > article > h2 {
@@ -630,20 +604,27 @@ section#grid-section-main > div.article-container > article > h2 {
 }
 
 
-/* PRESET DESKTOP TABLET Y MOBILE
+/* PREAJUSTES ESCRITORIO TABLETA Y MÓVIL
 
-/* Mobile #grid-section-main */
+/* Móvil #grid-section-main */
 
-/* Cuando haya mas de 1000px (vista desktop) */
+/* Cuando hay más de 1400px (vista de escritorio) */
 
-@media (min-width: 1000px) {
+@media (min-width: 1001px) {
     section#grid-section-main > div.article-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        min-width: 1000px;
     }
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+/* Cuando hay menos de 1400px (vista de portátil) */
+
+@media (max-width: 1400px) {
+    section#grid-section-main > div.article-container * {
+        font-size: 1rem;
+    }
+}
+
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     section#grid-section-main > div.article-container {
@@ -655,7 +636,7 @@ section#grid-section-main > div.article-container > article > h2 {
     }
 }
 
-/* cuando haya menos de 600px (vista mobile) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     section#grid-section-main > div.article-container {
@@ -674,18 +655,18 @@ section#grid-section-main > div.article-container > article > h2 {
 
 
 
-/* Comienza transicion de sección: .section-transition */
-/* NO HAY CÓDIGO DEBIDO A QUE ESTA HECHO MAS ARRIBA (LINEA 120-126) */
+/* Comienza la transición de la sección: .section-transition */
+/* NO HAY CÓDIGO PORQUE ESTÁ HECHO ARRIBA (LÍNEA 120-126) */
 
-/* Termina transicion de sección: .section-transition */
+/* Fin de la transición de la sección: .section-transition */
 /* ---------------------------------- */
-/* Comienza cuarta sección: #fourth-section-main */
+/* Comienza la cuarta sección: #fourth-section-main */
 
 
 
-/* Termina cuarta sección: #fourth-section-main */
+/* Fin de la cuarta sección: #fourth-section-main */
 /* ---------------------------------- */
-/* Comienza quinta sección: #registro-button-section-main */
+/* Comienza la quinta sección: #registro-button-section-main */
 
 .registro-button-section-main {
     width: auto;
@@ -727,12 +708,12 @@ section#grid-section-main > div.article-container > article > h2 {
     border-radius: 2rem;
     box-sizing: border-box;
 }
-/* Mobile registro-button-section-main */
+/* Móvil registro-button-section-main */
 
-/* Cuando haya mas de 1000px (vista desktop) */
+/* Cuando hay más de 1000px (vista de escritorio) */
 
-@media (min-width: 1000px) {
-    .registro-button-section-main {    
+@media (min-width: 1001px) {
+    .registro-button-section-main {
         right: 1.5rem;
         bottom: 1.5rem;
     }
@@ -741,14 +722,15 @@ section#grid-section-main > div.article-container > article > h2 {
         height: 2rem;
         width: 100%;
         gap: 10px;
-        svg {
-            width: 1rem;
-            aspect-ratio: 1/1;
-        }
+    }
+
+    .registro-button-section-main > button svg {
+        width: 1rem;
+        aspect-ratio: 1/1;
     }
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+/* Cuando hay menos de 1000px (vista de tableta) */
 
 @media (max-width: 1000px) {
     .registro-button-section-main {
@@ -760,14 +742,15 @@ section#grid-section-main > div.article-container > article > h2 {
         height: 2rem;
         width: 100%;
         gap: 10px;
-        svg {
-            width: 1rem;
-            aspect-ratio: 1/1;
-        }
+    }
+
+    .registro-button-section-main > button svg {
+        width: 1rem;
+        aspect-ratio: 1/1;
     }
 }
 
-/* cuando haya menos de 600px (vista mobile) */
+/* Cuando hay menos de 600px (vista de móvil) */
 
 @media (max-width: 600px) {
     .registro-button-section-main {
@@ -780,251 +763,191 @@ section#grid-section-main > div.article-container > article > h2 {
         height: 70%;
         width: 100%;
         gap: 10px;
-        svg {
-            width: 1rem;
-            aspect-ratio: 1/1;
-        }
     }
 
+    .registro-button-section-main > button svg {
+        width: 1rem;
+        aspect-ratio: 1/1;
+    }
 }
 
 
-/* Termina quinta sección: #registro-button-section-main */
+/* Fin de la quinta sección: #registro-button-section-main */
 /* ---------------------------------- */
-/* Comienza footer */
+/* Comienza el footer */
 
 footer {
-    width: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #303030;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 4rem 2rem 2rem;
     box-sizing: border-box;
-    gap: 2.5rem;
-
-    * {
-        font-family: 'Karla', sans-serif;
-    }
-
+    font-family: 'Montserrat', sans-serif;
 }
 
-#footer1 {
-    width: auto;
-    height: auto;
-    min-height: 380px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    margin: 1rem;
-    div{
-        gap: 0.25rem;
-        display: flex;
-        box-sizing: border-box;
-    }
-    p{
-        color: white;
-    }
-}
-
-.upper-footer1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: solid 1px white;
-}
-
-
-.footer1_sup_img{
-    width: 50%;
-    height: auto;
-}
-
-.footer1_sup-links{
-    align-items: center;
-    justify-content: flex-end;
-    width: 50%;
-    gap: 0.8rem !important;
-    img{
-        height: 2rem;
-    }
-}
-
-.middle-footer1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;
-    * {
-        margin: 0;
-        text-decoration: none;
-        color: white;
-    }
-    div{
-        width: 50%;
-        flex-direction: column;
-    }
-}
-
-.text-apart-middle-footer {
-    padding: 2rem 0;
-    font-weight: bold;
-}
-
-.lower-footer1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
-    border-top: solid 1px white;
-
-    * {
-        margin: 0;
-    }
-
-    nav {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
-}
-
-.bottom-footer-icons {
-    height: 1.5rem;
-    width: auto;
-}
-
-#footer2 {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid white;
-    margin: 1rem 0;
-    padding: 2rem;
-    gap: 0.5rem;
-}
-
-.agendate-formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    box-sizing: border-boxs;
-}
-
-.grid-agendate {
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
     display: grid;
-    gap: 0.5rem;
-    padding: 0;
-    border: none;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    box-sizing: border-box;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
 }
 
-.footer-agendate-titulo {
-    margin: 0;
-    font-family: 'Poppins';
-    color: white;
-    margin: 0 2px;
-}
-
-.agendate-input-chico {
-    grid-column: span 1;
-    grid-row: span 1;
-    background-color: #444;
-    color: white;
-    border: black;
-    padding: 0.5rem;
-}
-
-.agendate-input-text {
-    grid-column: span 2;
-    grid-row: span 2;
-    background-color: #444;
-    color: white;
-    border: black;
-    padding: 0.5rem;
-    resize: none;
-}
-
-.agendate-input {
-    grid-column: span 2;
-    grid-row: span 1;
-    background-color: #444;
-    color: white;
-    border: black;
-    padding: 0.5rem;
-}
-
-.agendate-enviar-button {
-    width: 25%;
-    background-color: #303030;
-    border: solid 1px white;
-    color: white;
-    padding: 0.5rem;
-    margin: 0 2px;
-    box-sizing: border-box;
+/* Columna de la marca */
+.footer-column.footer-brand {
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+}
+
+.footer-description {
+    color: #b8b8b8;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.footer-social-links a {
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    &:hover {
-        background-color: white;
-        color: black;
-        border: solid 1px black;
-        transition: 0.3s;
-    }
-
-    svg {
-        height: 1rem;
-    }
+    width: 40px;
+    height: 40px;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    color: #f0f0f0;
+    transition: all 0.3s ease;
 }
 
-/* Comienza footer mobile */
-
-/* Cuando haya mas de 1000px (vista desktop) */
-
-@media (min-width: 1000px) {
-    #footer1 {
-        min-width: 420px;
-    }
+.footer-social-links a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-3px);
 }
 
-/* Cuando haya menos de 1000px (vista tablet) */
+.footer-social-links svg {
+    width: 20px;
+    height: 20px;
+}
 
+/* Columna de enlaces */
+.footer-column.footer-links h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+}
+
+.footer-column.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-column.footer-links ul li a {
+    color: #b8b8b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer-column.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Columna de contacto */
+.footer-column.footer-contact h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+}
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.contact-item svg {
+    width: 18px;
+    height: 18px;
+    color: #007bff;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item p {
+    color: #b8b8b8;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.contact-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* Diseño responsivo */
 @media (max-width: 1000px) {
-    footer {
-        flex-direction: column-reverse;
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
     }
-    #footer1 {
-        width: 80%;
-    }
-    #footer2 {
-        border: none;
-        min-width: 550px;
+
+    .footer-column.footer-brand {
+        grid-column: 1 / -1;
     }
 }
-
-/* cuando haya menos de 600px (vista mobile) */
 
 @media (max-width: 600px) {
-    #footer2 {
-        padding: 1rem 0;
-        border: none;
-        min-width: 0;
+    footer {
+        padding: 3rem 1.5rem 1.5rem;
     }
 
-    .grid-agendate {
-        * {
-            padding: 0.5rem 0;
-        }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-column.footer-brand {
+        grid-column: 1;
+    }
+
+    .footer-logo {
+        width: 150px;
+    }
+
+    .footer-social-links {
+        justify-content: flex-start;
+    }
+
+    .footer-column h3 {
+        font-size: 1rem;
     }
 }
 
@@ -1134,10 +1057,11 @@ footer {
     width: 100%;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    h1{
-        margin-top: 10vh;
-        text-align: center;
-    }
+}
+
+.Alinvtitulo h1 {
+    margin-top: 10vh;
+    text-align: center;
 }
 
 /*crear formulario*/
@@ -1148,44 +1072,50 @@ footer {
     text-align: center;
     margin-left: 20%;
     margin-right: 20%;
-    input{
-        margin-top: 0%;
-        background-color: white;
-    }
-    select{
-        margin-top: 0%;
-        background-color: white;
-    }
-    button{
-        width: 60%;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 8%;
-        margin-bottom: 7%;
-        background-color: white;
-    }
-    p{
-        margin-top: 6%;
-        margin-bottom: 0%;
-    }
+}
 
+.formularios input {
+    margin-top: 0%;
+    background-color: white;
+}
+
+.formularios select {
+    margin-top: 0%;
+    background-color: white;
+}
+
+.formularios button {
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+    margin-bottom: 7%;
+    background-color: white;
+}
+
+.formularios p {
+    margin-top: 6%;
+    margin-bottom: 0%;
 }
 .formulariodiv1{
     display:flex;
     flex-direction: row;
-    div{
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-    input{
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-    select{
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+}
+
+.formulariodiv1 div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.formulariodiv1 input {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.formulariodiv1 select {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 .formulariodiv2{
     display: flex;
@@ -1193,4 +1123,38 @@ footer {
     margin-top: 10%;
     margin-right: 20%;
     margin-left: 20%;
+}
+/* Encabezado del avatar de perfil */
+.profile-avatar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar-header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff; /* Color azul similar a la página de perfil */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-avatar-header .avatar-initial {
+    line-height: 40px;
+}
+
+.profile-avatar-header .profile-svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.navlist {
+    display: inline-block;
 }
